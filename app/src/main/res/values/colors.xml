@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPage">#f0f0f0</color>
+    <color name="colorLine">#d9d9d9</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorPrice">#C73F4D</color>
+    <color name="colorNormal">#0EA60C</color>
+    <color name="color000">#000000</color>
+    <color name="color333">#333333</color>
+    <color name="color666">#666666</color>
+    <color name="color999">#999999</color>
+    <color name="color757">#757575</color>
+
+    <color name="c_aaa">#aaaaaa</color>
+    <color name="c_ddd">#dddddd</color>
+    <color name="colorTabOn">@color/colorPrimary</color>
+    <color name="colorTabUn">#666666</color>
+    <color name="im_color">#136281</color>
+    <color name="colorBg">#F0F0F0</color>
+
+    <color name="colorPrimary">#136281</color>
+    <color name="colorPrimaryDark">#136281</color>
+    <color name="colorAccent">#136281</color>
+
+    <drawable name="empty">#00000000</drawable>
+
+    <color name="green">#0EA60C</color>
+    <color name="red">#ff0000</color>
+
+    <color name="divide_line">#d1d1d1</color>
+    <color name="color_F1F1F1">#F1F1F1</color>
+</resources>

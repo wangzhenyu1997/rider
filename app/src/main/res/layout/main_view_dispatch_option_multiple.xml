@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_wait_agree"
+        style="@style/order_options_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_agree_no"
+            android:text="拒绝接单"
+            style="@style/button_left_hollow_primary"
+            />
+
+        <TextView
+            android:id="@+id/tv_batch_option_agree_yes"
+            android:text="确认接单"
+            style="@style/button_right_primary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_arrive_shop"
+        style="@style/order_options_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_arrive_shop_no"
+            android:text="上报异常"
+            style="@style/button_left_hollow_primary"/>
+
+        <TextView
+            android:id="@+id/tv_batch_option_arrive_shop_yes"
+            style="@style/button_right_primary"
+            android:text="全部到达取货点" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_wait_pickup"
+        style="@style/order_options_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_wait_pickup_no"
+            style="@style/button_left_hollow_primary"
+            android:text="取货失败" />
+
+        <TextView
+            android:id="@+id/tv_batch_option_wait_pickup_yes"
+            style="@style/button_right_primary"
+            android:text="全部取货成功" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_arrive_station"
+        style="@style/order_options_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_arrive_station_no"
+            style="@style/button_left_hollow_primary"
+            android:text="上报异常" />
+
+        <TextView
+            android:id="@+id/tv_batch_option_arrive_station_yes"
+            style="@style/button_right_primary"
+            android:text="全部送达收货点" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_wait_sign"
+        style="@style/order_options_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_wait_sign_no"
+            style="@style/button_left_hollow_primary"
+            android:text="签收失败" />
+
+        <TextView
+            android:id="@+id/tv_batch_option_wait_sign_yes"
+            style="@style/button_right_primary"
+            android:text="全部拍照签收" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_signed"
+        style="@style/order_options_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_signed_no"
+            style="@style/button_left_hollow_primary"
+            android:text="投诉客户" />
+
+        <TextView
+            android:id="@+id/tv_batch_option_signed_yes"
+            style="@style/button_right_primary"
+            android:text="评价客户" />
+
+    </LinearLayout>
+</merge>

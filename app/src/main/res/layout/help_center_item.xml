@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xml_fill_white_frame"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="18dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:id="@+id/m_tittle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/arrow_down_help"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="为什么要上传身份证？"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/m_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#c6c6c6" />
+
+            <TextView
+                android:id="@+id/m_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="我就是要传呢我就是要传呢我就是要传呢我就是要传呢我就是要传呢我就是要传呢我就是要传呢"
+                android:textColor="@color/color999"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+</LinearLayout>

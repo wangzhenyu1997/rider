@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">牛骑士</string>
+
+    <string name="tab_one">首页</string>
+    <string name="tab_two">分类</string>
+    <string name="tab_three">购物车</string>
+    <string name="tab_four">个人中心</string>
+
+    <string name="download_success">下载成功</string>
+    <string name="file_does_not_exist">文件不存在</string>
+    <string name="back_abnormal_results">数据返回异常</string>
+
+
+    <string name="personal_info_id_card_hint">请输入身份证号码</string>
+    <string name="personal_info_id_card">身份证号</string>
+    <string name="personal_info_name_hint">请输入昵称</string>
+    <string name="personal_info_name">真实姓名</string>
+    <string name="personal_info_phone">手机号</string>
+    <string name="personal_info_nick_hint">请输入昵称</string>
+    <string name="personal_info_nick">昵称</string>
+    <string name="personal_info_head_img">头像</string>
+    <string name="personal_info_card_img">证件照片</string>
+
+
+    <string name="number_digits">0123456789.</string>
+    <string name="main_history_dispatch_title">历史任务</string>
+</resources>

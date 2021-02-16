@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lingmiao.distribution.widget.ToolBarView
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_toolbar_height"
+        android:background="@color/common_ffffff" />
+
+    <com.james.common.view.EmptyLayout
+        android:id="@+id/el_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <include layout="@layout/fragment_base_load_more"/>
+
+</LinearLayout>

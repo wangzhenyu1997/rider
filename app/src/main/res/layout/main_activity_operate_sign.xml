@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dimen_15"
+            android:text="签收地址"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:background="@drawable/xml_card_view_fill_white"
+            android:padding="@dimen/dimen_15">
+
+            <ImageView
+                android:id="@+id/locationIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_10"
+                android:src="@mipmap/ic_user_location"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="locationIv" />
+
+            <TextView
+                android:id="@+id/addressNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_14"
+                android:layout_marginEnd="@dimen/dimen_14"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:textColor="@color/color333"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/barrier"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="地址" />
+
+            <TextView
+                android:id="@+id/addressDetailTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_14"
+                android:layout_marginEnd="@dimen/dimen_14"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:lines="2"
+                android:textColor="@color/color333"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/barrier"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressNameTv"
+                tools:text="地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_15">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dimen_5"
+                android:text="上传照片"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="(至少1张，最多5张，可选)"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/xml_card_view_fill_white"
+            android:padding="@dimen/dimen_15">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="44dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/searchHintTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dimen_15"
+                android:text="签收备注"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+
+            <CheckBox
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/searchHintTv"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:id="@+id/shortMessageCb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:button="@drawable/checkbox_checked"
+                android:paddingLeft="@dimen/dimen_5"
+                android:paddingTop="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingBottom="@dimen/dimen_15"
+                android:text="同时发送短信" />
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:paddingLeft="@dimen/dimen_5"
+                android:paddingTop="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingBottom="@dimen/dimen_15"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:text="清空内容"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clearSearchTv"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:padding="@dimen/dimen_10"
+            android:background="@drawable/xml_card_view_fill_white"
+            >
+
+            <EditText
+                android:scrollbars="vertical"
+                android:id="@+id/searchSignRemarksEt"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:gravity="left|top"
+                android:hint="请输入备注"
+                android:textSize="@dimen/sp_13" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/remarksRv"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15" />
+
+        <TextView
+            android:id="@+id/batchSignedTv"
+            style="@style/button_primary_single"
+            android:layout_margin="@dimen/dimen_15"
+            android:text="提交" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

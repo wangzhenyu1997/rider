@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPage"
+    android:orientation="vertical"
+    tools:context=".ui.activity.BillConfirmActivity">
+
+    <com.lingmiao.distribution.view.LayoutTopView
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="确认意见"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/abc_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/xml_card_view_fill_white"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <RadioButton
+                android:id="@+id/abc_pass"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:drawableLeft="@mipmap/dingdan"
+                android:drawableRight="@drawable/selector_checkbox_checked"
+                android:drawablePadding="10dp"
+                android:text="确认通过" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorLine" />
+
+            <RadioButton
+                android:id="@+id/abc_un_pass"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:button="@null"
+                android:drawableLeft="@mipmap/gantanhao"
+                android:drawableRight="@drawable/selector_checkbox_checked"
+                android:drawablePadding="10dp"
+                android:text="确认不通过" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/abc_confirm_price_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="账单金额"
+            android:textColor="#ff000000"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/abc_confirm_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/xml_card_view_fill_white"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/feiyong"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="确认金额"
+                    android:textColor="@color/color000"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/abc_bill_re_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:digits="@string/number_digits"
+                    android:gravity="end|center_vertical"
+                    android:hint="请输入确认金额"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/color757"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="具体原因"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/xml_card_view_fill_white"
+            android:gravity="start"
+            android:hint="请输入不通过原因，100字以内"
+            android:lines="5"
+            android:maxLength="100"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/abc_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/xml_fill_submit_frame"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/top_back"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:src="@mipmap/icon_top_back_white" />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:layout_marginBottom="@dimen/dimen_5"
+            android:background="@drawable/xml_border_white_10dp_frame"
+            android:orientation="horizontal">
+
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/searchStatusTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:drawableRight="@mipmap/ic_triangle_down"
+                android:drawablePadding="@dimen/dimen_10"
+                android:paddingLeft="@dimen/dimen_15"
+                android:text="待送达"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/color666" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginRight="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:background="@color/colorLine" />
+
+            <EditText
+                android:id="@+id/searchRemarksEt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:lines="1"
+                android:drawableLeft="@mipmap/ic_search_light"
+                android:drawablePadding="@dimen/dimen_5"
+                android:hint="搜索地点、联系人、联系电话"
+                android:textSize="@dimen/sp_11" />
+
+        </LinearLayout>
+
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:padding="@dimen/dimen_10"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/searchTv"
+            android:text="搜索"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <com.james.common.view.EmptyLayout
+        android:id="@+id/el_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <include
+        layout="@layout/fragment_base_load_more"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchLayout" />
+
+</LinearLayout>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_10"
+    android:layout_marginRight="@dimen/dimen_10"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/iv_dispatch_start_view"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/home_blue_circle_no" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_dispatch_start_view"
+            android:layout_marginLeft="6dp"
+            android:background="#dadada" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/tv_dispatch_start_distance"
+            android:layout_toRightOf="@+id/iv_dispatch_start_view"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_dispatch_start_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="我是商家名称" />
+
+            <TextView
+                android:id="@+id/tv_dispatch_start_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_15"
+                android:layout_toRightOf="@id/tv_dispatch_start_name"
+                android:drawableRight="@mipmap/icon_phone_new"
+                android:drawablePadding="@dimen/dimen_10"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14sp"
+                tools:text="18621774835" />
+
+            <TextView
+                android:id="@+id/tv_dispatch_start_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_dispatch_start_name"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="我是开始地点我是开始地点我是开始地点我是开始地点我是开始地点" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_dispatch_start_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="@dimen/dimen_12"
+            android:singleLine="true"
+            android:textColor="#00A0E9"
+            android:textSize="12sp"
+            tools:text="21.1公里"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/iv_dispatch_end_view"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/home_red_circle_no" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/iv_dispatch_end_view"
+            android:layout_marginLeft="6dp"
+            android:background="#dadada" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/tv_dispatch_end_distance"
+            android:layout_toRightOf="@+id/iv_dispatch_end_view"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_dispatch_end_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="我是商家名称" />
+
+            <TextView
+                android:id="@+id/tv_dispatch_end_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_15"
+                android:layout_toRightOf="@id/tv_dispatch_end_name"
+                android:drawableRight="@mipmap/icon_phone_new"
+                android:drawablePadding="@dimen/dimen_10"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14sp"
+                tools:text="18621774835" />
+
+            <TextView
+                android:id="@+id/tv_dispatch_end_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_dispatch_end_name"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="我是开始地点我是开始地点我是开始地点我是开始地点我是开始地点" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_dispatch_end_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="@dimen/dimen_12"
+            android:singleLine="true"
+            android:textColor="#C73F4D"
+            android:textSize="12sp"
+            tools:text="21.1公里"
+
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/m_tag_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@mipmap/home_tag" />
+
+        <LinearLayout
+            android:id="@+id/ll_dispatch_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/dimen_15"
+        android:background="#DADADA" />
+
+    <TextView
+        android:id="@+id/tv_dispatch_dt_out_order_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp"
+        android:drawableLeft="@mipmap/out_order"
+        android:drawablePadding="10dp"
+        android:singleLine="true"
+        android:textColor="#000"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:id="@+id/layout_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10">
+
+        <ImageView
+            android:id="@+id/m_time_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/shijian" />
+
+        <TextView
+            android:id="@+id/tv_dispatch_dt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/m_time_image"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textSize="12sp"
+            tools:text="2020-07-10 11:11:11 配送" />
+
+        <TextView
+            android:id="@+id/tv_dispatch_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_dispatch_dt_time"
+            android:background="@drawable/xml_fill_home_time_frame"
+            android:textColor="#00A0E9"
+            android:textSize="12sp"
+            tools:text="送达" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dimen_10">
+
+        <ImageView
+            android:id="@+id/m_good_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/kuaidi" />
+
+        <TextView
+            android:id="@+id/tv_dispatch_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/m_good_image"
+            android:singleLine="true"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            tools:text="家电商品呢" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_dispatch_remark_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/m_remark_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/gantanhao" />
+
+        <TextView
+            android:id="@+id/tv_dispatch_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/m_remark_image"
+            android:singleLine="true"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            tools:text="快点，客户等吃饭呢" />
+
+    </RelativeLayout>
+
+</LinearLayout>

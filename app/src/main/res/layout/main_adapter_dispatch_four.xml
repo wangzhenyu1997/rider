@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_batch_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_15">
+
+        <RelativeLayout
+            android:id="@+id/ll_batch_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_batch_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:lines="1"
+                    android:paddingTop="@dimen/dimen_15"
+                    android:paddingBottom="@dimen/dimen_15"
+                    android:paddingLeft="@dimen/dimen_15"
+                    tools:text="调度单号：d222000"
+                    android:textColor="@color/color333"
+                    android:textSize="@dimen/sp_12" />
+
+                <ImageView
+                    android:id="@+id/iv_dispatch_order_num_copy"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/tv_batch_no"
+                    android:paddingLeft="@dimen/dimen_10"
+                    android:src="@mipmap/fuzhi"
+                    android:paddingRight="@dimen/dimen_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/tv_batch_order_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/hollow_border_red"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    tools:text="共5单"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@mipmap/arrow_right"
+                    android:paddingRight="15dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View style="@style/DivideLineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_batch_store_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/ic_batch_owner"
+                android:drawablePadding="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingBottom="@dimen/dimen_7"
+                tools:text="门口淘舟山三农中心仓"
+                android:textColor="@color/color000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_batch_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_personal"
+                android:drawablePadding="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="@dimen/dimen_7"
+                android:paddingBottom="@dimen/dimen_7"
+                tools:text="张三疯"
+                android:textColor="@color/color000"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_batch_user_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="@dimen/dimen_7"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingBottom="@dimen/dimen_7"
+                tools:text="189219999999"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:paddingBottom="@dimen/dimen_15"
+                android:id="@+id/tv_batch_user_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/ic_location"
+                android:drawablePadding="@dimen/dimen_5"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="2"
+                android:paddingLeft="@dimen/dimen_15"
+                tools:text="上海市青浦区徐泾镇沪青平公路1881号上海市青浦区徐泾镇沪青平公路1881号"
+                android:textColor="@color/color000"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:paddingBottom="@dimen/dimen_15"
+                android:id="@+id/tv_user_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="@dimen/dimen_7"
+                android:paddingRight="@dimen/dimen_15"
+                tools:text="2.1公里"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:layout_marginRight="@dimen/dimen_15">
+
+            <View
+                style="@style/DivideLineHorizontal"
+                android:layout_marginBottom="@dimen/dimen_15"/>
+
+            <include layout="@layout/main_view_dispatch_option_multiple" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/newOrderIv"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:src="@mipmap/ic_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</FrameLayout>

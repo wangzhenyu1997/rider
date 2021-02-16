@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPage"
+    android:orientation="vertical"
+    tools:context=".ui.activity.BillDetailActivity">
+
+    <com.lingmiao.distribution.view.LayoutTopView
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="余额与押金"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/xml_card_view_fill_white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <LinearLayout
+                    android:id="@+id/amw_layout_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/icon_yue"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="余额"
+                        android:textColor="@color/color000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/amw_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableEnd="@mipmap/arrow_right"
+                        android:drawablePadding="10dp"
+                        android:gravity="end|center_vertical"
+                        android:text="0.00元"
+                        android:textColor="@color/color757"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorLine" />
+
+                <LinearLayout
+                    android:id="@+id/amw_layout_deposit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/feiyong"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="押金"
+                        android:textColor="@color/color000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/amw_deposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableEnd="@mipmap/arrow_right"
+                        android:drawablePadding="10dp"
+                        android:gravity="end|center_vertical"
+                        android:text="0.00元"
+                        android:textColor="@color/color757"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="账户积分"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/xml_card_view_fill_white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <LinearLayout
+                    android:id="@+id/amw_layout_integral"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/icon_yudan"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="牛蛋分"
+                        android:textColor="@color/color000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/amw_integral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableEnd="@mipmap/arrow_right"
+                        android:drawablePadding="10dp"
+                        android:gravity="end|center_vertical"
+                        android:text="0.00分"
+                        android:textColor="@color/color757"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="账户绑定"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/xml_card_view_fill_white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <LinearLayout
+                    android:id="@+id/amw_layout_alipay"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/icon_zhifubao"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="支付宝"
+                        android:textColor="@color/color000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/amw_bind_alipay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableEnd="@mipmap/arrow_right"
+                        android:drawablePadding="10dp"
+                        android:gravity="end|center_vertical"
+                        android:text="点击设置"
+                        android:textColor="@color/color757"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorLine" />
+
+                <LinearLayout
+                    android:id="@+id/amw_layout_bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/icon_bank"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="银行卡"
+                        android:textColor="@color/color000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/amw_bind_bank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableEnd="@mipmap/arrow_right"
+                        android:drawablePadding="10dp"
+                        android:gravity="end|center_vertical"
+                        android:text="点击设置"
+                        android:textColor="@color/color757"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

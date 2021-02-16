@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/xml_fill_white_frame"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/m_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/message_image"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/m_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:textColor="#757575"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/m_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="#D9D9D9"
+        android:textSize="12sp" />
+</LinearLayout>

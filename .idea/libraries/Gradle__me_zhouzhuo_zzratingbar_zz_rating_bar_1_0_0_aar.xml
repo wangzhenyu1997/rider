@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: me.zhouzhuo.zzratingbar:zz-rating-bar:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5924dd0631e99f8e626f4abf2f9efee7/jetified-zz-rating-bar-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5924dd0631e99f8e626f4abf2f9efee7/jetified-zz-rating-bar-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5924dd0631e99f8e626f4abf2f9efee7/jetified-zz-rating-bar-1.0.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.zhouzhuo.zzratingbar/zz-rating-bar/1.0.0/6c7372c15e604b6cd0349c53d3d9c2a7f008d702/zz-rating-bar-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.zhouzhuo.zzratingbar/zz-rating-bar/1.0.0/648f9652fb8de8bbbb171bdeb24a6d493bca8336/zz-rating-bar-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/m_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <TextView
+                style="@style/order_detail_part_title"
+                android:text="基本信息" />
+
+            <include layout="@layout/main_view_order_base_info" />
+
+            <TextView
+                style="@style/order_detail_part_title"
+                android:text="发货信息" />
+
+            <LinearLayout
+                style="@style/order_detail_part_items"
+                android:paddingBottom="@dimen/dimen_5">
+
+                <include layout="@layout/main_view_order_goods_info" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/order_detail_part_title"
+                android:text="派单信息" />
+
+            <include layout="@layout/main_view_order_delivery_info" />
+
+            <TextView
+                style="@style/order_detail_part_title"
+                android:text="时效信息" />
+
+            <include layout="@layout/main_view_order_time" />
+
+            <TextView
+                style="@style/order_detail_part_title"
+                android:text="异常信息" />
+
+            <include layout="@layout/main_view_order_exception" />
+
+            <TextView
+                style="@style/order_detail_part_title"
+                android:text="投诉信息" />
+
+            <include layout="@layout/main_view_order_complaint" />
+
+            <TextView
+                style="@style/order_detail_part_title"
+                android:text="订单轨迹" />
+
+            <RelativeLayout style="@style/order_detail_part_items">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTrace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dimen_10"
+        android:paddingBottom="@dimen/dimen_10"
+        android:paddingLeft="@dimen/dimen_15"
+        android:paddingRight="@dimen/dimen_15">
+
+        <include layout="@layout/main_view_dispatch_option_detail" />
+
+    </LinearLayout>
+</LinearLayout>

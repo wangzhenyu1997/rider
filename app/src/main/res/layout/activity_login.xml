@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <com.lingmiao.distribution.view.LayoutTopView
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="40dp"
+            android:text="牛骑士配送员登录"
+            android:textColor="#000000"
+            android:textSize="26sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
+
+        <ImageView
+            android:id="@+id/l_user_name_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/user_image" />
+
+        <EditText
+            android:id="@+id/l_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/l_user_name_tx"
+            android:background="@null"
+            android:hint="账号/手机号"
+            android:inputType="number"
+            android:maxLength="11"
+            android:text="18888888888"
+            android:textColor="@color/color333"
+            android:textColorHint="@color/color999"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/c_ddd" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
+
+        <ImageView
+            android:id="@+id/l_user_pass_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/user_pass" />
+
+        <EditText
+            android:id="@+id/l_user_pass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/l_user_pass_tx"
+            android:background="@null"
+            android:hint="登录密码"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:textColor="@color/color333"
+            android:textColorHint="@color/color999"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:id="@+id/m_show_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/eye_choose_un" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/c_ddd" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/l_choose_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:button="@null"
+            android:checked="true"
+            android:paddingLeft="@dimen/dimen_20"
+            android:paddingTop="@dimen/dimen_20"
+            android:paddingBottom="@dimen/dimen_20"
+            android:drawableLeft="@drawable/checkbox_checked"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="已阅读并同意"
+            android:textColor="@color/color999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:paddingLeft="@dimen/dimen_10"
+            android:paddingTop="@dimen/dimen_20"
+            android:paddingBottom="@dimen/dimen_20"
+            android:id="@+id/l_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/l_choose_checkbox"
+            android:text="《牛哥专送平台用户服务条款》"
+            android:textColor="@color/im_color"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/l_login_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/xml_fill_submit_frame"
+        android:gravity="center"
+        android:text="登 录"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="40dp">
+
+        <TextView
+            android:id="@+id/l_forget_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="忘记密码？"
+            android:textColor="@color/color333"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/l_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="注册新账号"
+            android:textColor="@color/color333"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

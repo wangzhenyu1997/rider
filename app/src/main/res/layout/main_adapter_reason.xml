@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:paddingRight="@dimen/dimen_15"
+        android:paddingLeft="@dimen/dimen_15"
+        android:id="@+id/m_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:button="@null"
+        android:drawableRight="@drawable/selector_checkbox_checked"
+        android:drawablePadding="10dp"
+        android:text="我的车胎爆了" />
+
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorLine" />
+
+</LinearLayout>

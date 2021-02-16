@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/order_detail_part_items"
+    android:layout_width="match_parent">
+
+    <LinearLayout style="@style/order_detail_part_item">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/m_dispatcher"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="配送员"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/m_dispatcher"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text=""
+            android:textColor="@color/color757"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View style="@style/common_divider" />
+
+    <LinearLayout style="@style/order_detail_part_item">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/m_order_phone"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="手机号"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/m_order_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text=""
+            android:textColor="@color/color757"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View style="@style/common_divider" />
+
+    <LinearLayout style="@style/order_detail_part_item">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/m_plate_num"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="车牌号"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/m_plate_num"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text="暂无"
+            android:textColor="@color/color757"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View style="@style/common_divider" />
+
+    <LinearLayout style="@style/order_detail_part_item">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/m_model"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="车型"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/m_model"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text="电动摩托"
+            android:textColor="@color/color757"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View style="@style/common_divider" />
+
+    <LinearLayout style="@style/order_detail_part_item">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/icon_account_edit"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="调度单号"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/m_dispatch_no"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text="222"
+            android:textColor="@color/color757"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

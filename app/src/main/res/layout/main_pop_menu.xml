@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.james.common.view.ILinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dimen_3"
+    android:paddingVertical="@dimen/dimen_6"
+    app:ivBgColor="#ffffff"
+    app:ivRadius="4dp">
+
+    <TextView
+        android:id="@+id/goodsEditTv"
+        style="@style/style_main_menu"
+        android:text="待接单" />
+
+    <TextView
+        android:id="@+id/goodsDisableTv"
+        style="@style/style_main_menu"
+        android:text="待取货"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/goodsQuantityTv"
+        style="@style/style_main_menu"
+        android:text="待送达"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+</com.james.common.view.ILinearLayout>

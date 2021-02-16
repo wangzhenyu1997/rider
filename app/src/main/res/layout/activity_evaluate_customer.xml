@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lingmiao.distribution.view.CustomLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:zhy="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPage"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.lingmiao.distribution.view.LayoutTopView
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/m_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/m_get_good"
+                    android:background="#d9d9d9" />
+
+                <TextView
+                    android:id="@+id/m_get_good"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="发货人"
+                    android:textColor="@color/color757"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/m_get_good"
+                    android:background="#d9d9d9" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <me.zhouzhuo.zzratingbar.ZzRatingBar
+                    android:id="@+id/m_get_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:zrb_checked_star_res="@mipmap/icon_star_big_on"
+                    app:zrb_click_enable="true"
+                    app:zrb_horizontal_spacing="20dp"
+                    app:zrb_normal_star_res="@mipmap/icon_star_big_un"
+                    app:zrb_rating="0"
+                    app:zrb_star_count="5"
+                    app:zrb_star_dimension="20dp" />
+            </RelativeLayout>
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/m_get_flowlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                zhy:max_select="-1" />
+
+            <EditText
+                android:id="@+id/m_get_edit"
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/xml_card_view_fill_white"
+                android:gravity="left|top"
+                android:hint="这个货主怎么样？给个评价吧"
+                android:padding="15dp"
+                android:textColor="@color/color000"
+                android:textColorHint="@color/color757"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/m_send_good"
+                    android:background="#d9d9d9" />
+
+                <TextView
+                    android:id="@+id/m_send_good"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="收货人"
+                    android:textColor="@color/color757"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/m_send_good"
+                    android:background="#d9d9d9" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <me.zhouzhuo.zzratingbar.ZzRatingBar
+                    android:id="@+id/m_send_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:zrb_checked_star_res="@mipmap/icon_star_big_on"
+                    app:zrb_click_enable="true"
+                    app:zrb_horizontal_spacing="20dp"
+                    app:zrb_normal_star_res="@mipmap/icon_star_big_un"
+                    app:zrb_rating="0"
+                    app:zrb_star_count="5"
+                    app:zrb_star_dimension="20dp" />
+            </RelativeLayout>
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/m_send_flowlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                zhy:max_select="-1" />
+
+            <EditText
+                android:id="@+id/m_send_edit"
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/xml_card_view_fill_white"
+                android:gravity="left|top"
+                android:hint="这个货主怎么样？给个评价吧"
+                android:padding="15dp"
+                android:textColor="@color/color000"
+                android:textColorHint="@color/color757"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/m_btn_six"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/m_submit"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/xml_fill_submit_frame"
+            android:gravity="center"
+            android:text="提 交"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</com.lingmiao.distribution.view.CustomLinearLayout>

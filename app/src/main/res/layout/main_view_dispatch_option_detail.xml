@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_arrive_shop"
+        style="@style/layout_match_wrap"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_arrive_shop_no"
+            style="@style/button_left_hollow_primary"
+            android:text="上报异常" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_wait_pickup"
+        style="@style/layout_match_wrap"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_re_arrive_shop_no"
+            style="@style/button_left_hollow_primary"
+            android:text="上报异常" />
+
+        <TextView
+            android:id="@+id/tv_batch_option_re_wait_pickup_no"
+            style="@style/button_right_warning"
+            android:text="取货失败" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_arrive_station"
+        style="@style/layout_match_wrap"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_arrive_station_no"
+            style="@style/button_left_hollow_primary"
+            android:text="上报异常" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch_wait_sign"
+        style="@style/layout_match_wrap"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_batch_option_re_arrive_station_no"
+            style="@style/button_left_hollow_primary"
+            android:text="上报异常" />
+
+        <TextView
+            android:id="@+id/tv_batch_option_re_wait_sign_no"
+            style="@style/button_right_warning"
+            android:text="签收失败" />
+
+    </LinearLayout>
+
+</merge>

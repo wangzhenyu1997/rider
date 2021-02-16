@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/order_detail_part_items"
+    android:padding="@dimen/dimen_10">
+
+    <TextView
+        android:id="@+id/m_down_time"
+        style="@style/order_detail_part_item_single"
+        android:text="下单时间：" />
+
+    <TextView
+        android:id="@+id/m_receiving_time"
+        style="@style/order_detail_part_item_single"
+        android:text="接单时间：" />
+
+    <TextView
+        android:id="@+id/m_complete_time"
+        style="@style/order_detail_part_item_single"
+        android:text="完成时间："/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"
+        android:background="#f0f0f0"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/m_receiving_valid_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:text="接单时效：2020-12-12 11:11:11"
+                android:textColor="@color/color000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/m_receiving_valid_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="10dp"
+                android:text="超时"
+                android:textColor="@color/colorPrice" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:id="@+id/m_sign_valid_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:text="签收时效：2020-12-12 11:11:11"
+                android:textColor="@color/color000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/m_sign_valid_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="10dp"
+                android:text="正常"
+                android:textColor="@color/colorNormal" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

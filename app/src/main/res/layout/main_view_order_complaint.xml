@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/m_complaint_message"
+    style="@style/order_detail_part_items"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_15">
+
+    <TextView
+        android:id="@+id/m_cp_view_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="有"
+        android:textColor="@color/color000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/m_cp_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/m_cp_view_one"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="0"
+        android:textColor="@color/colorPrice"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/m_cp_num"
+        android:drawableRight="@mipmap/arrow_right"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="个投诉"
+        android:textColor="@color/color000"
+        android:textSize="14sp" />
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/m_abnormal_message"
+    style="@style/order_detail_part_items"
+    android:padding="@dimen/dimen_15"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/m_ab_view_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="有"
+        android:textColor="@color/color000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/m_ab_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/m_ab_view_one"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="0"
+        android:textColor="@color/colorPrice"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/m_ab_num"
+        android:drawableRight="@mipmap/arrow_right"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="个异常"
+        android:textColor="@color/color000"
+        android:textSize="14sp" />
+</RelativeLayout>
+

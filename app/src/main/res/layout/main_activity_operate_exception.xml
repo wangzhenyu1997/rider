@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="上报信息"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/ac_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/xml_card_view_fill_white"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:checked="true"
+                    android:drawableLeft="@mipmap/icon_type"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="异常类型"
+                    android:textColor="@color/color000" />
+
+                <TextView
+                    android:id="@+id/tvExceptionType"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:checked="true"
+                    android:drawableRight="@mipmap/arrow_right"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择，必填"
+                    android:textColor="@color/color000"
+                    android:textColorHint="@color/color999" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorLine" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:checked="true"
+                    android:drawableLeft="@mipmap/shijian"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="异常时间"
+                    android:textColor="@color/color000" />
+
+                <TextView
+                    android:id="@+id/tvExceptionTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:checked="true"
+                    android:drawableRight="@mipmap/arrow_right"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择，必填"
+                    android:textColor="@color/color000"
+                    android:textColorHint="@color/color999" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorLine" />
+
+            <EditText
+                android:id="@+id/etDiscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="请输入异常描述，100字以内，必填"
+                android:lines="5"
+                android:maxLength="100"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_15">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dimen_5"
+                android:text="上传照片"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="(至少1张，最多5张，可选)"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/xml_card_view_fill_white"
+            android:padding="@dimen/dimen_15">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvExceptionImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="44dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:layout_margin="@dimen/dimen_15"
+            android:id="@+id/abc_submit"
+            style="@style/button_primary_single"
+            android:text="提交" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

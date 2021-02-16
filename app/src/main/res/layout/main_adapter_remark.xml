@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_15"
+    android:layout_marginRight="@dimen/dimen_15"
+    android:layout_marginBottom="@dimen/dimen_6"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/xml_card_view_fill_white">
+
+    <TextView
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingTop="@dimen/dimen_8"
+        android:paddingBottom="@dimen/dimen_8"
+        android:paddingLeft="@dimen/dimen_15"
+        android:paddingRight="@dimen/dimen_15"
+        android:id="@+id/remarkTv"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:paddingTop="@dimen/dimen_8"
+        android:paddingBottom="@dimen/dimen_8"
+        android:paddingLeft="@dimen/dimen_15"
+        android:paddingRight="@dimen/dimen_10"
+        android:id="@+id/remarkAddIv"
+        android:src="@mipmap/ic_add"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

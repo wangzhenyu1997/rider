@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_batch_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_batch_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_batch_store_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/ic_batch_owner"
+                android:drawablePadding="5dp"
+                android:lines="1"
+                android:padding="15dp"
+                android:text="门口淘舟山三农中心仓"
+                android:textColor="@color/color333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_batch_order_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/hollow_border_red"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:text="共5单"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/arrow_right"
+                android:paddingRight="15dp" />
+
+        </LinearLayout>
+
+        <View style="@style/DivideLineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_batch_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/ic_personal"
+                android:drawablePadding="@dimen/dimen_5"
+                android:padding="@dimen/dimen_15"
+                android:text="张三疯"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_batch_user_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_15"
+                android:text="189219999999"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dimen_15"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_batch_user_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/ic_location"
+                android:drawablePadding="@dimen/dimen_5"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingBottom="@dimen/dimen_15"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="上海市青浦区徐泾镇沪青平公路1881号"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_user_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.1公里"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <View
+            style="@style/DivideLineHorizontal"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:layout_marginRight="@dimen/dimen_15" />
+
+        <LinearLayout
+            style="@style/common_margin_15"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_batch_option_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/xml_border_white_push_frame"
+                android:gravity="center"
+                android:padding="@dimen/dimen_13"
+                android:text="全部拒接"
+                android:textColor="@color/im_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_batch_option_yes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="2"
+                android:background="@drawable/xml_fill_white_push_frame"
+                android:gravity="center"
+                android:padding="@dimen/dimen_13"
+                android:text="全部接单"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

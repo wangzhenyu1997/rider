@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/xml_card_view_fill_white"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="5dp"
+    android:id="@+id/iof_item" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/iof_order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="201909099876"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/iof_order_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="end"
+            android:gravity="center_vertical"
+            android:text="￥20.00"
+            android:textColor="@color/colorPrice"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/iof_order_type"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_below="@id/iof_order_id"
+            android:gravity="center_vertical"
+            android:text="接货订单"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/iof_order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iof_order_id"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iof_order_type"
+            android:background="@drawable/xml_border_2dp_im"
+            android:gravity="center_vertical"
+            android:paddingLeft="3dp"
+            android:paddingTop="1dp"
+            android:paddingRight="3dp"
+            android:paddingBottom="1dp"
+            android:text="进行中"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/iof_order_time"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center_vertical|right"
+            android:text="2017-09-09 17:34"
+            android:textColor="@color/color757"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

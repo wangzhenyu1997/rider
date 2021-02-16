@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/xml_card_view_fill_white"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:id="@+id/ib_item"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/ib_bill_code"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="201909099876"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/ib_bill_num"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="X10单"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical|right">
+
+            <TextView
+                android:id="@+id/ib_bill_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xml_border_2dp_im"
+                android:gravity="center_vertical"
+                android:paddingLeft="3dp"
+                android:paddingTop="1dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="1dp"
+                android:text="待确认"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/ib_bill_name"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="2019年6月账单"
+            android:textColor="@color/color000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/ib_bill_money"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="￥20.00"
+            android:textColor="@color/colorPrice"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/ib_bill_time"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical|right"
+            android:text="2017-09-09 17:34"
+            android:textColor="@color/color757"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

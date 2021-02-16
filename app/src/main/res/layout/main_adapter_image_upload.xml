@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:background="@color/colorWhite">
+
+    <ImageView
+        android:padding="@dimen/dimen_15"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:id="@+id/imageIv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/default_image" />
+
+    <ImageView
+        android:id="@+id/deleteIv"
+        android:layout_width="@dimen/dimen_30"
+        android:layout_height="@dimen/dimen_30"
+        android:layout_gravity="end"
+        android:paddingStart="@dimen/dimen_10"
+        android:paddingBottom="@dimen/dimen_10"
+        android:src="@mipmap/icon_delete" />
+</FrameLayout>
