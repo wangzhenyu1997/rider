@@ -1,9 +1,0 @@
-
-‡
-java:S13198"qThe type of the "images" object should be an interface such as "List" rather than the implementation "ArrayList".(Û¿â£
-‡
-java:S1319A"qThe type of the "images" object should be an interface such as "List" rather than the implementation "ArrayList".(ïè³Ë
-Y
-java:S11559">Use isEmpty() to check whether the collection is empty or not.(ÈŠ¡¶ýÿÿÿÿ
-Y
-java:S1155C">Use isEmpty() to check whether the collection is empty or not.(ÈŠ¡¶ýÿÿÿÿ

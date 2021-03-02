@@ -21,6 +21,8 @@ interface IDispatchTabPresenter : BasePresenter, ITakingSettingPresenter {
 
     fun sureOrder(id : String, successCallback: (DataVO<Unit>) -> Unit, failedCallback: () -> Unit)
 
+    fun takeOrder(id : String, successCallback: (DataVO<Unit>) -> Unit, failedCallback: () -> Unit)
+
     fun loadDispatchData(id : String);
 
     interface View : ITakingSettingPresenter.View {

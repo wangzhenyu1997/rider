@@ -1,2 +1,3 @@
 include ':common'
 include ':app',':nrecyclerview', ':imagepicker', ':library'
+rootProject.name = "rider"

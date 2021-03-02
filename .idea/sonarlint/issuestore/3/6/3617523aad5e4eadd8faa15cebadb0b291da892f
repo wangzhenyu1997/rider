@@ -1,0 +1,38 @@
+
+e
+java:S1128"JRemove this unused import 'com.lingmiao.distribution.okhttp.HttpCallback'.(¯¨Ş²şÿÿÿÿ
+I
+java:S1128 ".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+E
+java:S1128""*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ
+\
+java:S1128"FRemove this unused import 'com.lingmiao.distribution.config.Constant'.(›†ƒÜ
+_
+java:S1128"IRemove this unused import 'com.lingmiao.distribution.okhttp.OkHttpUtils'.(Ä¨¹Í
+`
+java:S1128"JRemove this unused import 'com.lingmiao.distribution.bean.HomeDetailBean'.(±ËòŒ
+G
+java:S1602K",Remove useless curly braces around statement(Ğ Ÿ«şÿÿÿÿ
+G
+java:S1602O",Remove useless curly braces around statement(‡ÕŒ·úÿÿÿÿ
+S
+java:S1874X"8Remove this use of "ClipboardManager"; it is deprecated.(òïßòúÿÿÿÿ
+S
+java:S1874X"8Remove this use of "ClipboardManager"; it is deprecated.(òïßòúÿÿÿÿ
+J
+java:S1874Y"/Remove this use of "setText"; it is deprecated.(–â¶Ãÿÿÿÿÿ
+m
+java:S3776^"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(é¿ÿ‘şÿÿÿÿ
+F
+java:S1874e"0Remove this use of "fromHtml"; it is deprecated.(Ù‚±ê
+Y
+java:S1874"=Remove this use of "setBackgroundDrawable"; it is deprecated.(„ºÃéùÿÿÿÿ
+8	java:S131¨""Add a default case to this switch.(ÉÆ£Ò
+G
+java:S10684",Remove this unused "mContent" private field.(ÉÇ«‘øÿÿÿÿ
+A
+java:S10685"+Remove this unused "mCancle" private field.(–Óù£
+D
+java:S10686")Remove this unused "mSure" private field.(¶Óª’ÿÿÿÿÿ
+Q	java:S125M"<This block of commented-out lines of code should be removed.(„ïµû
+Q	java:S125Q"<This block of commented-out lines of code should be removed.(„ïµû

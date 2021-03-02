@@ -111,6 +111,12 @@ object DispatchRepository {
         return apiService.agreeAccept(map).awaitHiResponse();
     }
 
+    suspend fun assignAndAccept(ids : MutableList<String>): HiResponse<DataVO<Unit>> {
+        var data = TakeOrderReq();
+        data.ids = ids;
+        return apiService.assignAndAccept(data).awaitHiResponse();
+    }
+
     suspend fun refuse(refuseOrderReq: RefuseOrderReq): HiResponse<DataVO<Unit>> {
         return apiService.refuse(refuseOrderReq).awaitHiResponse();
     }

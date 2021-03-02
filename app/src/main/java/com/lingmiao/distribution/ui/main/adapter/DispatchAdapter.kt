@@ -140,7 +140,7 @@ class DispatchAdapter(val type : Int) : BaseMultiItemQuickAdapter<DispatchOrderR
         helper.setText(R.id.tv_dispatch_order_num, String.format("订单号：%s", order?.orderNo));
         helper.setTag(R.id.tv_dispatch_order_num, order?.orderNo);
         // 总价
-        helper.setText(R.id.tv_dispatch_price, String.format("¥%s", "" + MathExtend.round(order?.totalCost!!, 2)))
+        helper.setText(R.id.tv_dispatch_price, String.format("¥%s", "" + MathExtend.round(item?.totalCost!!, 2)))
         // 价格明细
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             helper.setText(R.id.tv_dispatch_price_detail, Html.fromHtml(item?.getPriceDetailStr(), Html.FROM_HTML_MODE_LEGACY));

@@ -13,6 +13,7 @@ object VoiceUtils {
     private var soundPool: SoundPool? = null
     private var soundIdFourModel = 0
     private var soundIdTwoModel = 0
+    private var soundIdNewOrder = 0
 
     fun playVoiceOfFourModel() {
         soundPool?.apply {
@@ -30,11 +31,20 @@ object VoiceUtils {
         }
     }
 
+    fun playVoiceOfNewOrder() {
+        soundPool?.apply {
+            MainScope().launch {
+                play(soundIdNewOrder, 1f, 1f, 1, 0, 1f)
+            }
+        }
+    }
+
     fun init() {
         if (soundPool == null) {
             soundPool = getDefaultSoundPool();
             soundIdFourModel = soundPool!!.load(MyApp.getInstance(), R.raw.siji_audio, 1)
             soundIdTwoModel = soundPool!!.load(MyApp.getInstance(), R.raw.qishou_audio, 1)
+            soundIdNewOrder = soundPool!!.load(MyApp.getInstance(), R.raw.new_order, 1)
         }
     }
 

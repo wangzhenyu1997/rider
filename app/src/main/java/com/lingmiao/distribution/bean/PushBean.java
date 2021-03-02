@@ -1,5 +1,8 @@
 package com.lingmiao.distribution.bean;
 
+import com.lingmiao.distribution.ui.main.bean.DispatchOrderItemBean;
+import com.lingmiao.distribution.ui.main.bean.DispatchOrderRecordBean;
+
 /**
  * PushBean
  *
@@ -12,7 +15,7 @@ public class PushBean {
     private String dispatchId;
     private int type;  //1牛骑士派单通知   2审核结果通知
     private int auditStatus;  //2审核通过   3审核不通过
-    private String order;
+    private DispatchOrderItemBean order;
 
     public int getType() {
         return type;
@@ -36,5 +39,13 @@ public class PushBean {
 
     public void setDispatchId(String dispatchId) {
         this.dispatchId = dispatchId;
+    }
+
+    public DispatchOrderItemBean getOrder() {
+        return order;
+    }
+
+    public void setOrder(DispatchOrderItemBean order) {
+        this.order = order;
     }
 }

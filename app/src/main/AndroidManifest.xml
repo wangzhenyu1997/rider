@@ -43,8 +43,8 @@
     <application
         android:name=".app.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
@@ -65,7 +65,8 @@
 
         <activity
             android:name="com.lingmiao.distribution.ui.activity.WelcomeActivity"
-            android:theme="@style/Appwelcome">
+            android:theme="@style/Appwelcome"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,150 +77,150 @@
         <activity
             android:name="com.lingmiao.distribution.ui.activity.LoginActivity"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.lingmiao.distribution.ui.activity.RegisterActivity"
-            android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.AgreementActivity" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.AgreementActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.lingmiao.distribution.ui.activity.IdentityAtActivity"
-            android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.IdentityNoActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.IdentityExamineActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.HomeDetailActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.HomeActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.MessageListActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.EvaluateCustomerActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.CostDetailActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.AboutUsActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.IdentityExNoActivity" />
-        <activity android:name="com.lingmiao.distribution.ui.activity.FailedToSignInTwoActivity" />
-        <activity android:name=".ui.login.LoginActivity"/>
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.IdentityNoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.IdentityExamineActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.lingmiao.distribution.ui.activity.HomeDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.lingmiao.distribution.ui.activity.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.MessageListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.EvaluateCustomerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.lingmiao.distribution.ui.activity.CostDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.AboutUsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.IdentityExNoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lingmiao.distribution.ui.activity.FailedToSignInTwoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"/>
 
         <!--niuxinyu-->
-        <activity android:name=".ui.activity.PersonalInfoActivity" />
-        <activity android:name=".ui.activity.OrderFeeListActivity" />
-        <activity android:name=".ui.activity.BillListActivity" />
-        <activity android:name=".ui.activity.BillDetailActivity" />
-        <activity android:name=".ui.activity.BillConfirmActivity" />
-        <activity android:name=".ui.activity.MyWalletActivity" />
-        <activity android:name=".ui.activity.PayTypeAliActivity" />
-        <activity android:name=".ui.activity.PayTypeBankActivity" />
-        <activity android:name=".ui.activity.MyBalanceActivity" />
-        <activity android:name=".ui.activity.MyDepositActivity" />
-        <activity android:name=".ui.activity.MyIntegralActivity" />
-        <activity android:name=".ui.activity.RechargeActivity" />
-        <activity android:name=".ui.activity.WithdrawalActivity" />
-        <activity android:name=".ui.activity.HelpCenterActivity" />
-        <activity android:name=".ui.activity.PlatformRulesActivity" />
-        <activity android:name=".ui.activity.SettingActivity" />
-        <activity android:name=".ui.activity.ModifyPasswordActivity" />
-        <activity android:name=".ui.activity.ModifyPhoneActivity" />
-        <activity android:name=".ui.activity.ComplaintActivity" />
-        <activity android:name=".ui.activity.ReportExceptionActivity" />
-        <activity android:name=".ui.activity.FailedToSignInActivity" />
-        <activity android:name=".ui.activity.RejectionActivity" />
-        <activity android:name=".ui.activity.MapActivity" />
-        <activity android:name=".ui.activity.ReportExceptionListActivity" />
-        <activity android:name=".ui.activity.ComplaintListActivity" />
-        <activity android:name=".ui.activity.CardBindListActivity" />
-        <activity android:name=".ui.activity.CardUnBindActivity" />
+        <activity android:name=".ui.activity.PersonalInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.OrderFeeListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.BillListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.BillDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.BillConfirmActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.MyWalletActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.PayTypeAliActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.PayTypeBankActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.MyBalanceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.MyDepositActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.MyIntegralActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.RechargeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.WithdrawalActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.HelpCenterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.PlatformRulesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.SettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ModifyPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ModifyPhoneActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ComplaintActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ReportExceptionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.FailedToSignInActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.RejectionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.MapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ReportExceptionListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ComplaintListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.CardBindListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.CardUnBindActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.activity.ScanActivity" />
-        <activity android:name=".ui.activity.ScanOrderActivity" />
-        <activity android:name=".ui.activity.BatchDetailActivity" />
-        <activity android:name=".ui.activity.HistoryOrderActivity" />
-        <activity android:name=".ui.main.MainActivity" />
-        <activity android:name=".ui.main.DispatchDetailActivity" />
-        <activity android:name=".ui.main.OrderScanActivity" />
-        <activity android:name=".ui.main.HistoryListActivity" />
-        <activity android:name=".ui.main.OrderDetailActivity" />
-        <activity android:name=".ui.main.OperateSignActivity" />
-        <activity android:name=".ui.main.OperateCommentActivity"/>
-        <activity android:name=".ui.main.OperateExceptionActivity"/>
-        <activity android:name=".ui.main.OperatePickFailActivity"/>
-        <activity android:name=".ui.main.OperateSignFailActivity"/>
-        <activity android:name=".ui.main.OperateFeedbackActivity"/>
-        <activity android:name=".ui.main.SearchActivity"/>
+        <activity android:name=".ui.activity.ScanActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ScanOrderActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.BatchDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.HistoryOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.DispatchDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.OrderScanActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.HistoryListActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.OperateSignActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.OperateCommentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.OperateExceptionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.OperatePickFailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.OperateSignFailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.OperateFeedbackActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.SearchActivity"
+            android:screenOrientation="portrait"/>
 
         <!-- 后台下载 -->
         <service android:name=".service.UpdateService"/>
 
         <!-- 推送相关。。。。。。。。。。。。。。。。。。。。。。。。。。。。。推送相关 -->
-        <!-- Rich push 核心功能 since 2.0.6 -->
-        <activity
-            android:name="cn.jpush.android.ui.PopWinActivity"
-            android:exported="false"
-            android:theme="@style/MyDialogStyle"></activity> <!-- Required SDK核心功能 -->
-        <activity
-            android:name="cn.jpush.android.ui.PushActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:exported="false"
-            android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <action android:name="cn.jpush.android.ui.PushActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.lingmiao.distribution" />
-            </intent-filter>
-        </activity> <!-- Required SDK 核心功能 -->
-        <!-- 可配置android:process参数将PushService放在其他进程中 -->
         <service
-            android:name="cn.jpush.android.service.PushService"
+            android:name=".service.PushService"
+            android:enabled="true"
             android:exported="false"
-            android:process=":mult">
+            android:process=":pushcore">
             <intent-filter>
-                <action android:name="cn.jpush.android.intent.REGISTER" />
-                <action android:name="cn.jpush.android.intent.REPORT" />
-                <action android:name="cn.jpush.android.intent.PushService" />
-                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+                <action android:name="cn.jiguang.user.service.action" />
             </intent-filter>
-        </service> <!-- since 3.0.9 Required SDK 核心功能 -->
-        <provider
-            android:name="cn.jpush.android.service.DataProvider"
-            android:authorities="com.lingmiao.distribution.DataProvider"
-            android:exported="false" /> <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
-        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
-        <service
-            android:name="cn.jpush.android.service.DaemonService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="cn.jpush.android.intent.DaemonService" />
+        </service>
 
-                <category android:name="com.lingmiao.distribution" />
-            </intent-filter>
-        </service> <!-- since 3.1.0 Required SDK 核心功能 -->
-        <provider
-            android:name="cn.jpush.android.service.DownloadProvider"
-            android:authorities="com.lingmiao.distribution.DownloadProvider"
-            android:exported="true" /> <!-- Required SDK核心功能 -->
+        <!-- Required since 3.0.7 -->
+        <!-- 新的 tag/alias 接口结果返回需要开发者配置一个自定的广播 -->
+        <!-- 3.3.0开始所有事件将通过该类回调 -->
+        <!-- 该广播需要继承 JPush 提供的 JPushMessageReceiver 类, 并如下新增一个 Intent-Filter -->
         <receiver
-            android:name="cn.jpush.android.service.PushReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter android:priority="1000">
-                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
-                <!-- Required  显示通知栏 -->
-                <category android:name="com.lingmiao.distribution" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-            <!-- Optional -->
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver> <!-- Required SDK核心功能 -->
-        <receiver
-            android:name="cn.jpush.android.service.AlarmReceiver"
-            android:exported="false" /> <!-- User defined.  For test only  用户自定义的广播接收器 -->
-        <receiver
-            android:name="com.lingmiao.distribution.service.JPushReceiver"
+            android:name=".service.JPushReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
@@ -233,16 +234,20 @@
                 <!-- Required  用户打开自定义通知栏的intent -->
                 <action android:name="cn.jpush.android.intent.CONNECTION" />
                 <!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                <category android:name="com.lingmiao.distribution" />
+                <category android:name="${applicationId}" />
             </intent-filter>
-        </receiver> <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
-        <receiver android:name="com.lingmiao.distribution.service.MyJPushMessageReceiver">
+        </receiver>
+        <receiver
+            android:name=".service.MyJPushReceiver"
+            android:enabled="true"
+            android:exported="false">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
 
-                <category android:name="com.lingmiao.distribution"></category>
+                <category android:name="${applicationId}" />
             </intent-filter>
-        </receiver> <!-- Required  . Enable it you can get statistics data with channel -->
+        </receiver>
+        <!-- 极光统计  END -->
 
         <!--高德地图-->
         <meta-data android:name="com.amap.api.v2.apikey" android:value="${AMAP_KEY}"/>
@@ -256,7 +261,8 @@
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--微信支付end-->
     </application>
 

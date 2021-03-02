@@ -1,0 +1,20 @@
+
+V	java:S1256"<This block of commented-out lines of code should be removed.(ÆÁÚ¶ÿÿÿÿÿ
+V	java:S110+"<This class has 9 parents which is greater than 5 authorized.(°ïÇåüÿÿÿÿ
+N
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Q
+java:S26961"6Make the enclosing method "static" or remove this set.(¤œÅúÿÿÿÿ
+V	java:S125D"<This block of commented-out lines of code should be removed.(©‚¾ëÿÿÿÿÿ
+N
+java:S1135”"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+L
+java:S2696j"6Make the enclosing method "static" or remove this set.(ŒÚ™
+h
+java:S3776]"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(óºŒĞ
+G
+java:S1144]"1Remove this unused private "checkVersion" method.(óºŒĞ
+\
+java:S1128"FRemove this unused import 'com.lingmiao.distribution.util.PreferUtil'.(Œùÿá
+@
+java:S5411i"*Use the primitive boolean expression here.(ìü€Ø

@@ -15,6 +15,11 @@ interface IDispatchOptionPresenter : BasePresenter {
     fun changeViewType(list : List<DispatchOrderRecordBean>, event : HomeModelEvent);
 
     /**
+     * 确认抢单
+     */
+    fun takeOrder(id : String, successCallback : (DataVO<Unit>) -> Unit, failedCallback : () -> Unit)
+
+    /**
      * 确认接单
      */
     fun sureOrder(id : String, successCallback : (DataVO<Unit>) -> Unit, failedCallback : () -> Unit)

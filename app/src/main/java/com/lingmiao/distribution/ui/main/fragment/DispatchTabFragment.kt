@@ -28,6 +28,7 @@ import com.lingmiao.distribution.ui.main.presenter.impl.DispatchTabPreImpl
 import com.lingmiao.distribution.util.VoiceUtils
 import com.lingmiao.distribution.widget.ITabWithNumberView
 import com.james.common.base.BaseFragment
+import com.lingmiao.distribution.ui.main.pop.TakeOrderDialog
 import kotlinx.android.synthetic.main.main_fragment_dispatch_tab.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -50,6 +51,8 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
     private var mediaPlayer:MediaPlayer? = null;
 
     private var mPushDialog : HomePushDialog?= null;
+
+    private var mTakeOrderDialog : TakeOrderDialog?= null
 
     companion object {
 
@@ -305,17 +308,20 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
                 Gson().fromJson(event.message, PushBean::class.java)
             if (param.type == 1) {
                 mPresenter?.loadDispatchData(param.dispatchId);
-//                if (mPushDialog?.isShowing() == true) {
-//                    mPushDialog?.dismiss()
-//                }
-//                mPushDialog = HomePushDialog(
-//                    context,
-//                    click,
-//                    param.dispatchId
-//                )
-//                mPushDialog?.show()
             } else if(param.type == 3) {
-                // todo 抢单
+                // 抢单
+                if(param?.order!=null) {
+                    VoiceUtils.playVoiceOfNewOrder()
+                    if (mTakeOrderDialog?.isShowing == true) {
+                        mTakeOrderDialog?.dismiss()
+                    }
+                    mTakeOrderDialog = TakeOrderDialog(
+                        context,
+                        takeOrderClick,
+                        param?.order!!
+                    )
+                    mTakeOrderDialog?.show()
+                }
             }
         } else if (event.code == 12) {  //获取相关订单数量
             loadTabNumber();
@@ -351,6 +357,35 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
             mPushDialog?.dismiss()
             startActivity(Intent(context, RejectionActivity::class.java).putExtra("id", id))
         }
+    }
+
+    private val takeOrderClick: TakeOrderDialog.DialogPushConfirmClick = object : TakeOrderDialog.DialogPushConfirmClick {
+        override fun sure(id: kotlin.String) {
+            val dialog = HomeConfirmDialog(
+                activity,
+                DialogHomeConfirmClick { value: kotlin.Boolean? ->
+                    if (value == true) {
+                        mTakeOrderDialog?.dismiss()
+                        agreeAndAccept(id)
+                    }
+                }, "抢单提示", "请确认是否接单配送？", "取消", "确认抢单"
+            )
+            dialog.show()
+        }
+
+        override fun refuse(id: kotlin.String) {
+            mTakeOrderDialog?.dismiss()
+            startActivity(Intent(context, RejectionActivity::class.java).putExtra("id", id))
+        }
+    }
+
+    fun agreeAndAccept(id : String) {
+        mPresenter?.takeOrder(id, {
+            showToast("抢单成功!")
+            refreshListData();
+            loadTabNumber();
+        }, {
+        });
     }
 
     fun agreeAccept(id : String) {

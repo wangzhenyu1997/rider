@@ -27,6 +27,22 @@ open class DispatchOptionPreImpl(open val view : BaseView) : BasePreImpl(view),
     }
 
     /**
+     * 确认抢单
+     */
+    override fun takeOrder(
+        id: String,
+        successCallback: (DataVO<Unit>) -> Unit,
+        failedCallback: () -> Unit
+    ) {
+        mCoroutine.launch {
+            val ids : MutableList<String> = mutableListOf();
+            ids.add(id);
+            val resp = DispatchRepository.assignAndAccept(ids);
+            option(resp, successCallback, failedCallback);
+        }
+    }
+
+    /**
      * 确认接单
      */
     override fun sureOrder(id: String, successCallback: (DataVO<Unit>) -> Unit, failedCallback: () -> Unit) {

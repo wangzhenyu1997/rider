@@ -60,12 +60,22 @@ class DispatchTabPreImpl(private var view: IDispatchTabPresenter.View) :
         return UserManager.getTakingModel();
     }
 
+    // 接单
     override fun sureOrder(
         id: String,
         successCallback: (DataVO<Unit>) -> Unit,
         failedCallback: () -> Unit
     ) {
         dispatchOptionPresenter?.sureOrder(id, successCallback, failedCallback);
+    }
+
+    // 抢单
+    override fun takeOrder(
+        id: String,
+        successCallback: (DataVO<Unit>) -> Unit,
+        failedCallback: () -> Unit
+    ) {
+        dispatchOptionPresenter?.takeOrder(id, successCallback, failedCallback);
     }
 
     override fun loadDispatchData(id: String) {

@@ -8,24 +8,26 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatDialog
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+import cn.jpush.android.api.JPushInterface
 import com.allenliu.versionchecklib.v2.AllenVersionChecker
 import com.allenliu.versionchecklib.v2.builder.UIData
 import com.amap.api.location.AMapLocation
 import com.amap.api.location.AMapLocationClient
 import com.amap.api.location.AMapLocationClientOption
 import com.amap.api.location.AMapLocationListener
-import com.blankj.utilcode.util.AppUtils
-import com.blankj.utilcode.util.FragmentUtils
-import com.blankj.utilcode.util.ScreenUtils
-import com.blankj.utilcode.util.Utils
+import com.blankj.utilcode.util.*
 import com.fisheagle.mkt.base.UserManager
 import com.google.zxing.integration.android.IntentIntegrator
+import com.jaeger.library.StatusBarUtil
+import com.james.common.base.BaseActivity
+import com.james.common.utils.DialogUtils
+import com.james.common.utils.exts.doIntercept
+import com.james.common.utils.permission.interceptor.LocationInterceptor
+import com.james.common.utils.permission.interceptor.StorageInterceptor
 import com.lingmiao.distribution.R
 import com.lingmiao.distribution.bean.PersonalDataParam
 import com.lingmiao.distribution.bean.UpdateBean
 import com.lingmiao.distribution.config.Constant
-import com.lingmiao.distribution.dialog.HomeConfirmDialog.DialogHomeConfirmClick
-import com.lingmiao.distribution.service.UpdateService
 import com.lingmiao.distribution.ui.activity.*
 import com.lingmiao.distribution.ui.login.bean.LoginBean
 import com.lingmiao.distribution.ui.main.event.MainToSearchEvent
@@ -34,20 +36,12 @@ import com.lingmiao.distribution.ui.main.presenter.IMainPresenter
 import com.lingmiao.distribution.ui.main.presenter.impl.MainPreImpl
 import com.lingmiao.distribution.util.GlideUtil
 import com.lingmiao.distribution.util.PublicUtil
-import com.lingmiao.distribution.util.ToastUtil
 import com.lingmiao.distribution.util.VoiceUtils
-import com.jaeger.library.StatusBarUtil
-import com.james.common.base.BaseActivity
-import com.james.common.utils.DialogUtils
-import com.james.common.utils.exts.doIntercept
-import com.james.common.utils.permission.interceptor.LocationInterceptor
-import com.james.common.utils.permission.interceptor.StorageInterceptor
 import kotlinx.android.synthetic.main.main_activity_main.*
 import kotlinx.android.synthetic.main.main_layout_left_drawer.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import java.util.*
 
 /**
 Create Date : 2020/12/263:38 PM
@@ -216,6 +210,8 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
         } else {
             setUserView();
         }
+        val rid = JPushInterface.getRegistrationID(applicationContext)
+        LogUtils.e("push", "[registrationID] $rid")
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

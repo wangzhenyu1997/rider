@@ -55,6 +55,13 @@ interface DispatchApiService {
     fun agreeAccept(@Body map: Map<String, String>): Call<DataVO<Unit>>;
 
     /**
+     * 确认抢单
+     */
+    @WithHiResponse
+    @POST("/rider-mobile-compose/dispatch/assignAndAccept")
+    fun assignAndAccept(@Body data: TakeOrderReq): Call<DataVO<Unit>>;
+
+    /**
      * 拒单接单
      */
     @WithHiResponse
