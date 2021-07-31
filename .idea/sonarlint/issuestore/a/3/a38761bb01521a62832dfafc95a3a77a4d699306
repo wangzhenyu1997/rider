@@ -1,45 +1,45 @@
 
+I
+java:S1444)".Make this "public static mContext" field final(Ê®âÿÿÿÿÿ
+u
+java:S2293…"YReplace the type specification in this constructor call with the diamond operator ("<>").(úÖ¸ıÿÿÿÿ
+[
+java:S1124-"EReorder the modifiers to comply with the Java Language Specification.(Âúƒô
 —
 java:S1186_"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ğè¸…
+a
+java:S2259»"JA "NullPointerException" could be thrown; "activityList" is nullable here.(¥ÈÁ´
 o
 java:S1104)"TMake mContext a static final constant or non-public and provide accessors if needed.(Ê®âÿÿÿÿÿ
-K
-java:S14441"0Make this "public static APP_STATUS" field final(ãñ¦âùÿÿÿÿ
 Z
 java:S1155Ã">Use isEmpty() to check whether the collection is empty or not.(ÍâÃÆşÿÿÿÿ
+p
+java:S30081"URename this field "APP_STATUS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãñ¦âùÿÿÿÿ
+K
+java:S14441"0Make this "public static APP_STATUS" field final(ãñ¦âùÿÿÿÿ
+œ
+java:S1186F"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(­×›üüÿÿÿÿ
 q
 java:S11041"VMake APP_STATUS a static final constant or non-public and provide accessors if needed.(ãñ¦âùÿÿÿÿ
 U
 java:S1155Ì">Use isEmpty() to check whether the collection is empty or not.(Èæ’¸
-p
-java:S30081"URename this field "APP_STATUS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãñ¦âùÿÿÿÿ
 L
 java:S2696@"6Make the enclosing method "static" or remove this set.(¢ŞÿĞ
 œ
-java:S1186F"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(­×›üüÿÿÿÿ
-[
-java:S1124/"EReorder the modifiers to comply with the Java Language Specification.(È—¼ó
-I
-java:S1444)".Make this "public static mContext" field final(Ê®âÿÿÿÿÿ
-œ
 java:S1186Z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ãºÍ’ıÿÿÿÿ
-[
-java:S1124-"EReorder the modifiers to comply with the Java Language Specification.(Âúƒô
-V
-java:S5527©"?Enable server hostname verification on this SSL/TLS connection.(§¼Éç
-œ
-java:S1186d"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ŠÏò¢ùÿÿÿÿ
+—
+java:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±½ï½
+U
+java:S1155¶">Use isEmpty() to check whether the collection is empty or not.(Èæ’¸
 D
 java:S1604¦"(Make this anonymous inner class a lambda(‡«ª±ùÿÿÿÿ
 œ
+java:S1186d"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ŠÏò¢ùÿÿÿÿ
+[
+java:S1124/"EReorder the modifiers to comply with the Java Language Specification.(È—¼ó
+œ
 java:S1186U"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¾Õııÿÿÿÿ
 a
-java:S2259»"JA "NullPointerException" could be thrown; "activityList" is nullable here.(¥ÈÁ´
-—
-java:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±½ï½
-u
-java:S2293…"YReplace the type specification in this constructor call with the diamond operator ("<>").(úÖ¸ıÿÿÿÿ
-a
 java:S2259Ó"JA "NullPointerException" could be thrown; "activityList" is nullable here.(­­²û
-U
-java:S1155¶">Use isEmpty() to check whether the collection is empty or not.(Èæ’¸
+V
+java:S5527©"?Enable server hostname verification on this SSL/TLS connection.(§¼Éç

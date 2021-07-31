@@ -3,6 +3,7 @@ package com.lingmiao.distribution.ui.main.presenter
 import com.lingmiao.distribution.bean.PersonalDataParam
 import com.james.common.base.BasePresenter
 import com.james.common.base.BaseView
+import com.lingmiao.distribution.ui.main.bean.UploadPointVo
 
 /**
 Create Date : 2020/12/263:43 PM
@@ -15,9 +16,12 @@ interface IMainPresenter : IVersionPresenter {
 
     fun getUser();
 
+    fun uploadPoint(vo : UploadPointVo);
+
     interface View : IVersionPresenter.View {
 
         fun setUser(data : PersonalDataParam?);
+
     }
 
 }

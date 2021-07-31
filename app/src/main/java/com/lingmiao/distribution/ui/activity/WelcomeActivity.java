@@ -46,9 +46,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         MyApplication.APP_STATUS = MyApplication.APP_STATUS_NORMAL; // App正常的启动，设置App的启动状态为正常启动
         setTheme(R.style.AppTheme);
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

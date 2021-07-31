@@ -1,9 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: com.contrarywind:Android-PickerView:4.1.8@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8e8ebc0e9fe0600b3ec393c7439f4a6a/jetified-Android-PickerView-4.1.8/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8e8ebc0e9fe0600b3ec393c7439f4a6a/jetified-Android-PickerView-4.1.8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8e8ebc0e9fe0600b3ec393c7439f4a6a/jetified-Android-PickerView-4.1.8/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3db82590504e448a0eb3343d977fd2d/jetified-Android-PickerView-4.1.8/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3db82590504e448a0eb3343d977fd2d/jetified-Android-PickerView-4.1.8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3db82590504e448a0eb3343d977fd2d/jetified-Android-PickerView-4.1.8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1317b5505e16249e98f5ef9510bf0842/jetified-Android-PickerView-4.1.8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1317b5505e16249e98f5ef9510bf0842/jetified-Android-PickerView-4.1.8/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1317b5505e16249e98f5ef9510bf0842/jetified-Android-PickerView-4.1.8/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc8de791b5fc00b0a1ab3b12b46af3e5/jetified-Android-PickerView-4.1.8/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc8de791b5fc00b0a1ab3b12b46af3e5/jetified-Android-PickerView-4.1.8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc8de791b5fc00b0a1ab3b12b46af3e5/jetified-Android-PickerView-4.1.8/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc68d182baa139d1930b5bc5a2f7f483/jetified-Android-PickerView-4.1.8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc68d182baa139d1930b5bc5a2f7f483/jetified-Android-PickerView-4.1.8/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc68d182baa139d1930b5bc5a2f7f483/jetified-Android-PickerView-4.1.8/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.contrarywind/Android-PickerView/4.1.8/fc7b6b99685b8ddbdd477568e30d912b04a6ed01/Android-PickerView-4.1.8-javadoc.jar!/" />

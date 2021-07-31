@@ -1,11 +1,15 @@
 package com.lingmiao.distribution.ui.main
 
 import android.content.Intent
+import android.net.Uri
+import android.os.Build
+import android.provider.Settings
 import android.view.Gravity
 import android.view.KeyEvent
 import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatDialog
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import cn.jpush.android.api.JPushInterface
@@ -28,14 +32,18 @@ import com.lingmiao.distribution.R
 import com.lingmiao.distribution.bean.PersonalDataParam
 import com.lingmiao.distribution.bean.UpdateBean
 import com.lingmiao.distribution.config.Constant
+import com.lingmiao.distribution.location.AmapLocationProvider
+import com.lingmiao.distribution.location.WorkProvider
 import com.lingmiao.distribution.ui.activity.*
 import com.lingmiao.distribution.ui.login.bean.LoginBean
+import com.lingmiao.distribution.ui.main.bean.UploadPointVo
 import com.lingmiao.distribution.ui.main.event.MainToSearchEvent
 import com.lingmiao.distribution.ui.main.fragment.DispatchTabFragment
 import com.lingmiao.distribution.ui.main.presenter.IMainPresenter
 import com.lingmiao.distribution.ui.main.presenter.impl.MainPreImpl
 import com.lingmiao.distribution.util.GlideUtil
 import com.lingmiao.distribution.util.PublicUtil
+import com.lingmiao.distribution.util.StatusBarUtil
 import com.lingmiao.distribution.util.VoiceUtils
 import kotlinx.android.synthetic.main.main_activity_main.*
 import kotlinx.android.synthetic.main.main_layout_left_drawer.*
@@ -89,11 +97,13 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
         initMap();
 
         initRequest();
+
         FragmentUtils.replace(
             supportFragmentManager,
             DispatchTabFragment.newInstance(),
             R.id.frDispatchTab
         );
+
 
     }
 
@@ -244,9 +254,48 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
      */
     private fun initMap() {
         doIntercept(LocationInterceptor(context),failed = {}){
-
+            it;
         }
-        locate();
+        //locate();
+
+        val manager = NotificationManagerCompat.from(this)
+        // areNotificationsEnabled方法的有效性官方只最低支持到API 19，低于19的仍可调用此方法不过只会返回true，即默认为用户已经开启了通知。
+        val isOpened: Boolean = manager.areNotificationsEnabled()
+        if(!isOpened) {
+            try {
+                // 根据isOpened结果，判断是否需要提醒用户跳转AppInfo页面，去打开App通知权限
+                val intent = Intent()
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                    intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+                    //这种方案适用于 API 26, 即8.0（含8.0）以上可以用
+                    intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+                    intent.putExtra(Settings.EXTRA_CHANNEL_ID, applicationInfo.uid)
+
+                    //这种方案适用于 API21——25，即 5.0——7.1 之间的版本可以使用
+                    intent.putExtra("app_package", packageName)
+                    intent.putExtra("app_uid", applicationInfo.uid)
+                } else {
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
+                    intent.putExtra("com.android.settings.ApplicationPkgName", packageName);
+                }
+                startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                // 出现异常则跳转到应用设置界面：锤子坚果3——OC105 API25
+                val intent = Intent()
+
+                //下面这种方案是直接跳转到当前应用的设置界面。
+                //https://blog.csdn.net/ysy950803/article/details/71910806
+                intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+                val uri: Uri = Uri.fromParts("package", packageName, null)
+                intent.data = uri
+                startActivity(intent)
+            }
+        }
+
+        WorkProvider.post(this);
+
     }
 
     fun locate() {
@@ -259,9 +308,9 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
         //可选，设置是否gps优先，只在高精度模式下有效。默认关闭
         mOption.isGpsFirst = true
         //可选，设置网络请求超时时间。默认为30秒。在仅设备模式下无效
-        mOption.httpTimeOut = 30000
+        mOption.httpTimeOut = 15000
         //可选，设置定位间隔。默认为2秒
-        mOption.interval = 60000
+        mOption.interval = 15000
         //可选， 设置网络请求的协议。可选HTTP或者HTTPS。默认为HTTP
         AMapLocationClientOption.setLocationProtocol(AMapLocationClientOption.AMapLocationProtocol.HTTP)
         //可选，设置是否使用传感器。默认是false
@@ -285,12 +334,21 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
      * 定位监听
      */
     var locationListener = AMapLocationListener { location: AMapLocation? ->
+        LogUtils.d(".....定位")
         if (null != location) {
+            LogUtils.d(".....定位", location)
             //errCode等于0代表定位成功，其他的为定位失败，具体的可以参照官网定位错误码说明
             if (location.errorCode == 0) {
                 Constant.LOCATIONADDRESS = location.address
                 Constant.LOCATIONLONGITUDE = location.longitude
                 Constant.LOCATIONLATITUDE = location.latitude
+
+
+                val item = UploadPointVo();
+                item.riderId = Constant.user.id;
+                item.lat = location.latitude;
+                item.lng = location.longitude;
+                mPresenter?.uploadPoint(item);
             }
         }
     }
@@ -316,6 +374,7 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
             locationClient?.onDestroy()
         }
         VoiceUtils.release()
+        AmapLocationProvider.getInstance().stopLocation();
     }
 
     override fun checkVersionSuccess(response: UpdateBean) {

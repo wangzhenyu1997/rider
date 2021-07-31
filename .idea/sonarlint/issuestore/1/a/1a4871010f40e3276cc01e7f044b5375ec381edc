@@ -1,0 +1,10 @@
+
+W	java:S110)"=This class has 10 parents which is greater than 5 authorized.(µéíãùÿÿÿÿ
+@
+java:S5411M"*Use the primitive boolean expression here.(ìü€Ø
+y
+java:S1450"bRemove the "versionUpdateDialog" field and declare it as a local variable in the relevant methods.(¨·Ì‘
+=	java:S131°""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+N
+java:S1068"7Remove this unused "versionUpdateDialog" private field.(¨·Ì‘
+Q	java:S125u"<This block of commented-out lines of code should be removed.(ÍµÇŞ

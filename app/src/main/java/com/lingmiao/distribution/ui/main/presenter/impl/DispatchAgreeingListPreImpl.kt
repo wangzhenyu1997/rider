@@ -38,9 +38,9 @@ class DispatchAgreeingListPreImpl(val view: IDispatchListPresenter.View) : BaseP
                 val list = resp?.data?.data?.records ?: listOf();
                 dispatchOptionPresenter?.changeViewType(list, event);
 //                EventBus.getDefault().post(DispatchSingleNumberEvent(DispatchConstants.DISPATCH_STATUS_AGREEING, resp?.data?.data?.totalCount ?: 0));
-                view.onLoadMoreSuccess(list, page.getPageIndex() < resp?.data?.data?.totalPages?:0)
+                view?.onLoadMoreSuccess(list, page.getPageIndex() < resp?.data?.data?.totalPages?:0)
             } else {
-                view.onLoadMoreFailed()
+                view?.onLoadMoreFailed()
             }
             view?.hidePageLoading()
         }

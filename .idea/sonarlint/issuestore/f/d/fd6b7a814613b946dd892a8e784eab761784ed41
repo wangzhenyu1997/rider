@@ -1,0 +1,52 @@
+
+d
+java:S1192¥"HDefine a constant instead of duplicating this literal "address" 4 times.(É£Û ÿÿÿÿÿ
+f
+java:S1192ã"JDefine a constant instead of duplicating this literal "longitude" 5 times.(Íá¼íúÿÿÿÿ
+g
+java:S1192¤"KDefine a constant instead of duplicating this literal "dispatchId" 4 times.(ªáŸöıÿÿÿÿ
+a
+java:S1192M"FDefine a constant instead of duplicating this literal "index" 8 times.(³ÊŒçùÿÿÿÿ
+e
+java:S1192ä"IDefine a constant instead of duplicating this literal "latitude" 5 times.(³ş²şÿÿÿÿ
+Z
+java:S1155õ">Use isEmpty() to check whether the collection is empty or not.(¿§¼˜ûÿÿÿÿ
+E
+java:S5411o"*Use the primitive boolean expression here.(ÒÛ’ˆÿÿÿÿÿ
+@
+java:S5411|"*Use the primitive boolean expression here.(ìü€Ø
+A
+java:S5411"*Use the primitive boolean expression here.(ìü€Ø
+A
+java:S5411Ÿ"*Use the primitive boolean expression here.(ìü€Ø
+A
+java:S5411®"*Use the primitive boolean expression here.(ìü€Ø
+A
+java:S5411½"*Use the primitive boolean expression here.(ìü€Ø
+m
+java:S1450D"WRemove the "listener" field and declare it as a local variable in the relevant methods.(ùú×É
+O
+java:S1172J"4Remove this unused method parameter "startPosition".(©¢ìÁüÿÿÿÿ
+>
+java:S1185S"(Remove this method to simply inherit it.(ßìê¯
+`
+java:S1874m"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(Ê™ÒŒ
+P
+java:S1874n":Remove this use of "setUserVisibleHint"; it is deprecated.(Ö‚Û
+h
+java:S3776w"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(šœ•²
+
+java:S1186ê"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô¸åõüÿÿÿÿ
+L
+java:S1172„"0Remove this unused method parameter "homeParam".(Ñ¶™œùÿÿÿÿ
+?	java:S108")Either remove or fill this block of code.(å¥‡
+D
+java:S1185“"(Remove this method to simply inherit it.(Ù­ôÈÿÿÿÿÿ
+3
+java:S1116¨"Remove this empty statement.(÷Û§Û
+Q	java:S125U"<This block of commented-out lines of code should be removed.(¦±äŒ
+R	java:S125³"<This block of commented-out lines of code should be removed.(äØ£Û
+R	java:S125¾"<This block of commented-out lines of code should be removed.(ãÅ²
+W	java:S125Ö"<This block of commented-out lines of code should be removed.(ÑÙü¨ûÿÿÿÿ
+W	java:S125Ş"<This block of commented-out lines of code should be removed.(î·…Àùÿÿÿÿ
+R	java:S125ÿ"<This block of commented-out lines of code should be removed.(æ¸

@@ -23,7 +23,7 @@ class MyJPushReceiver: JPushMessageReceiver() {
         context: Context,
         customMessage: CustomMessage
     ) {
-        LogUtils.e(TAG, "[onMessage] $customMessage")
+        LogUtils.d(TAG, "[onMessage] $customMessage")
         processCustomMessage(context, customMessage)
     }
 
@@ -31,7 +31,7 @@ class MyJPushReceiver: JPushMessageReceiver() {
         context: Context,
         message: NotificationMessage
     ) {
-        LogUtils.e(TAG, "[onNotifyMessageOpened] $message")
+        LogUtils.d(TAG, "[onNotifyMessageOpened] $message")
         try {
             //打开自定义的Activity
             EventBus.getDefault().post(PublicBean(message.notificationExtras))
@@ -41,7 +41,7 @@ class MyJPushReceiver: JPushMessageReceiver() {
 //            bundle.putString(JPushInterface.EXTRA_ALERT, message.notificationContent)
 //            val jpushExtra:JpushExtra? = GsonUtils.fromJson(message.notificationExtras, JpushExtra::class.java)
 //            jpushExtra?.let {
-////                LogUtils.e(TAG, "jpushExtra:$jpushExtra")
+////                LogUtils.d(TAG, "jpushExtra:$jpushExtra")
 //                if(IConstant.MESSAGE_ORDER_PAY_SUCCESS == jpushExtra.type){
 //                    bundle.putString(IConstant.JPUSH_TYPE,IConstant.MESSAGE_ORDER_PAY_SUCCESS)
 //                } else if(IConstant.MESSAGE_APPLY_SHOP_REFUSE == jpushExtra.type){
@@ -57,7 +57,7 @@ class MyJPushReceiver: JPushMessageReceiver() {
     }
 
     override fun onMultiActionClicked(context: Context?, intent: Intent) {
-        LogUtils.e(TAG, "[onMultiActionClicked] 用户点击了通知栏按钮")
+        LogUtils.d(TAG, "[onMultiActionClicked] 用户点击了通知栏按钮")
         val nActionExtra =
             intent.extras?.getString(JPushInterface.EXTRA_NOTIFICATION_ACTION_EXTRA)
 
@@ -67,13 +67,13 @@ class MyJPushReceiver: JPushMessageReceiver() {
             return
         }
         if (nActionExtra == "my_extra1") {
-            LogUtils.e(TAG, "[onMultiActionClicked] 用户点击通知栏按钮一")
+            LogUtils.d(TAG, "[onMultiActionClicked] 用户点击通知栏按钮一")
         } else if (nActionExtra == "my_extra2") {
-            LogUtils.e(TAG, "[onMultiActionClicked] 用户点击通知栏按钮二")
+            LogUtils.d(TAG, "[onMultiActionClicked] 用户点击通知栏按钮二")
         } else if (nActionExtra == "my_extra3") {
-            LogUtils.e(TAG, "[onMultiActionClicked] 用户点击通知栏按钮三")
+            LogUtils.d(TAG, "[onMultiActionClicked] 用户点击通知栏按钮三")
         } else {
-            LogUtils.e(TAG, "[onMultiActionClicked] 用户点击通知栏按钮未定义")
+            LogUtils.d(TAG, "[onMultiActionClicked] 用户点击通知栏按钮未定义")
         }
     }
 
@@ -81,12 +81,12 @@ class MyJPushReceiver: JPushMessageReceiver() {
         context: Context?,
         message: NotificationMessage
     ) {
-        LogUtils.e(TAG, "[onNotifyMessageArrived] $message")
+        LogUtils.d(TAG, "[onNotifyMessageArrived] $message")
         try {
             EventBus.getDefault().post(PublicBean(message.notificationExtras))
 //            val jpushExtra:JpushExtra? = GsonUtils.fromJson(message.notificationExtras, JpushExtra::class.java)
 //            jpushExtra?.let {
-////                LogUtils.e(TAG, "jpushExtra:$jpushExtra")
+////                LogUtils.d(TAG, "jpushExtra:$jpushExtra")
 //                if(IConstant.MESSAGE_ORDER_PAY_SUCCESS == jpushExtra.type){
 //                    VoiceUtils.playVoice(Utils.getApp())
 //                }
@@ -102,28 +102,28 @@ class MyJPushReceiver: JPushMessageReceiver() {
         context: Context?,
         message: NotificationMessage
     ) {
-        LogUtils.e(TAG, "[onNotifyMessageDismiss] $message")
+        LogUtils.d(TAG, "[onNotifyMessageDismiss] $message")
     }
 
     override fun onRegister(
         context: Context?,
         registrationId: String
     ) {
-        LogUtils.e(TAG, "[onRegister] $registrationId")
+        LogUtils.d(TAG, "[onRegister] $registrationId")
     }
 
     override fun onConnected(
         context: Context?,
         isConnected: Boolean
     ) {
-        LogUtils.e(TAG, "[onConnected] $isConnected")
+        LogUtils.d(TAG, "[onConnected] $isConnected")
     }
 
     override fun onCommandResult(
         context: Context?,
         cmdMessage: CmdMessage
     ) {
-        LogUtils.e(TAG, "[onCommandResult] $cmdMessage")
+        LogUtils.d(TAG, "[onCommandResult] $cmdMessage")
     }
 
     override fun onTagOperatorResult(
@@ -187,6 +187,6 @@ class MyJPushReceiver: JPushMessageReceiver() {
         source: Int
     ) {
         super.onNotificationSettingsCheck(context, isOn, source)
-        LogUtils.e(TAG, "[onNotificationSettingsCheck] isOn:$isOn,source:$source")
+        LogUtils.d(TAG, "[onNotificationSettingsCheck] isOn:$isOn,source:$source")
     }
 }

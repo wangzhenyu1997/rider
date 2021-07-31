@@ -19,7 +19,7 @@ android {
         targetSdkVersion android.targetSdkVersion
         versionCode 2
         versionName "1.0.0"
-        setProperty("archivesBaseName", "distribution_$versionName"+"_"+"$formattedDate")
+        setProperty("archivesBaseName", "rider_$versionName"+"_"+"$formattedDate")
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
         compileOptions {
@@ -180,6 +180,7 @@ dependencies {
 
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.8'
 
+    implementation 'androidx.work:work-runtime:2.3.4'
 
 }
 

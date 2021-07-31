@@ -7,6 +7,7 @@ import com.lingmiao.distribution.ui.main.presenter.IMainPresenter
 import com.lingmiao.distribution.ui.main.presenter.IVersionPresenter
 import com.james.common.base.BasePreImpl
 import com.james.common.netcore.networking.http.core.awaitHiResponse
+import com.lingmiao.distribution.ui.main.bean.UploadPointVo
 import kotlinx.coroutines.launch
 
 /**
@@ -38,6 +39,18 @@ class MainPreImpl(var view : IMainPresenter.View) : BasePreImpl(view), IMainPres
 
         }
 
+    }
+
+    override fun uploadPoint(vo: UploadPointVo) {
+        mCoroutine.launch {
+            val resp = LoginRepository.apiService.uploadPoint(vo).awaitHiResponse();
+            handleResponse(resp, {
+
+            }, {
+
+            })
+
+        }
     }
 
     override fun checkVersion(string: String) {

@@ -1,9 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.razerdp:BasePopup:2.2.3@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec3113478a8cffdaf839e3d275b6f9c7/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec3113478a8cffdaf839e3d275b6f9c7/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec3113478a8cffdaf839e3d275b6f9c7/jetified-BasePopup-2.2.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59c201a18650397b202f3e31d7b1c701/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59c201a18650397b202f3e31d7b1c701/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59c201a18650397b202f3e31d7b1c701/jetified-BasePopup-2.2.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1bfd95b000817cb3882b3b196b24637c/jetified-BasePopup-2.2.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1bfd95b000817cb3882b3b196b24637c/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1bfd95b000817cb3882b3b196b24637c/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6290f669960472a74694e5f08e80da30/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6290f669960472a74694e5f08e80da30/jetified-BasePopup-2.2.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6290f669960472a74694e5f08e80da30/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5bf76b346309aa8553f23b8779a7ed28/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5bf76b346309aa8553f23b8779a7ed28/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5bf76b346309aa8553f23b8779a7ed28/jetified-BasePopup-2.2.3/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.razerdp/BasePopup/2.2.3/985048accb8fda774e3f2c4dc6e21cc1d34af5c0/BasePopup-2.2.3-javadoc.jar!/" />

@@ -5,6 +5,7 @@ import com.lingmiao.distribution.bean.PersonalDataBean
 import com.lingmiao.distribution.ui.login.bean.LoginBean
 import com.lingmiao.distribution.ui.login.bean.LoginVo
 import com.james.common.netcore.networking.http.annotations.WithHiResponse
+import com.lingmiao.distribution.ui.main.bean.UploadPointVo
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -24,5 +25,12 @@ interface LoginApiService {
     @WithHiResponse
     @POST("/rider-mobile-compose/rider/queryRider")
     fun queryRider() : Call<DataVO<PersonalDataBean>>
+
+    /**
+     * 上传经纬度
+     */
+    @WithHiResponse
+    @POST("/rider-mobile-compose/rider/uploadPoint")
+    fun uploadPoint(@Body item : UploadPointVo) : Call<DataVO<Unit>>
 
 }

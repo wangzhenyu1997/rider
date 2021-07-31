@@ -1,15 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.franmontiel:PersistentCookieJar:v1.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4e50a8811e86e974dc9ec7d50da5f9d/jetified-PersistentCookieJar-v1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4e50a8811e86e974dc9ec7d50da5f9d/jetified-PersistentCookieJar-v1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4e50a8811e86e974dc9ec7d50da5f9d/jetified-PersistentCookieJar-v1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2749c54f018d633b233b16c0a2b716ab/jetified-PersistentCookieJar-v1.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2749c54f018d633b233b16c0a2b716ab/jetified-PersistentCookieJar-v1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2749c54f018d633b233b16c0a2b716ab/jetified-PersistentCookieJar-v1.0.1/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.franmontiel/PersistentCookieJar/v1.0.1/6c765d8ec1f8139eb3ee23dcbbbd1dd160d60554/PersistentCookieJar-v1.0.1-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.franmontiel/PersistentCookieJar/v1.0.1/d43d9353b879595f4972e3c3c8099282342381e6/PersistentCookieJar-v1.0.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.franmontiel/PersistentCookieJar/v1.0.1/24a030ec223d00ebb92e199709ccddb0ed66b949/PersistentCookieJar-v1.0.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.franmontiel/PersistentCookieJar/v1.0.1/fb19699a006be3c9568315875f416e1ed0a736b0/PersistentCookieJar-v1.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

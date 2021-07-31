@@ -1,0 +1,145 @@
+
+F
+java:S1444"+Make this "public static TOKEN" field final(¹ÒÏ÷ùÿÿÿÿ
+L
+java:S1444"6Make this "public static Home_Model_Event" field final(šÔå
+K
+java:S1444#"0Make this "public static loginState" field final(ï¬¿•ûÿÿÿÿ
+L
+java:S1444$"1Make this "public static refreshView" field final(‰–ÊÂıÿÿÿÿ
+K
+java:S1444&"0Make this "public static WORKSTATES" field final(Ö¿ ıÿÿÿÿ
+T
+java:S1444'"9Make this "public static WORK_STATES_OF_REST" field final(ñ³‘Òıÿÿÿÿ
+T
+java:S1444("9Make this "public static WORK_STATES_OF_WORK" field final(†¤¬¥ıÿÿÿÿ
+E
+java:S1444)"*Make this "public static user" field final(šıİÿÿÿÿÿ
+G
+java:S1444"1Make this "public static downLoadUrl" field final(ı»
+J
+java:S1444‚"3Make this "public static downLoadState" field final(ßóÕ¾
+Q
+java:S1444ƒ"5Make this "public static apkDownLoadPath" field final(°­¡Ìıÿÿÿÿ
+Q
+java:S1444ˆ"5Make this "public static LOCATIONADDRESS" field final(â³›ÿÿÿÿÿ
+N
+java:S1444‰"7Make this "public static LOCATIONLONGITUDE" field final(ëç°
+R
+java:S1444Š"6Make this "public static LOCATIONLATITUDE" field final(İäˆ¹üÿÿÿÿ
+l
+java:S1104"QMake TOKEN a static final constant or non-public and provide accessors if needed.(¹ÒÏ÷ùÿÿÿÿ
+r
+java:S1104"\Make Home_Model_Event a static final constant or non-public and provide accessors if needed.(šÔå
+q
+java:S1104#"VMake loginState a static final constant or non-public and provide accessors if needed.(ï¬¿•ûÿÿÿÿ
+r
+java:S1104$"WMake refreshView a static final constant or non-public and provide accessors if needed.(‰–ÊÂıÿÿÿÿ
+q
+java:S1104&"VMake WORKSTATES a static final constant or non-public and provide accessors if needed.(Ö¿ ıÿÿÿÿ
+z
+java:S1104'"_Make WORK_STATES_OF_REST a static final constant or non-public and provide accessors if needed.(ñ³‘Òıÿÿÿÿ
+z
+java:S1104("_Make WORK_STATES_OF_WORK a static final constant or non-public and provide accessors if needed.(†¤¬¥ıÿÿÿÿ
+k
+java:S1104)"PMake user a static final constant or non-public and provide accessors if needed.(šıİÿÿÿÿÿ
+m
+java:S1104"WMake downLoadUrl a static final constant or non-public and provide accessors if needed.(ı»
+p
+java:S1104‚"YMake downLoadState a static final constant or non-public and provide accessors if needed.(ßóÕ¾
+w
+java:S1104ƒ"[Make apkDownLoadPath a static final constant or non-public and provide accessors if needed.(°­¡Ìıÿÿÿÿ
+w
+java:S1104ˆ"[Make LOCATIONADDRESS a static final constant or non-public and provide accessors if needed.(â³›ÿÿÿÿÿ
+t
+java:S1104‰"]Make LOCATIONLONGITUDE a static final constant or non-public and provide accessors if needed.(ëç°
+x
+java:S1104Š"\Make LOCATIONLATITUDE a static final constant or non-public and provide accessors if needed.(İäˆ¹üÿÿÿÿ
+k
+java:S3008"PRename this field "TOKEN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ÒÏ÷ùÿÿÿÿ
+q
+java:S3008"[Rename this field "Home_Model_Event" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÔå
+p
+java:S3008&"URename this field "WORKSTATES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö¿ ıÿÿÿÿ
+y
+java:S3008'"^Rename this field "WORK_STATES_OF_REST" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ³‘Òıÿÿÿÿ
+y
+java:S3008("^Rename this field "WORK_STATES_OF_WORK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†¤¬¥ıÿÿÿÿ
+v
+java:S3008ˆ"ZRename this field "LOCATIONADDRESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â³›ÿÿÿÿÿ
+s
+java:S3008‰"\Rename this field "LOCATIONLONGITUDE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëç°
+w
+java:S3008Š"[Rename this field "LOCATIONLATITUDE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İäˆ¹üÿÿÿÿ
+n	java:S1154"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(é‚È
+t	java:S1155"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(òÊâÄüÿÿÿÿ
+o	java:S1156"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(†£à¡
+o	java:S1157"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÓçŞÃ
+t	java:S1158"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Øã·õÿÿÿÿÿ
+t	java:S1159"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æ¯âÿÿÿÿÿ
+o	java:S115:"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÀÍã¤
+t	java:S115;"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(×ŸÕúÿÿÿÿ
+o	java:S115<"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‡´¢˜
+o	java:S115="ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ø½Œ
+t	java:S115>"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¢Ñ¶ ÿÿÿÿÿ
+t	java:S115?"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ùïÒÕøÿÿÿÿ
+o	java:S115@"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Şçõé
+o	java:S115A"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(°É¶©
+o	java:S115B"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(°ôô‡
+t	java:S115C"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ò§øÿÿÿÿ
+o	java:S115D"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ô‰ô¹
+t	java:S115E"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ô…¸üÿÿÿÿ
+o	java:S115F"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ıè°ş
+n	java:S115G"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Œ½È
+t	java:S115H"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(§á¶™ùÿÿÿÿ
+t	java:S115J"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(§Î™óøÿÿÿÿ
+t	java:S115L"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÊØïãüÿÿÿÿ
+t	java:S115N"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õß£¦úÿÿÿÿ
+t	java:S115P"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(úÒÛèüÿÿÿÿ
+t	java:S115Q"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(íîÑÚıÿÿÿÿ
+t	java:S115R"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÏÍåüÿÿÿÿ
+t	java:S115S"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(²†‘ğûÿÿÿÿ
+o	java:S115T"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŸÅÇ¬
+o	java:S115U"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ä”µ½
+n	java:S115V"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŸìÍ
+o	java:S115W"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ùŸ–
+o	java:S115X"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õ‡ñ
+t	java:S115]"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¬˜„øÿÿÿÿ
+n	java:S115^"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(½Ìˆ
+o	java:S115_"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(œ‰Æ”
+t	java:S115`"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(´‰Öõúÿÿÿÿ
+t	java:S115a"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.( ³ÿ€ûÿÿÿÿ
+o	java:S115b"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ïÛ´¢
+t	java:S115c"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(õœÏÿÿÿÿÿ
+t	java:S115d"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÕñÎÔùÿÿÿÿ
+o	java:S115e"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ìƒ£ì
+t	java:S115f"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Í“ÛØşÿÿÿÿ
+o	java:S115g"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÁœÒœ
+t	java:S115h"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‰­úúûÿÿÿÿ
+t	java:S115i"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¹û°çşÿÿÿÿ
+t	java:S115j"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(±ï¯éÿÿÿÿÿ
+t	java:S115k"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ıÑ±åøÿÿÿÿ
+t	java:S115l"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ğ’ñÖùÿÿÿÿ
+o	java:S115m"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ìî
+t	java:S115n"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÎßÇ¯øÿÿÿÿ
+t	java:S115o"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(µ¯Ô„ûÿÿÿÿ
+o	java:S115p"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÉÛ—Õ
+t	java:S115q"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‘³×Ÿÿÿÿÿÿ
+t	java:S115r"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ıè¥½ùÿÿÿÿ
+t	java:S115s"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(é½åğùÿÿÿÿ
+t	java:S115t"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ıÕ‰–ùÿÿÿÿ
+t	java:S115u"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¶Ë–‹üÿÿÿÿ
+n	java:S115v"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ò¸ªX
+t	java:S115|"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.( Úâğıÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Ø¡²›ÿÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(şéÍÛÿÿÿÿÿ
+`
+java:S1124."EReorder the modifiers to comply with the Java Language Specification.(ÛÿÀúÿÿÿÿ
+Z
+java:S1124/"EReorder the modifiers to comply with the Java Language Specification.(ˆÇB
+^
+java:S1874|"CRemove this use of "getExternalStorageDirectory"; it is deprecated.( Úâğıÿÿÿÿ
+_
+java:S1874ƒ"CRemove this use of "getExternalStorageDirectory"; it is deprecated.(°­¡Ìıÿÿÿÿ

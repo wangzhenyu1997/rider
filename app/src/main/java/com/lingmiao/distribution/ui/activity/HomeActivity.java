@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.fisheagle.mkt.base.UserManager;
 import com.google.gson.Gson;

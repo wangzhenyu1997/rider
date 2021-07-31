@@ -1,0 +1,9 @@
+
+g
+java:S1301¬"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
+=	java:S131¬""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+M
+java:S1874W"0Remove this use of "getColor"; it is deprecated.(šõ¶8¢ù†›/
+M
+java:S1874Z"0Remove this use of "getColor"; it is deprecated.(«š©“8¢ù†›/
+^	java:S110)"=This class has 10 parents which is greater than 5 authorized.(áÚîÛúÿÿÿÿ8¢ù†›/

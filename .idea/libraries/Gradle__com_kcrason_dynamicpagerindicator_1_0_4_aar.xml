@@ -1,9 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: com.kcrason:dynamicpagerindicator:1.0.4@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/631267053d1265a3ce705f2bb238565b/jetified-dynamicpagerindicator-1.0.4/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/631267053d1265a3ce705f2bb238565b/jetified-dynamicpagerindicator-1.0.4/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/631267053d1265a3ce705f2bb238565b/jetified-dynamicpagerindicator-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/73afd0f94059ddaa5b57e051a73b99cd/jetified-dynamicpagerindicator-1.0.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/73afd0f94059ddaa5b57e051a73b99cd/jetified-dynamicpagerindicator-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/73afd0f94059ddaa5b57e051a73b99cd/jetified-dynamicpagerindicator-1.0.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f3e57ce4258c6664cdc42655d22e3207/jetified-dynamicpagerindicator-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f3e57ce4258c6664cdc42655d22e3207/jetified-dynamicpagerindicator-1.0.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f3e57ce4258c6664cdc42655d22e3207/jetified-dynamicpagerindicator-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/00aecf85c6b77994f9600141a04837b5/jetified-dynamicpagerindicator-1.0.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/00aecf85c6b77994f9600141a04837b5/jetified-dynamicpagerindicator-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/00aecf85c6b77994f9600141a04837b5/jetified-dynamicpagerindicator-1.0.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/904984bb3d6a56b75ba54629f58497a9/jetified-dynamicpagerindicator-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/904984bb3d6a56b75ba54629f58497a9/jetified-dynamicpagerindicator-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/904984bb3d6a56b75ba54629f58497a9/jetified-dynamicpagerindicator-1.0.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kcrason/dynamicpagerindicator/1.0.4/fd25b80f08ef6b2a85739d43ffffb688ec11891d/dynamicpagerindicator-1.0.4-javadoc.jar!/" />
