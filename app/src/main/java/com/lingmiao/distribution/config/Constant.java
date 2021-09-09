@@ -107,6 +107,7 @@ public class Constant {
     public static final String AppSubmitWithdrawAccount = URL + "account/submitWithdrawAccount";                    //绑定账户
     public static final String AppUpdateWithdrawAccount = URL + "account/updateWithdrawAccount";                    //修改账户
     public static final String AppQueryBankCardList = URL + "account/queryBankCardList";                            //绑定银行卡列表
+    public static final String AppQueryChargeRate = URL + "account/withdraw/queryServiceChargeRate";
     public static final String AppQueryContentList = URL + "content/queryContentList";                              //内容列表
     public static final String AppQueryPayableChargeList = URL + "settleBill/queryPayableChargeList";               //订单费用
     public static final String AppQuerySettleBillById = URL + "settleBill/querySettleBillById";                     //账单详情

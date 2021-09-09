@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPage"
-    android:orientation="vertical"
-    tools:context=".ui.activity.PersonalInfoActivity">
+    android:orientation="vertical">
 
     <com.lingmiao.distribution.view.LayoutTopView
         android:id="@+id/top_view"
@@ -210,5 +209,37 @@
                 android:src="@mipmap/dianzizhengjian" />
 
         </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="配送区域"
+                android:textColor="@color/color000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_are"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="end|center_vertical"
+                android:hint="请选择"
+                android:drawablePadding="@dimen/dimen_15"
+                android:textColor="@color/color757"
+                android:drawableRight="@mipmap/arrow_right"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 </LinearLayout>

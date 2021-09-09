@@ -15,12 +15,14 @@ import com.lingmiao.distribution.bean.LoginBean;
 import com.lingmiao.distribution.bean.PersonalBean;
 import com.lingmiao.distribution.bean.PersonalDataParam;
 import com.lingmiao.distribution.bean.UploadBean;
+import com.lingmiao.distribution.common.commonpop.bean.RegionVo;
 import com.lingmiao.distribution.config.Constant;
 import com.lingmiao.distribution.databinding.ActivityPersonalInfoBinding;
 import com.lingmiao.distribution.dialog.ListDialog;
 import com.lingmiao.distribution.imageloader.GlideImageLoader;
 import com.lingmiao.distribution.okhttp.HttpCallback;
 import com.lingmiao.distribution.okhttp.OkHttpUtils;
+import com.lingmiao.distribution.ui.activity.presenter.PopAddressPreImpl;
 import com.lingmiao.distribution.ui.common.bean.UploadDataBean;
 import com.lingmiao.distribution.ui.common.pop.MediaMenuPop;
 import com.lingmiao.distribution.util.GlideUtil;
@@ -52,7 +54,7 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
     // 上传图片
     private ArrayList<String> photoData = new ArrayList<>();
     private PersonalDataParam dataParam = null;
-
+    private List<RegionVo> regionVos;
     @Override
     protected void setCreateView(@Nullable Bundle savedInstanceState) {
         viewBinding = ActivityPersonalInfoBinding.inflate(LayoutInflater.from(this));
@@ -75,10 +77,16 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
 
             @Override
             public void onRightTx() {//提交资料
+                if(regionVos == null) {
+                    ToastUtil.showToast(context, "请选择配送区域");
+                    return;
+                }
                 submit(viewBinding.piNick.getText().toString());
             }
         }, true, "个人资料", 0, "保存");
         viewBinding.piHeadImg.setOnClickListener(this);
+        viewBinding.piCardBackImg.setOnClickListener(this);
+        viewBinding.tvAre.setOnClickListener(this);
     }
 
     /**
@@ -107,7 +115,6 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
             }
         });
     }
-
 
     /**
      * 提交修改信息
@@ -151,12 +158,21 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
 //                chooseImage(10010);
                 showGallery(10010);
                 break;
+            case R.id.pi_card_back_img:
+            case R.id.tv_are:
+                address.showAddressPop(context, (str, list) -> {
+                    this.regionVos = list;
+                    viewBinding.tvAre.setText(str);
+                    return null;
+                });
+                break;
             default:
                 break;
 
         }
     }
 
+    PopAddressPreImpl address = new PopAddressPreImpl();
 
     /**
      * 初始化图片选择器

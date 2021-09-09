@@ -84,6 +84,7 @@ public class WithdrawalActivity extends ActivitySupport implements View.OnClickL
      */
     private void initData() {
         getAliInfo();
+//        getChargeRate();
     }
 
     /**
@@ -105,6 +106,22 @@ public class WithdrawalActivity extends ActivitySupport implements View.OnClickL
         });
     }
 
+    private void getChargeRate() {
+        Map<String, String> mMap = new HashMap<>();
+        OkHttpUtils.postAync(Constant.AppQueryChargeRate, new Gson().toJson(mMap), new HttpCallback<String>(context, getProgressDialog()) {
+            @Override
+            public void onSuccess(String response) {
+                super.onSuccess(response);
+//                if (response.getCode().equals(Constant.SUCCESS) && response.getData() != null && response.getData().size() != 0) {
+//                    cardInfo = response.getData().get(0);
+//                    viewBinding.awBankAccount.setText(response.getData().get(0).getOpenAccountName());
+//                    viewBinding.awBankName.setText(response.getData().get(0).getBankName());
+//                    viewBinding.awCardCode.setText(response.getData().get(0).getCardNo());
+//                }
+            }
+        });
+        //
+    }
     /**
      * 获取支付宝账户信息
      */

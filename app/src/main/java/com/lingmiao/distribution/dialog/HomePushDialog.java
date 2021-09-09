@@ -96,15 +96,15 @@ public class HomePushDialog extends Dialog {
             public void onSuccess(HomeDetailBean response) {
                 super.onSuccess(response);
                 if (response.getCode().equals(Constant.SUCCESS) && response.getData() != null) {
-
-                    viewBinding.mPrice.setText("¥" + MathExtend.round(response.getData().totalCost, 2));                         //总配送费
+                    //总配送费
+                    viewBinding.mPrice.setText("¥" + MathExtend.round(response.getData().deliveryCost, 2));
                     String mPriceDetail = "";
-//                    if (!MathExtend.round(response.getData().tipCost, 2).equals("0.00") && !MathExtend.round(response.getData().tipCost, 2).equals("--")) {
+                    if (!MathExtend.round(response.getData().tipCost, 2).equals("0.00") && !MathExtend.round(response.getData().tipCost, 2).equals("--")) {
                         mPriceDetail += "(包含小费<font color='#C73F4D'>¥" + MathExtend.round(response.getData().tipCost, 2) + "</font>";
-//                    }
-//                    if (!MathExtend.round(response.getData().rewardCost, 2).equals("0.00") && !MathExtend.round(response.getData().rewardCost, 2).equals("--")) {
+                    }
+                    if (!MathExtend.round(response.getData().rewardCost, 2).equals("0.00") && !MathExtend.round(response.getData().rewardCost, 2).equals("--")) {
                         mPriceDetail += "，奖励" + "<font color='#C73F4D'>¥" + MathExtend.round(response.getData().rewardCost, 2) + "</font>)";
-//                    }
+                    }
                     viewBinding.mPriceDetail.setText(Html.fromHtml(mPriceDetail));//费用明细
 //                    viewBinding.mPriceDetail.setText(Html.fromHtml("(包含小费<font color='#C73F4D'>¥" + MathExtend.round(response.getData().tipCost, 2) +
 //                            "</font>，奖励" + "<font color='#C73F4D'>¥" + MathExtend.round(response.getData().rewardCost, 2) + "</font>)"));//费用明细

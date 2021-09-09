@@ -106,10 +106,10 @@ class OperateSignActivity : BaseActivity<IOperateSignPresenter>(), IOperateSignP
                     return@setOnClickListener;
                 }
             }
-            if(mImageAdapter?.data?.size == 1) {
-                showToast("请上传照片");
-                return@setOnClickListener;
-            }
+//            if(mImageAdapter?.data?.size == 1) {
+//                showToast("请上传照片");
+//                return@setOnClickListener;
+//            }
             val dialog = HomeConfirmDialog(
                 context,
                 HomeConfirmDialog.DialogHomeConfirmClick { value: Boolean ->

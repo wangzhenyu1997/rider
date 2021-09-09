@@ -43,7 +43,7 @@ import com.lingmiao.distribution.ui.main.presenter.IMainPresenter
 import com.lingmiao.distribution.ui.main.presenter.impl.MainPreImpl
 import com.lingmiao.distribution.util.GlideUtil
 import com.lingmiao.distribution.util.PublicUtil
-import com.lingmiao.distribution.util.StatusBarUtil
+//import com.lingmiao.distribution.util.StatusBarUtil
 import com.lingmiao.distribution.util.VoiceUtils
 import kotlinx.android.synthetic.main.main_activity_main.*
 import kotlinx.android.synthetic.main.main_layout_left_drawer.*

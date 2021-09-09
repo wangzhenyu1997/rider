@@ -8,9 +8,10 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
 import androidx.viewpager.widget.ViewPager;
 import androidx.drawerlayout.widget.DrawerLayout;
-import android.view.Gravity;
+
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,6 @@ import android.widget.LinearLayout;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.fisheagle.mkt.base.UserManager;
 import com.google.gson.Gson;
@@ -45,7 +45,6 @@ import com.lingmiao.distribution.dialog.TakeOrderSettingDialog;
 import com.lingmiao.distribution.okhttp.HttpCallback;
 import com.lingmiao.distribution.okhttp.OkHttpUtils;
 import com.lingmiao.distribution.util.GlideUtil;
-import com.lingmiao.distribution.util.PreferUtil;
 import com.lingmiao.distribution.util.PublicUtil;
 import com.lingmiao.distribution.util.SystemAppUtils;
 import com.lingmiao.distribution.util.ToastUtil;
@@ -85,6 +84,9 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
 
     private HomeModelEvent mListModel = null;
 
+    //双击退出应用
+    private long mExitTime;
+
     @Override
     protected void setCreateView(@Nullable Bundle savedInstanceState) {
         viewBinding = ActivityHomeBinding.inflate(LayoutInflater.from(this));
@@ -102,17 +104,6 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
      */
     @SuppressLint("ClickableViewAccessibility")
     private void initView() {
-//        viewBinding.topView.setData(new LayoutTopTwoView.TopCallback() {
-//            @Override
-//            public void onTopBack() { //侧滑菜单
-//                viewBinding.tradeDrawer.openDrawer(Gravity.START);
-//            }
-//
-//            @Override
-//            public void onRightImage() {
-//                startActivity(new Intent(context, MessageListActivity.class));
-//            }
-//        }, true, "鱼燕配送", R.mipmap.home_right_image, null);
         LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, SystemAppUtils.getStatusHeight(this) + PublicUtil.dip2px(Objects.requireNonNull(this), 44));
         viewBinding.tTopView.setLayoutParams(param1);
         viewBinding.ivTopBack.setOnClickListener(this);
@@ -124,7 +115,7 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
 //        viewBinding.mViewpager.setOffscreenPageLimit(2);
         viewBinding.mViewpager.setOffscreenPageLimit(1);
         viewBinding.mViewpager.setCurrentItem(0, false);
-        viewBinding.mViewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewBinding.mViewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
 
@@ -147,7 +138,7 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
 //        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         //屏蔽穿透事件
         viewBinding.mAllView.setOnTouchListener((v, event) -> true);
-        viewBinding.tradeDrawer.setDrawerListener(new DrawerLayout.DrawerListener() {
+        viewBinding.tradeDrawer.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
 
@@ -405,6 +396,9 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
                     mPushDialog = new HomePushDialog(MyApplication.DHActivityManager.getManager().getTopActivity(), click, param.getDispatchId());
                     mPushDialog.show();
                 }
+            } else if(param.getType() == 3) {
+                // 抢单模式
+                
             }
         } else if (event.getCode() == 12) {  //获取相关订单数量
             getNum();
@@ -418,7 +412,7 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
     /**
      * 更换工作状态
      */
-    private void updateWorkstatus(int state) {
+    private void updateWorkStatus(int state) {
         Map<String, Object> mMap = new HashMap<>();
         mMap.put("workStatus", state);
         OkHttpUtils.postAync(Constant.AppUpdateWorkStatus, new Gson().toJson(mMap), new HttpCallback<LoginBean>(context, getProgressDialog()) {
@@ -438,60 +432,72 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_top_back:             //侧滑菜单
-                viewBinding.tradeDrawer.openDrawer(Gravity.START);
+            case R.id.iv_top_back:
+                //侧滑菜单
+                viewBinding.tradeDrawer.openDrawer(GravityCompat.START);
                 break;
             case R.id.tv_home_take_setting:
                 TakeOrderSettingDialog takeOrderSettingDialog = TakeOrderSettingDialog.newInstance();
                 takeOrderSettingDialog.show(getSupportFragmentManager(), "TakeOrderSettingDialog");
                 break;
             case R.id.btn_home_work:
-//            case R.id.top_title:            //头部
+                //头部
                 HomeConfirmDialog dialog = new HomeConfirmDialog(this, value -> {
                     if (value) {
                         if (Constant.WORKSTATES == 0) {
-                            updateWorkstatus(1);
+                            updateWorkStatus(1);
                         } else {
-                            updateWorkstatus(0);
+                            updateWorkStatus(0);
                         }
                     }
                 }, "温馨提示", Constant.WORKSTATES == 0 ? "上班后将会接受派单，确定要上班吗？" : "下班后将不能再接到派单，确定要下班吗？", "取消", "确定");
                 dialog.show();
                 break;
-            case R.id.top_right_image:      //消息
+            case R.id.top_right_image:
+                //消息
                 startActivity(new Intent(context, MessageListActivity.class));
                 break;
-            case R.id.m_select_one_re:      //待取货
+            case R.id.m_select_one_re:
+                //待取货
                 viewBinding.mViewpager.setCurrentItem(0);
                 break;
-            case R.id.m_select_two_re:      //待送达
+            case R.id.m_select_two_re:
+                //待送达
                 viewBinding.mViewpager.setCurrentItem(1);
                 break;
-            case R.id.m_select_three_re:    //已结束
+            case R.id.m_select_three_re:
+                //已结束
                 viewBinding.mViewpager.setCurrentItem(2);
                 break;
-            case R.id.m_user_re:            //用户信息
+            case R.id.m_user_re:
+                //用户信息
                 startActivityForResult(new Intent(context, PersonalInfoActivity.class), 100);
                 break;
-            case R.id.m_order_fee:          //订单费用
+            case R.id.m_order_fee:
+                //订单费用
                 startActivity(new Intent(context, OrderFeeListActivity.class));
                 break;
-            case R.id.m_settlement:         //结算对账
+            case R.id.m_settlement:
+                //结算对账
                 startActivity(new Intent(context, BillListActivity.class));
                 break;
 //            case R.id.m_zizhi:              //我的资质
 ////                startActivity(new Intent(context, ComplaintActivity.class));
 ////                break;
-            case R.id.m_money:              //我的钱包
+            case R.id.m_money:
+                //我的钱包
                 startActivity(new Intent(context, MyWalletActivity.class));
                 break;
-            case R.id.m_pingtai:            //平台规则
+            case R.id.m_pingtai:
+                //平台规则
                 startActivity(new Intent(context, PlatformRulesActivity.class));
                 break;
-            case R.id.m_help:               //帮助中心
+            case R.id.m_help:
+                //帮助中心
                 startActivity(new Intent(context, HelpCenterActivity.class));
                 break;
-            case R.id.m_setting:            //设置
+            case R.id.m_setting:
+                //设置
                 startActivity(new Intent(context, SettingActivity.class));
                 break;
             case R.id.top_scan_image:
@@ -557,9 +563,6 @@ public class HomeActivity extends ActivitySupport implements View.OnClickListene
             locationClient.onDestroy();
         }
     }
-
-    //双击退出应用
-    private long mExitTime;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
