@@ -106,6 +106,7 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
                     viewBinding.piName.setText(data.getName());
                     viewBinding.piNick.setText(data.getNickName());
                     viewBinding.piPhone.setText(data.getMobile());
+                    viewBinding.tvAre.setText(data.getDistrictAra());
                     GlideUtil.load(context, data.getHeadImgUrl(), viewBinding.piHeadImg, GlideUtil.getHeadImgOption());
                     GlideUtil.load(context, data.getIdCardBackUrl(), viewBinding.piCardBackImg, GlideUtil.getRoundedOption(20));
                     GlideUtil.load(context, data.getIdCardFrontUrl(), viewBinding.piCardFrontImg, GlideUtil.getRoundedOption(20));
@@ -121,12 +122,20 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
      * 仅头像 昵称可修改
      */
     private void submit(String nickName) {
-        if (!checkInput(nickName)) return;
+        if (!checkInput(nickName)) {
+            return;
+        }
+        if(!checkInput(province, "请选择配送区域信息") || !checkInput(city, "请选择配送区域信息") || !checkInput(district, "请选择配送区域信息")) {
+            return;
+        }
         String id = UserManager.Companion.getPushID();
         Map<String, String> mMap = new HashMap<>();
         mMap.put("headImgUrl", dataParam != null ? dataParam.getHeadImgUrl() : "");
         mMap.put("id", id);
         mMap.put("nickName", nickName);
+        mMap.put("provinceName", province);
+        mMap.put("cityName", city);
+        mMap.put("districtName", district);
         OkHttpUtils.postAync(Constant.AppUpdateRider, new Gson().toJson(mMap), new HttpCallback<LoginBean>(context, getProgressDialog()) {
             @Override
             public void onSuccess(LoginBean response) {
@@ -144,12 +153,18 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
      * 检验输入框内容
      */
     private boolean checkInput(String nick) {
-        if (!InputUtil.isEmpty(this, nick, "请输入昵称！")) {
+        return checkInput(nick, "请输入昵称！");
+    }
+
+    private boolean checkInput(String nick, String hint) {
+        if (!InputUtil.isEmpty(this, nick, hint)) {
             return false;
         }
         return true;
     }
 
+
+    String province, city, district;
 
     @Override
     public void onClick(View v) {
@@ -163,6 +178,11 @@ public class PersonalInfoActivity extends ActivitySupport implements View.OnClic
                 address.showAddressPop(context, (str, list) -> {
                     this.regionVos = list;
                     viewBinding.tvAre.setText(str);
+                    if(list != null && list.size() >= 3) {
+                        province = list.get(0).getIName();
+                        city = list.get(1).getIHint();
+                        district = list.get(2).getIHint();
+                    }
                     return null;
                 });
                 break;

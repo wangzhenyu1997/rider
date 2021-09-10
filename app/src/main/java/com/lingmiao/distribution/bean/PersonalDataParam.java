@@ -31,6 +31,9 @@ public class PersonalDataParam {
     private String updateTime;//string, optional),
     private String updaterId;//string, optional)
     private String nickName;//昵称
+    private String provinceName;
+    private String cityName;
+    private String districtName;
 
     private int workStatus;   //，0休息 1工作中
 
@@ -216,5 +219,41 @@ public class PersonalDataParam {
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
+    }
+
+    public String getProvinceName() {
+        return provinceName;
+    }
+
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getDistrictName() {
+        return districtName;
+    }
+
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
+    }
+
+    public String getDistrictAra() {
+        return String.format("%s%s%s", getNotNull(provinceName), getNotNull(cityName), getNotNull(districtName));
+    }
+
+    String getNotNull(String str) {
+        return isNull(str) ? "" : str;
+    }
+
+    boolean isNull(String str) {
+        return str == null || str.equals("null");
     }
 }
