@@ -18,7 +18,7 @@ android {
         minSdkVersion android.minSdkVersion
         targetSdkVersion android.targetSdkVersion
         versionCode 2
-        versionName "1.0.0"
+        versionName "1.0.1"
         setProperty("archivesBaseName", "rider_$versionName"+"_"+"$formattedDate")
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }

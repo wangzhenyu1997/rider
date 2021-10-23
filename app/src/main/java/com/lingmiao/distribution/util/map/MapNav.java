@@ -38,7 +38,6 @@ public class MapNav {
             if (id.equals("1")) {
                 if (PublicUtil.isInstalled(context, "com.baidu.BaiduMap")) {
                     Intent intent = new Intent();
-//                    intent.setData(Uri.parse("baidumap://map/direction?destination=39.98871,116.43234&mode=driving&coord_type=bd09ll&src=" + context.getPackageName()));
                     intent.setData(Uri.parse("baidumap://map/direction?destination=" + mlatitude + "," + mlongitude + "&mode=riding&coord_type=bd09ll&src=" + context.getPackageName()));
                     context.startActivity(intent);
                 } else {
@@ -46,7 +45,6 @@ public class MapNav {
                 }
             } else if (id.equals("2")) {
                 if (PublicUtil.isInstalled(context, "com.autonavi.minimap")) {
-//                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("amapuri://route/plan/?dlat=" + mlongitude + "&dlon=" + mlatitude + "&dname=B&dev=0&t=0"));
                     Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("amapuri://openFeature?featureName=OnRideNavi&rideType=elebike&sourceApplication=" + context.getPackageName() + "&lat=" + mlatitude + "&lon=" + mlongitude + "&dev=0"));
                     intent.addCategory("android.intent.category.DEFAULT");
                     intent.setPackage("com.autonavi.minimap");
@@ -65,49 +63,6 @@ public class MapNav {
             }
         }, mapData, 0);
         dialog.show();
-    }
-
-    public static void gaoDeNavi(Context activity, String address) {
-        if(AppUtils.isAppInstalled("com.autonavi.minimap")) {
-            String uri = String.format("amapuri://route/plan/?dname=%s&dev=0&t=0", address);
-            Intent intent = new Intent();
-            intent.setAction("android.intent.action.VIEW");
-            intent.addCategory("android.intent.category.DEFAULT");
-            intent.setData(Uri.parse(uri));
-            intent.setPackage("com.autonavi.minimap");
-            activity.startActivity(intent);
-        } else {
-            ToastUtil.showToast(activity, "您尚未安装百度地图");
-            Intent intent = new Intent();
-            intent.setData(Uri.parse("market://details?id=com.autonavi.minimap"));
-            activity.startActivity(intent);
-        }
-    }
-
-    public static void baiduNavi(Context activity, String address) {
-        if(AppUtils.isAppInstalled("com.baidu.BaiduMap")) {
-            Intent intent = new Intent();
-            intent.setData(Uri.parse("baidumap://map/navi?query=" + address + "&src=andr.baidu.openAPIdemo"));
-            activity.startActivity(intent);
-        } else {
-            ToastUtil.showToast(activity, "您尚未安装百度地图");
-            Intent intent = new Intent();
-            intent.setData(Uri.parse("market://details?id=com.baidu.BaiduMap"));
-            activity.startActivity(intent);
-        }
-    }
-
-    public static void tencent(Context activity, String address, double lat, double lng) {
-        if(AppUtils.isAppInstalled("com.tencent.map")) {
-            Intent intent = new Intent();
-            intent.setData(Uri.parse("qqmap://map/routeplan?type=drive&to=" + address + "&tocoord=" + lat + "," + lng + "&referer=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"));
-            activity.startActivity(intent);
-        } else {
-            ToastUtil.showToast(activity, "您尚未安装百度地图");
-            Intent intent = new Intent();
-            intent.setData(Uri.parse("market://details?id=com.tencent.map"));
-            activity.startActivity(intent);
-        }
     }
 
 }
