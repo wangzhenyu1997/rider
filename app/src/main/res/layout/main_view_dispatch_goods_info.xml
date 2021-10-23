@@ -53,6 +53,7 @@
                 android:layout_below="@+id/tv_dispatch_business_name"
                 android:gravity="center_vertical"
                 android:singleLine="true"
+                android:maxLines="2"
                 android:text="我是开始地点我是开始地点我是开始地点我是开始地点我是开始地点"
                 android:textColor="#000"
                 android:textSize="12sp"
@@ -64,14 +65,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:singleLine="true"
-            android:text="21.1公里"
-            android:textColor="#00A0E9"
-            android:textSize="12sp"
+            android:drawableRight="@mipmap/ic_location"
+            android:drawablePadding="@dimen/dimen_5"
+            android:paddingTop="@dimen/dimen_12"
             android:paddingBottom="@dimen/dimen_12"
-            android:layout_alignParentBottom="true"
-
-            />
+            android:singleLine="true"
+            android:layout_centerVertical="true"
+            tools:text="21.1公里"
+            android:textColor="#00A0E9"
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -103,7 +105,7 @@
             android:layout_toLeftOf="@+id/tv_dispatch_end_distance"
             android:layout_toRightOf="@+id/iv_dispatch_end_view"
             android:gravity="center_vertical"
-            android:maxLines="1"
+            android:maxLines="2"
             android:text="我是结束位置我是结束位置我是结束位置我是结束位置"
             android:textColor="#000"
             android:textSize="14sp"
@@ -115,10 +117,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:drawableRight="@mipmap/ic_location"
+            android:drawablePadding="@dimen/dimen_5"
+            android:paddingTop="@dimen/dimen_12"
+            android:paddingBottom="@dimen/dimen_12"
             android:singleLine="true"
-            android:text="21.1公里"
             android:textColor="#C73F4D"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            tools:text="21.1公里" />
     </RelativeLayout>
 
     <LinearLayout

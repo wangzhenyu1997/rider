@@ -22,6 +22,15 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c91bac4d2164c8b722e225af950b1e81/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c91bac4d2164c8b722e225af950b1e81/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c91bac4d2164c8b722e225af950b1e81/jetified-BasePopup-2.2.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1897066ee6504e15bb8d48bfd927d0ba/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1897066ee6504e15bb8d48bfd927d0ba/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1897066ee6504e15bb8d48bfd927d0ba/jetified-BasePopup-2.2.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/06dae7d53c36b516ff41791950f27068/jetified-BasePopup-2.2.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/06dae7d53c36b516ff41791950f27068/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/06dae7d53c36b516ff41791950f27068/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c18f02d75fc7924200deae32a385540c/jetified-BasePopup-2.2.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c18f02d75fc7924200deae32a385540c/jetified-BasePopup-2.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c18f02d75fc7924200deae32a385540c/jetified-BasePopup-2.2.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.razerdp/BasePopup/2.2.3/985048accb8fda774e3f2c4dc6e21cc1d34af5c0/BasePopup-2.2.3-javadoc.jar!/" />

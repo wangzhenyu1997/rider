@@ -44,7 +44,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
     private var tvTabList: ArrayList<ITabWithNumberView> = ArrayList();
 
-    private var mTabTitles = arrayOf("待接单", "待取货", "待送达")
+    private var mTabTitles = arrayOf("待抢单", "待接单", "待取货", "待送达")
 
     private var mFragments = mutableListOf<Fragment>();
 
@@ -135,6 +135,11 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
     private fun initTabLayout() {
         // 待接单
+        tvTabVie.setOnClickListener {
+            viewPager.currentItem = DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_VIE);
+            EventBus.getDefault().post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_VIE));
+        }
+        // 待接单
         tvTabAgreeing.setOnClickListener {
             viewPager.currentItem = DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_AGREEING);
             EventBus.getDefault().post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_AGREEING));
@@ -149,10 +154,12 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
             viewPager.currentItem = DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_DELIVERING);
             EventBus.getDefault().post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_DELIVERING));
         }
+        tvTabList.add(tvTabVie);
         tvTabList.add(tvTabAgreeing);
         tvTabList.add(tvTabTaking);
         tvTabList.add(tvTabDelivering);
 
+        mFragments.add(OrderListFragment.vie(mPresenter?.getModelData()!!));
         mFragments.add(DispatchListFragment.agreeing(mPresenter?.getModelData()!!));
         mFragments.add(DispatchListFragment.taking(mPresenter?.getModelData()!!));
         mFragments.add(DispatchListFragment.delivering(mPresenter?.getModelData()!!));
@@ -187,6 +194,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
     }
 
     private fun setTabStatus(tabIndex: Int) {
+        tvTabVie.setTabSelected(false)
         tvTabAgreeing.setTabSelected(false)
         tvTabTaking.setTabSelected(false)
         tvTabDelivering.setTabSelected(false)

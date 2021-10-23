@@ -81,11 +81,7 @@ public class LoginActivity extends ActivitySupport implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.l_login_btn:          //登录
-//                startActivity(new Intent(context, IdentityExamineActivity.class).putExtra("type", 1));
                 submit(viewBinding.lUserName.getText().toString(), viewBinding.lUserPass.getText().toString());
-//                Intent intent = new Intent(context, HomeActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                context.startActivity(intent);
                 break;
             case R.id.l_forget_pass:        //忘记密码
                 startActivity(new Intent(context, ModifyPasswordActivity.class).putExtra("type", 1));
@@ -126,8 +122,6 @@ public class LoginActivity extends ActivitySupport implements View.OnClickListen
             public void onSuccess(LoginBean response) {
                 super.onSuccess(response);
                 if (response.getCode().equals(Constant.SUCCESS)) {
-//                    PreferUtil.setPrefString(context, Constant.IS_USERNAME, userName); //登录成功、把userName存到本地
-//                    PreferUtil.setPrefString(context, Constant.IS_USERPASS, password); //登录成功、把password存到本地
                     UserManager.Companion.setUserNameAndPwd(userName, MD5Util.getMD5Str(password));
 
                     Constant.TOKEN = response.getData().getToken();
@@ -154,7 +148,6 @@ public class LoginActivity extends ActivitySupport implements View.OnClickListen
                 super.onSuccess(response);
                 if (response.getCode().equals(Constant.SUCCESS) && response.getData() != null && response.getData().getRider() != null) {
                     PersonalDataParam personData = response.getData().getRider();
-//                    PreferUtil.setPrefString(context, Constant.IS_ID, personData.getId()); //登录成功
 
                     UserManager.Companion.setPushID(personData.getId());
 

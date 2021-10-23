@@ -16,8 +16,15 @@
         android:paddingRight="15dp">
 
         <com.lingmiao.distribution.widget.ITabWithNumberView
-            android:id="@+id/tvTabAgreeing"
+            android:id="@+id/tvTabVie"
             app:tvSelected="true"
+            app:tvTitle="待抢单"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.lingmiao.distribution.widget.ITabWithNumberView
+            android:id="@+id/tvTabAgreeing"
             app:tvTitle="待接单"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

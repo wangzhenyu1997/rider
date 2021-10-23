@@ -21,6 +21,13 @@ interface DispatchApiService {
     fun updateWorkStatus(@Body map: Map<String, Int>): Call<DataVO<Unit>>;
 
     /**
+     * 抢单列表
+     */
+    @WithHiResponse
+    @POST("/rider-mobile-compose/order/queryOrderListByRiderId")
+    fun queryOrderListByRiderId(@Body map: BasePageReqVO<DispatchListReq>): Call<DataVO<PageVO<DispatchOrderItemBean>>>;
+
+    /**
      * 调度单列表
      */
     @WithHiResponse

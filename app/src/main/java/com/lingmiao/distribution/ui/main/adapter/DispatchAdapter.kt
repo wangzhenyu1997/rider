@@ -183,6 +183,8 @@ class DispatchAdapter(val type : Int) : BaseMultiItemQuickAdapter<DispatchOrderR
 
         helper.addOnClickListener(R.id.iv_dispatch_order_num_copy);
         resetButtonOption(helper);
+        helper.addOnClickListener(R.id.tv_dispatch_start_distance);
+        helper.addOnClickListener(R.id.tv_dispatch_end_distance);
 
         when(item?.dispatchStatus) {
             DispatchOrderRecordBean.CANCEL,

@@ -8,8 +8,25 @@
     <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
     <groovy codeStyle="LEGACY" />
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_take_order.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/main_activity_search.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/main_adapter_dispatch_four.xml" value="0.401114156752912" />
+        <entry key="app/src/main/res/layout/main_adapter_dispatch_two.xml" value="0.1546875" />
+        <entry key="app/src/main/res/layout/main_adapter_order.xml" value="0.1546875" />
+        <entry key="app/src/main/res/layout/main_fragment_dispatch_tab.xml" value="0.2078804347826087" />
+        <entry key="app/src/main/res/layout/main_view_dispatch_goods_info.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/main_view_dispatch_option.xml" value="0.21614583333333334" />
+        <entry key="app/src/main/res/layout/main_view_dispatch_option_multiple.xml" value="0.18020833333333333" />
+        <entry key="app/src/main/res/layout/main_view_order_goods_info.xml" value="0.21614583333333334" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

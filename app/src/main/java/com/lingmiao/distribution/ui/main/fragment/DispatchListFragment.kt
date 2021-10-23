@@ -35,6 +35,7 @@ import com.lingmiao.distribution.util.PublicUtil
 import com.lingmiao.distribution.widget.EmptyView
 import com.james.common.base.loadmore.BaseLoadMoreFragment
 import com.james.common.base.loadmore.core.IPage
+import com.lingmiao.distribution.util.map.MapNav
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -262,6 +263,14 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
                                 EvaluateCustomerActivity::class.java
                             ).putExtra("id", item?.id)
                         )
+                    }
+                    R.id.tv_dispatch_start_distance -> {
+                        // 导航
+                        MapNav.chooseMapDialog(requireContext(), item?.getConsignerAddress(), item?.orderList?.get(0)?.consignerLat ?: 0.0, item?.orderList?.get(0)?.consignerLng ?: 0.0)
+                    }
+                    R.id.tv_dispatch_end_distance -> {
+                        // 导航
+                        MapNav.chooseMapDialog(requireContext(), item?.getConsignerAddress(), item?.orderList?.get(0)?.consigneeLat ?: 0.0, item?.orderList?.get(0)?.consigneeLng ?: 0.0)
                     }
                 }
             }

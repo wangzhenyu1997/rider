@@ -11,6 +11,7 @@ import com.lingmiao.distribution.net.Fetch
 import com.lingmiao.distribution.ui.main.bean.*
 import com.james.common.netcore.networking.http.core.HiResponse
 import com.james.common.netcore.networking.http.core.awaitHiResponse
+import com.lingmiao.distribution.ui.main.presenter.IOrderViePresenter
 import retrofit2.Call
 import retrofit2.http.Body
 import java.util.*
@@ -34,6 +35,16 @@ object DispatchRepository {
         body.pageNum = req.pageNum;
         body.pageSize = IConstant.PAGE_SIZE_DEFAULT;
         return apiService.queryDispatchList(body).awaitHiResponse();
+    }
+
+    /**
+     * 调度单列表
+     */
+    suspend fun queryOrderListByRiderId(pageNum : Int): HiResponse<DataVO<PageVO<DispatchOrderItemBean>>> {
+        val req = BasePageReqVO<DispatchListReq>();
+        req.pageSize = IConstant.PAGE_SIZE_DEFAULT;
+        req.pageNum = pageNum;
+        return apiService.queryOrderListByRiderId(req).awaitHiResponse();
     }
 
     /**

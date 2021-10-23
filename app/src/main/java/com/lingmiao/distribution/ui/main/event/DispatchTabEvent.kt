@@ -21,9 +21,10 @@ class DispatchTabEvent(val status: Int = DispatchConstants.DISPATCH_STATUS_AGREE
          */
         fun getTabIndexByStatus(status: Int): Int {
             return when (status) {
-                DispatchConstants.DISPATCH_STATUS_AGREEING -> 0
-                DispatchConstants.DISPATCH_STATUS_TAKING -> 1
-                DispatchConstants.DISPATCH_STATUS_DELIVERING -> 2
+                DispatchConstants.DISPATCH_STATUS_VIE -> 0
+                DispatchConstants.DISPATCH_STATUS_AGREEING -> 1
+                DispatchConstants.DISPATCH_STATUS_TAKING -> 2
+                DispatchConstants.DISPATCH_STATUS_DELIVERING -> 3
                 else -> 0
             }
         }

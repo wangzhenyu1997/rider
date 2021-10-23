@@ -22,6 +22,15 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d1fb02aa50e779f2c1830eaed2b5bf97/jetified-okhttp3-integration-4.8.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d1fb02aa50e779f2c1830eaed2b5bf97/jetified-okhttp3-integration-4.8.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d1fb02aa50e779f2c1830eaed2b5bf97/jetified-okhttp3-integration-4.8.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d856484604b56391657350a157be77c8/jetified-okhttp3-integration-4.8.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d856484604b56391657350a157be77c8/jetified-okhttp3-integration-4.8.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d856484604b56391657350a157be77c8/jetified-okhttp3-integration-4.8.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e84ac2d0113dc3b4e7b2c4d50769e2ec/jetified-okhttp3-integration-4.8.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e84ac2d0113dc3b4e7b2c4d50769e2ec/jetified-okhttp3-integration-4.8.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e84ac2d0113dc3b4e7b2c4d50769e2ec/jetified-okhttp3-integration-4.8.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/521b7ab787498c4cd42c67e87ac1a4b1/jetified-okhttp3-integration-4.8.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/521b7ab787498c4cd42c67e87ac1a4b1/jetified-okhttp3-integration-4.8.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/521b7ab787498c4cd42c67e87ac1a4b1/jetified-okhttp3-integration-4.8.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/okhttp3-integration/4.8.0/60e3940926c8711251f55855c53320ab03d49924/okhttp3-integration-4.8.0-javadoc.jar!/" />

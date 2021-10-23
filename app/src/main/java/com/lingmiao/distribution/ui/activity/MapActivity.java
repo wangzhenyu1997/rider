@@ -42,6 +42,7 @@ import com.lingmiao.distribution.okhttp.OkHttpUtils;
 import com.lingmiao.distribution.ui.main.bean.DispatchOrderRecordBean;
 import com.lingmiao.distribution.util.PublicUtil;
 import com.lingmiao.distribution.util.ToastUtil;
+import com.lingmiao.distribution.util.map.MapNav;
 import com.lingmiao.distribution.util.map.RideRouteOverlay;
 import com.lingmiao.distribution.view.LayoutTopView;
 
@@ -357,43 +358,6 @@ public class MapActivity extends ActivitySupport implements View.OnClickListener
         });
     }
 
-    /**
-     * 地图选择弹窗
-     */
-    private void chooseMapDialog() {
-        ListDialog dialog = new ListDialog(context, (ListDialog.DialogItemClickListener) (position, id, text, chooseIndex) -> {//1:百度   2：高德   3.腾讯
-            if (id.equals("1")) {
-                if (PublicUtil.isInstalled(context, "com.baidu.BaiduMap")) {
-                    Intent intent = new Intent();
-//                    intent.setData(Uri.parse("baidumap://map/direction?destination=39.98871,116.43234&mode=driving&coord_type=bd09ll&src=" + context.getPackageName()));
-                    intent.setData(Uri.parse("baidumap://map/direction?destination=" + mlatitude + "," + mlongitude + "&mode=riding&coord_type=bd09ll&src=" + context.getPackageName()));
-                    startActivity(intent);
-                } else {
-                    ToastUtil.showToast(context, "请先安装百度地图客户端");
-                }
-            } else if (id.equals("2")) {
-                if (PublicUtil.isInstalled(context, "com.autonavi.minimap")) {
-//                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("amapuri://route/plan/?dlat=" + mlongitude + "&dlon=" + mlatitude + "&dname=B&dev=0&t=0"));
-                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("amapuri://openFeature?featureName=OnRideNavi&rideType=elebike&sourceApplication=" + context.getPackageName() + "&lat=" + mlatitude + "&lon=" + mlongitude + "&dev=0"));
-                    intent.addCategory("android.intent.category.DEFAULT");
-                    intent.setPackage("com.autonavi.minimap");
-                    startActivity(intent);
-                } else {
-                    ToastUtil.showToast(context, "请先安装高德地图客户端");
-                }
-            } else {
-                if (PublicUtil.isInstalled(context, "com.tencent.map")) {
-                    Intent intent = new Intent();
-                    intent.setData(Uri.parse("qqmap://map/routeplan?type=drive&fromcoord=CurrentLocation&to=" + mAddress + "&tocoord=" + mlatitude + "," + mlongitude + "&referer=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"));
-                    startActivity(intent);
-                } else {
-                    ToastUtil.showToast(context, "请先安装腾讯地图客户端");
-                }
-            }
-        }, mapData, 0);
-        dialog.show();
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -425,7 +389,7 @@ public class MapActivity extends ActivitySupport implements View.OnClickListener
                 }
                 break;
             case R.id.am_navigation:
-                chooseMapDialog();
+                MapNav.chooseMapDialog(this, mAddress, mlatitude, mlongitude);
                 break;
             default:
                 break;

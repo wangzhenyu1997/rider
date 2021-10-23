@@ -20,7 +20,9 @@ interface DispatchConstants {
 
 
         // 待接单
-        const val DISPATCH_STATUS_AGREEING = 0;
+        const val DISPATCH_STATUS_VIE = 0;
+        // 待接单
+        const val DISPATCH_STATUS_AGREEING = DISPATCH_STATUS_VIE+1;
         // 待取货
         const val DISPATCH_STATUS_TAKING = DISPATCH_STATUS_AGREEING + 1;
         // 待送达
@@ -30,6 +32,10 @@ interface DispatchConstants {
 
         fun newInstance(): DispatchTabFragment {
             return DispatchTabFragment()
+        }
+
+        fun isVieTab(type : Int) : Boolean {
+            return type == DISPATCH_STATUS_VIE;
         }
 
         fun isAgreeingTab(type : Int) : Boolean {
