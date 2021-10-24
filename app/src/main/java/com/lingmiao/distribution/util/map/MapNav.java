@@ -42,6 +42,9 @@ public class MapNav {
                     context.startActivity(intent);
                 } else {
                     ToastUtil.showToast(context, "请先安装百度地图客户端");
+                    Intent intent = new Intent();
+                    intent.setData(Uri.parse("market://details?id=com.baidu.BaiduMap"));
+                    context.startActivity(intent);
                 }
             } else if (id.equals("2")) {
                 if (PublicUtil.isInstalled(context, "com.autonavi.minimap")) {
@@ -51,6 +54,9 @@ public class MapNav {
                     context.startActivity(intent);
                 } else {
                     ToastUtil.showToast(context, "请先安装高德地图客户端");
+                    Intent intent = new Intent();
+                    intent.setData(Uri.parse("market://details?id=com.autonavi.minimap"));
+                    context.startActivity(intent);
                 }
             } else {
                 if (PublicUtil.isInstalled(context, "com.tencent.map")) {
@@ -59,6 +65,9 @@ public class MapNav {
                     context.startActivity(intent);
                 } else {
                     ToastUtil.showToast(context, "请先安装腾讯地图客户端");
+                    Intent intent = new Intent();
+                    intent.setData(Uri.parse("market://details?id=com.tencent.map"));
+                    context.startActivity(intent);
                 }
             }
         }, mapData, 0);
