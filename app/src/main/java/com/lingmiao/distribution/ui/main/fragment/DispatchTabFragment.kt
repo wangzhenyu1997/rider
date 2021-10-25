@@ -79,8 +79,6 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
         initTakingOrderSetting();
 
-        loadTabNumber();
-
         loadSetting();
 
         setWorkStatus();

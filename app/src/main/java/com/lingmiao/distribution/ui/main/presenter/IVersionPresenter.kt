@@ -18,7 +18,7 @@ interface IVersionPresenter : BasePresenter{
 
     interface View : BaseView {
 
-        fun checkVersionSuccess(data : UpdateBean);
+        fun checkVersionSuccess(data : UpdateBean?);
 
     }
 

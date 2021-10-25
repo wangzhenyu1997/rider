@@ -18,8 +18,8 @@ open class VersionPreImpl(open var view : IVersionPresenter.View) : BasePreImpl(
 
             val resp = DispatchRepository.upgrade(string);
             handleResponse(resp) {
-                if(resp?.data?.isSuccessAndData() == true) {
-                    view.checkVersionSuccess(resp?.data?.data!!);
+                if(resp.data?.isSuccessAndData() == true) {
+                    view.checkVersionSuccess(resp.data?.data);
                 }
             }
 

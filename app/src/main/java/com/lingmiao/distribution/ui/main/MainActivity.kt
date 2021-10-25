@@ -33,6 +33,7 @@ import com.lingmiao.distribution.bean.PersonalDataParam
 import com.lingmiao.distribution.bean.UpdateBean
 import com.lingmiao.distribution.config.Constant
 import com.lingmiao.distribution.location.AmapLocationProvider
+import com.lingmiao.distribution.location.LocInterceptor
 import com.lingmiao.distribution.location.WorkProvider
 import com.lingmiao.distribution.ui.activity.*
 import com.lingmiao.distribution.ui.login.bean.LoginBean
@@ -103,8 +104,6 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
             DispatchTabFragment.newInstance(),
             R.id.frDispatchTab
         );
-
-
     }
 
     private fun initRequest() {
@@ -222,6 +221,7 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
         }
         val rid = JPushInterface.getRegistrationID(applicationContext)
         LogUtils.e("push", "[registrationID] $rid")
+        WorkProvider.post(this);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -254,9 +254,8 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
      */
     private fun initMap() {
         doIntercept(LocationInterceptor(context),failed = {}){
-            it;
         }
-        //locate();
+        locate();
 
         val manager = NotificationManagerCompat.from(this)
         // areNotificationsEnabled方法的有效性官方只最低支持到API 19，低于19的仍可调用此方法不过只会返回true，即默认为用户已经开启了通知。
@@ -293,9 +292,6 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
                 startActivity(intent)
             }
         }
-
-        WorkProvider.post(this);
-
     }
 
     fun locate() {
@@ -334,9 +330,7 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
      * 定位监听
      */
     var locationListener = AMapLocationListener { location: AMapLocation? ->
-        LogUtils.d(".....定位")
         if (null != location) {
-            LogUtils.d(".....定位", location)
             //errCode等于0代表定位成功，其他的为定位失败，具体的可以参照官网定位错误码说明
             if (location.errorCode == 0) {
                 Constant.LOCATIONADDRESS = location.address
@@ -377,14 +371,14 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
         AmapLocationProvider.getInstance().stopLocation();
     }
 
-    override fun checkVersionSuccess(response: UpdateBean) {
-        if(response == null || response.downloadUrl?.isEmpty() == true || !response?.isNeedUpgrade) {
+    override fun checkVersionSuccess(response: UpdateBean?) {
+        if(response == null || response.downloadUrl?.isEmpty() == true || !response.isNeedUpgrade) {
             return;
         }
         versionUpdateDialog = DialogUtils.showVersionUpdateDialog(
             context!!,
             "版本更新",
-            if(response?.upgradeContent?.isNotBlank() == true) response?.upgradeContent else "检测到新版本，是否立即更新？",
+            if(response.upgradeContent?.isNotBlank() == true) response.upgradeContent else "检测到新版本，是否立即更新？",
             "暂不更新",
             null,
             "立即更新",

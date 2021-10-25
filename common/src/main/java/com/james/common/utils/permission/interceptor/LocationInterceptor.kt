@@ -1,6 +1,7 @@
 package com.james.common.utils.permission.interceptor
 
 import android.content.Context
+import com.blankj.utilcode.util.LogUtils
 import com.james.common.utils.exts.Interceptor
 import com.james.common.utils.permission.PermissionUtil
 import com.james.common.utils.permission.callback.LocationCallback
