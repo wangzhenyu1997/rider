@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
@@ -41,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="¥15.00"
+                    tools:text="¥15.00"
                     android:textColor="@color/colorPrice"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -53,7 +54,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/m_price"
-                    android:text="(包含小费¥10，奖励¥1.5)"
+                    tools:text="(包含小费¥10，奖励¥1.5)"
                     android:textColor="@color/color757"
                     android:textSize="10sp" />
             </RelativeLayout>
