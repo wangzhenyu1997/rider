@@ -92,7 +92,9 @@ public class HomeModelEvent implements Serializable {
     }
 
     public int getWorkStatus() {
-        return workStatus;
+        //  return workStatus;
+        //默认二轮
+        return MODEL_TWO;
     }
 
     public void setWorkStatus(int workStatus) {

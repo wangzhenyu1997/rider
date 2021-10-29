@@ -48,7 +48,7 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:visibility="visible"
+            android:visibility="gone"
             android:id="@+id/rb_take_order_setting_four"
             style="@style/take_order_setting_item"
             android:layout_marginLeft="15dp"

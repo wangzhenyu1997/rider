@@ -89,7 +89,6 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
     private fun loadSetting() {
         mPresenter?.getSetting({
             it?.apply {
-                it.workStatus = HomeModelEvent.MODEL_TWO
                 UserManager.setTakingModel(it)
                 Constant.Home_Model_Event = it
             }
