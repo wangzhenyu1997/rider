@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ActivityUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lingmiao.distribution.R;
@@ -80,14 +81,15 @@ public class TakeOrderDialog extends Dialog {
             if (mOrderNum == null) {
                 return;
             }
-            ClipboardManager cm = (ClipboardManager) MyApplication.DHActivityManager.getManager().getTopActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+
+            ClipboardManager cm = (ClipboardManager) ActivityUtils.getTopActivity().getSystemService(Context.CLIPBOARD_SERVICE);
             cm.setText(mOrderNum);
-            ToastUtil.showToast(MyApplication.DHActivityManager.getManager().getTopActivity(), "订单号复制成功！");
+            ToastUtil.showToast(ActivityUtils.getTopActivity(), "订单号复制成功！");
         });
     }
 
     private void refreshView() {
-        if(mData == null) {
+        if (mData == null) {
             return;
         }
         //总配送费
