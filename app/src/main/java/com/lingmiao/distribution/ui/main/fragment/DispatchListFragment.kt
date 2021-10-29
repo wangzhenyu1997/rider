@@ -46,11 +46,13 @@ Create Date : 2020/12/2710:40 AM
 Auther      : Fox
 Desc        :
  **/
-class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDispatchListPresenter>(), IDispatchListPresenter.View {
+class DispatchListFragment :
+    BaseLoadMoreFragment<DispatchOrderRecordBean, IDispatchListPresenter>(),
+    IDispatchListPresenter.View {
 
-    private var mDispatchStatus : Int? = null;
+    private var mDispatchStatus: Int? = null;
 
-    private var mHomeModelEvent : HomeModelEvent?= null;
+    private var mHomeModelEvent: HomeModelEvent? = null;
 
     companion object {
         const val CODE_SIGN = 101;
@@ -61,7 +63,7 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
         const val KEY_DISPATCH_STATUS = "KEY_DISPATCH_STATUS"
         const val KEY_DISPATCH_EVENT = "KEY_DISPATCH_EVENT"
 
-        fun newInstance(status : Int, event : HomeModelEvent) : DispatchListFragment {
+        fun newInstance(status: Int, event: HomeModelEvent): DispatchListFragment {
             return DispatchListFragment().apply {
                 arguments = Bundle().apply {
                     putInt(KEY_DISPATCH_STATUS, status);
@@ -70,15 +72,15 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
             }
         }
 
-        fun agreeing(event : HomeModelEvent) : DispatchListFragment {
+        fun agreeing(event: HomeModelEvent): DispatchListFragment {
             return newInstance(DispatchConstants.DISPATCH_STATUS_AGREEING, event);
         }
 
-        fun taking(event : HomeModelEvent) : DispatchListFragment {
+        fun taking(event: HomeModelEvent): DispatchListFragment {
             return newInstance(DispatchConstants.DISPATCH_STATUS_TAKING, event);
         }
 
-        fun delivering(event : HomeModelEvent) : DispatchListFragment {
+        fun delivering(event: HomeModelEvent): DispatchListFragment {
             return newInstance(DispatchConstants.DISPATCH_STATUS_DELIVERING, event);
         }
 
@@ -89,22 +91,20 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
         mHomeModelEvent = arguments?.getSerializable(KEY_DISPATCH_EVENT) as HomeModelEvent;
     }
 
-    override fun getLayoutId(): Int? {
-        return R.layout.main_fragment_dispatch_list;
-    }
+    override fun getLayoutId() = R.layout.main_fragment_dispatch_list;
 
-    override fun useEventBus(): Boolean {
-        return true;
-    }
+
+    override fun useEventBus()= true
+
 
     override fun initOthers(rootView: View) {
 
     }
 
-    fun getOrderIds(item : DispatchOrderRecordBean?) : ArrayList<String> {
+    fun getOrderIds(item: DispatchOrderRecordBean?): ArrayList<String> {
         val ids = arrayListOf<String>()
         item?.orderList?.forEachIndexed { index, item ->
-            if(item?.id?.isNotBlank() == true) {
+            if (item?.id?.isNotBlank() == true) {
                 ids.add(item?.id!!);
             }
         }
@@ -115,9 +115,10 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
         return DispatchAdapter(mDispatchStatus!!).apply {
             setOnItemChildClickListener { adapter, view, position ->
                 var item = getItem(position);
-                when(view.id) {
+                when (view.id) {
                     R.id.iv_dispatch_order_num_copy -> {
-                        val cm: ClipboardManager = MyApp.getInstance().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                        val cm: ClipboardManager = MyApp.getInstance()
+                            .getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                         cm.setPrimaryClip(
                             ClipData.newPlainText(
                                 MyApp.getInstance().getPackageName(),
@@ -132,9 +133,15 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
                                 activity,
                                 DialogHomeConfirmClick { value: Boolean ->
                                     if (value) {
-                                        if(DispatchOrderRecordBean.isDeliveryStatus(item?.dispatchStatus?:0)) {
-                                            if(item?.getFirstOrder()?.isSelfTake == 1) {
-                                                PublicUtil.callPhone(consigneeCustomerMobile, activity);
+                                        if (DispatchOrderRecordBean.isDeliveryStatus(
+                                                item?.dispatchStatus ?: 0
+                                            )
+                                        ) {
+                                            if (item?.getFirstOrder()?.isSelfTake == 1) {
+                                                PublicUtil.callPhone(
+                                                    consigneeCustomerMobile,
+                                                    activity
+                                                );
                                             } else {
                                                 PublicUtil.callPhone(consignerPhone, activity);
                                             }
@@ -171,7 +178,10 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
                     R.id.tv_batch_option_arrive_shop_no -> {
                         // 上报异常
                         startActivity(
-                            Intent(activity, ReportExceptionActivity::class.java).putExtra("id", item?.id)
+                            Intent(activity, ReportExceptionActivity::class.java).putExtra(
+                                "id",
+                                item?.id
+                            )
                         )
                     }
                     R.id.tv_batch_option_arrive_shop_yes -> {
@@ -215,7 +225,7 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
                     }
                     R.id.tv_batch_option_arrive_station_yes -> {
                         val ids = getOrderIds(item);
-                        if(ids == null || ids.size == 0) {
+                        if (ids == null || ids.size == 0) {
                             return@setOnItemChildClickListener
                         }
                         // 送达收货点
@@ -233,7 +243,7 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
                     R.id.tv_batch_option_wait_sign_no -> {
                         // 签收失败
                         val ids = getOrderIds(item);
-                        if(ids == null || ids.size == 0) {
+                        if (ids == null || ids.size == 0) {
                             return@setOnItemChildClickListener
                         }
                         OperateSignFailActivity.batch(context!!, ids, CODE_SIGN_FAIL)
@@ -241,10 +251,15 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
                     R.id.tv_batch_option_wait_sign_yes -> {
                         // 签收成功
                         val ids = getOrderIds(item);
-                        if(ids == null || ids.size == 0) {
+                        if (ids == null || ids.size == 0) {
                             return@setOnItemChildClickListener
                         }
-                        OperateSignActivity.batch(context!!, item?.getFirstOrder()?.isSelfTake ?: 0, ids, CODE_SIGN);
+                        OperateSignActivity.batch(
+                            context!!,
+                            item?.getFirstOrder()?.isSelfTake ?: 0,
+                            ids,
+                            CODE_SIGN
+                        );
                     }
                     R.id.tv_batch_option_signed_no -> {
                         // 投诉客户
@@ -266,25 +281,46 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
                     }
                     R.id.tv_dispatch_start_distance -> {
                         // 导航
-                        MapNav.chooseMapDialog(requireContext(), item?.getConsignerAddress(), item?.orderList?.get(0)?.consignerLat ?: 0.0, item?.orderList?.get(0)?.consignerLng ?: 0.0)
+                        MapNav.chooseMapDialog(
+                            requireContext(),
+                            item?.getConsignerAddress(),
+                            item?.orderList?.get(0)?.consignerLat ?: 0.0,
+                            item?.orderList?.get(0)?.consignerLng ?: 0.0
+                        )
                     }
                     R.id.tv_dispatch_end_distance -> {
                         // 导航
-                        MapNav.chooseMapDialog(requireContext(), item?.getConsignerAddress(), item?.orderList?.get(0)?.consigneeLat ?: 0.0, item?.orderList?.get(0)?.consigneeLng ?: 0.0)
+                        MapNav.chooseMapDialog(
+                            requireContext(),
+                            item?.getConsignerAddress(),
+                            item?.orderList?.get(0)?.consigneeLat ?: 0.0,
+                            item?.orderList?.get(0)?.consigneeLng ?: 0.0
+                        )
                     }
                 }
             }
             setOnItemClickListener { adapter, view, position ->
                 var item = getItem(position);
                 item?.apply {
-                    if(viewModelType == 0) {
-                        if(DispatchConstants.isDeliveringTab(type)) {
-                            if(item?.pickOrderFlag?.isNotBlank() == true) {
-                                DispatchDetailActivity.delivery(context!!, item?.pickOrderFlag!!, type, item?.req, CODE_DETAIL);
+                    if (viewModelType == 0) {
+                        if (DispatchConstants.isDeliveringTab(type)) {
+                            if (item?.pickOrderFlag?.isNotBlank() == true) {
+                                DispatchDetailActivity.delivery(
+                                    context!!,
+                                    item?.pickOrderFlag!!,
+                                    type,
+                                    item?.req,
+                                    CODE_DETAIL
+                                );
                             }
                         } else {
-                            if(item?.id?.isNotBlank() == true) {
-                                DispatchDetailActivity.forResult(context!!, item?.id!!, type, CODE_DETAIL);
+                            if (item?.id?.isNotBlank() == true) {
+                                DispatchDetailActivity.forResult(
+                                    context!!,
+                                    item?.id!!,
+                                    type,
+                                    CODE_DETAIL
+                                );
                             }
                         }
                     } else {
@@ -318,7 +354,7 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
     }
 
     override fun createPresenter(): IDispatchListPresenter? {
-        return when(mDispatchStatus) {
+        return when (mDispatchStatus) {
             DispatchConstants.DISPATCH_STATUS_AGREEING -> DispatchAgreeingListPreImpl(this);
             DispatchConstants.DISPATCH_STATUS_TAKING -> DispatchTakingListPreImpl(this);
             DispatchConstants.DISPATCH_STATUS_DELIVERING -> DispatchDeliveringListPreImpl(this);
@@ -363,11 +399,11 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
         }
     }
 
-    private var newOrderId : String ?= "";
+    private var newOrderId: String? = "";
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onNewOrder(event: DispatchNewOrderEvent) {
-        if(event?.id?.isNotBlank()) {
+        if (event?.id?.isNotBlank()) {
             newOrderId = event.id;
             (mAdapter as DispatchAdapter).setOrderId(newOrderId!!);
             mLoadMoreDelegate?.refresh()
@@ -376,11 +412,12 @@ class DispatchListFragment : BaseLoadMoreFragment<DispatchOrderRecordBean, IDisp
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if((requestCode == CODE_SIGN
+        if ((requestCode == CODE_SIGN
                     || requestCode == CODE_DETAIL
                     || requestCode == CODE_PICK_FAIL
                     || requestCode == CODE_SIGN_FAIL
-                    || requestCode == CODE_SIGNED) && resultCode == Activity.RESULT_OK) {
+                    || requestCode == CODE_SIGNED) && resultCode == Activity.RESULT_OK
+        ) {
             mLoadMoreDelegate?.refresh()
         }
     }

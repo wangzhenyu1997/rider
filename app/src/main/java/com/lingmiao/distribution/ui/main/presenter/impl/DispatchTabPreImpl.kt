@@ -27,19 +27,22 @@ class DispatchTabPreImpl(private var view: IDispatchTabPresenter.View) :
         TakingSettingPreImpl(view)
     }
 
-    override fun loadTabNumber(event : HomeModelEvent) {
+    override fun loadTabNumber(event: HomeModelEvent) {
         mCoroutine.launch {
-//            view?.showDialogLoading()
 
-            val resp = DispatchRepository.loadDispatchNumber(null, event);
-            handleResponse(resp, {
-                if(it?.isSuccessAndData()) {
-                    view?.loadTabNumberSuccess(it?.data);
-                }
-            }, {
+            val resp1 = DispatchRepository.queryOrderListByRiderId(1)
+            val resp = DispatchRepository.loadDispatchNumber(null, event)
+            if (resp1.isSuccess) {
+                handleResponse(resp, {
+                    if (it.isSuccessAndData()) {
+                        view.loadTabNumberSuccess(it.data,resp1.data.data?.totalCount.toString())
+                    }
+                }, {
 
-            })
-//            view?.hideDialogLoading()
+                })
+            }
+
+
         }
     }
 

@@ -72,38 +72,37 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
     private var versionUpdateDialog: AppCompatDialog? = null
 
     override fun createPresenter(): IMainPresenter {
-        return MainPreImpl(this);
+        return MainPreImpl(this)
     }
 
-    override fun getLayoutId(): Int {
-        return R.layout.main_activity_main;
-    }
+    override fun getLayoutId() = R.layout.main_activity_main
+
 
     override fun useBaseLayout(): Boolean {
-        return false;
+        return false
     }
 
     override fun useEventBus(): Boolean {
-        return true;
+        return true
     }
 
     override fun initView() {
-        StatusBarUtil.setColor(context, ContextCompat.getColor(context, R.color.colorPrimary));
+        StatusBarUtil.setColor(context, ContextCompat.getColor(context, R.color.colorPrimary))
 
-        initHeader();
-        initDrawer();
+        initHeader()
+        initDrawer()
 
-        useStoragePermission();
+        useStoragePermission()
 
-        initMap();
+        initMap()
 
-        initRequest();
+        initRequest()
 
         FragmentUtils.replace(
             supportFragmentManager,
             DispatchTabFragment.newInstance(),
             R.id.frDispatchTab
-        );
+        )
     }
 
     private fun initRequest() {
@@ -112,7 +111,7 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
 
     private fun initHeader() {
         iv_top_back.setOnClickListener {
-            trade_drawer.openDrawer(Gravity.LEFT);
+            trade_drawer.openDrawer(Gravity.LEFT)
         }
         top_right_image.setOnClickListener {
             startActivity(Intent(context, MessageListActivity::class.java))
@@ -214,7 +213,7 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
 
     override fun onResume() {
         super.onResume()
-        if(Constant.user == null) {
+        if (Constant.user == null) {
             getUserInfo();
         } else {
             setUserView();
@@ -245,26 +244,27 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
     }
 
     fun useStoragePermission() {
-        doIntercept(StorageInterceptor(this),failed = {}){
+        doIntercept(StorageInterceptor(this), failed = {}) {
 
         }
     }
+
     /**
      * 初始化地图组件
      */
     private fun initMap() {
-        doIntercept(LocationInterceptor(context),failed = {}){
+        doIntercept(LocationInterceptor(context), failed = {}) {
         }
         locate();
 
         val manager = NotificationManagerCompat.from(this)
         // areNotificationsEnabled方法的有效性官方只最低支持到API 19，低于19的仍可调用此方法不过只会返回true，即默认为用户已经开启了通知。
         val isOpened: Boolean = manager.areNotificationsEnabled()
-        if(!isOpened) {
+        if (!isOpened) {
             try {
                 // 根据isOpened结果，判断是否需要提醒用户跳转AppInfo页面，去打开App通知权限
                 val intent = Intent()
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
                     intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
                     //这种方案适用于 API 26, 即8.0（含8.0）以上可以用
                     intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
@@ -275,7 +275,10 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
                     intent.putExtra("app_uid", applicationInfo.uid)
                 } else {
                     intent.setAction(Intent.ACTION_VIEW);
-                    intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
+                    intent.setClassName(
+                        "com.android.settings",
+                        "com.android.settings.InstalledAppDetails"
+                    );
                     intent.putExtra("com.android.settings.ApplicationPkgName", packageName);
                 }
                 startActivity(intent)
@@ -372,13 +375,13 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
     }
 
     override fun checkVersionSuccess(response: UpdateBean?) {
-        if(response == null || response.downloadUrl?.isEmpty() == true || !response.isNeedUpgrade) {
+        if (response == null || response.downloadUrl?.isEmpty() == true || !response.isNeedUpgrade) {
             return;
         }
         versionUpdateDialog = DialogUtils.showVersionUpdateDialog(
             context!!,
             "版本更新",
-            if(response.upgradeContent?.isNotBlank() == true) response.upgradeContent else "检测到新版本，是否立即更新？",
+            if (response.upgradeContent?.isNotBlank() == true) response.upgradeContent else "检测到新版本，是否立即更新？",
             "暂不更新",
             null,
             "立即更新",
@@ -401,7 +404,7 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
     }
 
     override fun setUser(user: PersonalDataParam?) {
-        if(Constant.user != null) {
+        if (Constant.user != null) {
             UserManager.setUserInfo(Constant.user);
         }
         setUserView();

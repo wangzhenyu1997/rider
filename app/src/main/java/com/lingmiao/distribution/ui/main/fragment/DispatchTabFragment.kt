@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.fisheagle.mkt.base.UserManager
 import com.google.gson.Gson
+import com.james.common.base.BaseFragment
 import com.lingmiao.distribution.R
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.lingmiao.distribution.bean.PublicBean
@@ -22,13 +23,12 @@ import com.lingmiao.distribution.ui.main.bean.DispatchNumberBean
 import com.lingmiao.distribution.ui.main.bean.DispatchOrderRecordBean
 import com.lingmiao.distribution.ui.main.event.*
 import com.lingmiao.distribution.ui.main.pop.HomePushDialog
+import com.lingmiao.distribution.ui.main.pop.TakeOrderDialog
 import com.lingmiao.distribution.ui.main.pop.TakingOrderSettingPop
 import com.lingmiao.distribution.ui.main.presenter.IDispatchTabPresenter
 import com.lingmiao.distribution.ui.main.presenter.impl.DispatchTabPreImpl
 import com.lingmiao.distribution.util.VoiceUtils
 import com.lingmiao.distribution.widget.ITabWithNumberView
-import com.james.common.base.BaseFragment
-import com.lingmiao.distribution.ui.main.pop.TakeOrderDialog
 import kotlinx.android.synthetic.main.main_fragment_dispatch_tab.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -68,7 +68,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
     override fun useEventBus() = true
 
 
-    override fun createPresenter(): IDispatchTabPresenter? {
+    override fun createPresenter(): IDispatchTabPresenter {
         return DispatchTabPreImpl(this)
     }
 
@@ -163,13 +163,13 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
         tvTabList.add(tvTabTaking);
         tvTabList.add(tvTabDelivering);
 
-        mFragments.add(OrderListFragment.vie(mPresenter?.getModelData()!!));
-        mFragments.add(DispatchListFragment.agreeing(mPresenter?.getModelData()!!));
-        mFragments.add(DispatchListFragment.taking(mPresenter?.getModelData()!!));
-        mFragments.add(DispatchListFragment.delivering(mPresenter?.getModelData()!!));
+        mFragments.add(OrderListFragment.vie(mPresenter?.getModelData()!!))
+        mFragments.add(DispatchListFragment.agreeing(mPresenter?.getModelData()!!))
+        mFragments.add(DispatchListFragment.taking(mPresenter?.getModelData()!!))
+        mFragments.add(DispatchListFragment.delivering(mPresenter?.getModelData()!!))
 
-        val fragmentAdapter = DispatchPageAdapter(childFragmentManager, mFragments, mTabTitles);
-        viewPager.adapter = fragmentAdapter;
+        val fragmentAdapter = DispatchPageAdapter(childFragmentManager, mFragments, mTabTitles)
+        viewPager.adapter = fragmentAdapter
         viewPager.addOnPageChangeListener(mPageChangeListener);
         viewPager.offscreenPageLimit = 1;
     }
@@ -214,7 +214,13 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
         EventBus.getDefault().post(RefreshDispatchStatusEvent(viewPager.currentItem))
     }
 
-    override fun loadTabNumberSuccess(data: DispatchNumberBean?) {
+    override fun loadTabNumberSuccess(data: DispatchNumberBean?, number: String) {
+        val temp = try {
+            number.toInt()
+        } catch (e: Exception) {
+            0
+        }
+        tvTabVie.setTabNumber(temp)
         tvTabAgreeing.setTabNumber(data?.receivedNum!!);
         tvTabTaking.setTabNumber(data?.pickupNum!!);
         tvTabDelivering.setTabNumber(data?.arriveNum!!);
@@ -304,18 +310,18 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun refreshDispatchTabNumber(event: DispatchSingleNumberEvent) {
-        when (event?.status) {
+        when (event.status) {
             -1 -> {
-                loadTabNumber();
+                loadTabNumber()
             }
             DispatchConstants.DISPATCH_STATUS_AGREEING -> {
-                tvTabAgreeing.setTabNumber(event?.number);
+                tvTabAgreeing.setTabNumber(event.number)
             }
             DispatchConstants.DISPATCH_STATUS_TAKING -> {
-                tvTabTaking.setTabNumber(event?.number);
+                tvTabTaking.setTabNumber(event.number)
             }
             DispatchConstants.DISPATCH_STATUS_DELIVERING -> {
-                tvTabDelivering.setTabNumber(event?.number);
+                tvTabDelivering.setTabNumber(event.number)
             }
         }
     }

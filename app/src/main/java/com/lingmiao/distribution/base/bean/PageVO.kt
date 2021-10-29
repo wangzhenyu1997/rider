@@ -1,4 +1,4 @@
-package com.fisheagle.mkt.business.common.bean
+package com.lingmiao.distribution.base.bean
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

@@ -1,6 +1,6 @@
 package com.lingmiao.distribution.ui.main.api
 
-import com.fisheagle.mkt.business.common.bean.PageVO
+import com.lingmiao.distribution.base.bean.PageVO
 import com.lingmiao.distribution.base.bean.BasePageReqVO
 import com.lingmiao.distribution.base.bean.DataVO
 import com.lingmiao.distribution.bean.HomeModelEvent

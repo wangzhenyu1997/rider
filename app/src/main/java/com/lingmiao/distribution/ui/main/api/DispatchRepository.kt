@@ -1,7 +1,7 @@
 package com.lingmiao.distribution.ui.main.api
 
 import com.fisheagle.mkt.base.IConstant
-import com.fisheagle.mkt.business.common.bean.PageVO
+import com.lingmiao.distribution.base.bean.PageVO
 import com.lingmiao.distribution.base.bean.BasePageReqVO
 import com.lingmiao.distribution.base.bean.DataVO
 import com.lingmiao.distribution.bean.HomeModelEvent
@@ -11,9 +11,6 @@ import com.lingmiao.distribution.net.Fetch
 import com.lingmiao.distribution.ui.main.bean.*
 import com.james.common.netcore.networking.http.core.HiResponse
 import com.james.common.netcore.networking.http.core.awaitHiResponse
-import com.lingmiao.distribution.ui.main.presenter.IOrderViePresenter
-import retrofit2.Call
-import retrofit2.http.Body
 import java.util.*
 
 object DispatchRepository {

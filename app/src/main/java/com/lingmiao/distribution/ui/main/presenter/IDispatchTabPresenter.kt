@@ -27,7 +27,7 @@ interface IDispatchTabPresenter : BasePresenter, ITakingSettingPresenter {
 
     interface View : ITakingSettingPresenter.View {
 
-        fun loadTabNumberSuccess(data : DispatchNumberBean?);
+        fun loadTabNumberSuccess(data : DispatchNumberBean?,number:String)
 
         fun updateWorkStatusSuccess();
 

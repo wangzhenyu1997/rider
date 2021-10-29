@@ -1,6 +1,7 @@
 package com.lingmiao.distribution.ui.main.presenter.impl
 
 import android.content.Intent
+import android.util.Log
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.lingmiao.distribution.ui.main.api.DispatchRepository
 import com.lingmiao.distribution.ui.main.bean.DispatchConstants
@@ -37,18 +38,19 @@ class OrderVieListPreImpl(val view: IOrderViePresenter.View) : BasePreImpl(view)
 
     override fun loadList(page: IPage, datas: List<*>, event : HomeModelEvent) {
         mCoroutine.launch {
-            if(datas?.isEmpty()) {
-                view?.showPageLoading()
+            if(datas.isEmpty()) {
+                view.showPageLoading()
             }
 
-            val resp = DispatchRepository.queryOrderListByRiderId(page.getPageIndex());
+            val resp = DispatchRepository.queryOrderListByRiderId(page.getPageIndex())
             if (resp.isSuccess) {
-                val list = resp?.data?.data?.records ?: listOf();
-                view?.onLoadMoreSuccess(list, page.getPageIndex() < resp?.data?.data?.totalPages?:0)
+                val list = resp.data?.data?.records ?: listOf()
+                view.upDateTotalCount(resp.data.data?.totalCount.toString())
+                view.onLoadMoreSuccess(list, page.getPageIndex() < resp.data?.data?.totalPages?:0)
             } else {
-                view?.onLoadMoreFailed()
+                view.onLoadMoreFailed()
             }
-            view?.hidePageLoading()
+            view.hidePageLoading()
         }
     }
 

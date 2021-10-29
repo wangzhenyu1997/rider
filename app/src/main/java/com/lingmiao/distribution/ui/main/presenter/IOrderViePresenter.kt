@@ -16,19 +16,21 @@ Desc        :
  **/
 interface IOrderViePresenter : BasePresenter {
 
-    fun loadList(page : IPage, list : List<*>, event : HomeModelEvent);
+    fun loadList(page: IPage, list: List<*>, event: HomeModelEvent);
 
-    fun getStatusList() : MutableList<Int>;
+    fun getStatusList(): MutableList<Int>;
 
-    fun itemOptionClick(item : DispatchOrderItemBean);
+    fun itemOptionClick(item: DispatchOrderItemBean);
 
-    fun batchOptionClick(ids : ArrayList<String>);
+    fun batchOptionClick(ids: ArrayList<String>);
 
-    fun sureOrder(id : String, successCallback: (DataVO<Unit>) -> Unit, failedCallback: () -> Unit)
+    fun sureOrder(id: String, successCallback: (DataVO<Unit>) -> Unit, failedCallback: () -> Unit)
 
-    fun takeOrder(id : String, successCallback: (DataVO<Unit>) -> Unit, failedCallback: () -> Unit)
+    fun takeOrder(id: String, successCallback: (DataVO<Unit>) -> Unit, failedCallback: () -> Unit)
 
     interface View : BaseView, BaseLoadMoreView<DispatchOrderItemBean> {
-        fun onItemOptionSuccess();
+        fun onItemOptionSuccess()
+
+        fun upDateTotalCount(num: String)
     }
 }
