@@ -22,10 +22,10 @@ Desc        :
 class TakingOrderSettingPop(context: Context, var data: HomeModelEvent) :
     BaseLazyPopupWindow(context) {
 
-    private var listener: ((HomeModelEvent) -> Unit)? = null;
+    private var listener: ((HomeModelEvent) -> Unit)? = null
 
-    private var mSortDescDrawable: Drawable? = null;
-    private var mSortAscDrawable: Drawable? = null;
+    private var mSortDescDrawable: Drawable? = null
+    private var mSortAscDrawable: Drawable? = null
     private var mModelDrawable: Drawable? = null
     private var mDoubleSortDrawable: Drawable? = null
     private var mDoubleSortSelectedDrawable: Drawable? = null
@@ -33,11 +33,11 @@ class TakingOrderSettingPop(context: Context, var data: HomeModelEvent) :
     private var event: HomeModelEvent? = null
 
     fun setOnClickListener(listener: ((HomeModelEvent) -> Unit)?) {
-        this.listener = listener;
+        this.listener = listener
     }
 
     fun setTakingModel(event: HomeModelEvent) {
-        this.event = event;
+        this.event = event
     }
 
     /**
@@ -49,27 +49,27 @@ class TakingOrderSettingPop(context: Context, var data: HomeModelEvent) :
      * **强烈建议使用[BasePopupWindow.createPopupById]，该方法支持读取View的xml布局参数，否则可能会出现与布局不一样的展示从而必须手动传入宽高等参数**
      */
     override fun onCreateContentView(): View {
-        return createPopupById(R.layout.dialog_take_order_setting);
+        return createPopupById(R.layout.dialog_take_order_setting)
     }
 
-    override fun onCreateShowAnimation(): Animation? {
+    override fun onCreateShowAnimation(): Animation {
         return showYTranslateAnim(300)
     }
 
-    override fun onCreateDismissAnimation(): Animation? {
+    override fun onCreateDismissAnimation(): Animation{
         return hideYTranslateAnim(300)
     }
 
     override fun onViewCreated(contentView: View) {
-        popupGravity = Gravity.BOTTOM or Gravity.CENTER;
+        popupGravity = Gravity.BOTTOM or Gravity.CENTER
 
-        initData();
+        initData()
 
-        initView();
+        initView()
 
     }
     private fun initData() {
-        event = UserManager.getTakingModel();
+        event = UserManager.getTakingModel()
 
         // drawable
         mModelDrawable = context.getDrawable(R.mipmap.ic_selected)
@@ -89,12 +89,12 @@ class TakingOrderSettingPop(context: Context, var data: HomeModelEvent) :
         contentView.findViewById<ImageView>(R.id.tv_take_order_setting_exit).setOnClickListener{ v ->
             // 退出
             dismiss()
-        };
+        }
         // 确定
         contentView.findViewById<TextView>(R.id.tv_take_order_setting_submit).setOnClickListener { v ->
-            listener?.invoke(event!!);
+            listener?.invoke(event!!)
             dismiss()
-        };
+        }
 
         setModelView()
 
@@ -107,22 +107,22 @@ class TakingOrderSettingPop(context: Context, var data: HomeModelEvent) :
         // 轮模式
         contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_four).setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked) {
-                event?.workStatus = HomeModelEvent.MODEL_FOUR;
+                event?.workStatus = HomeModelEvent.MODEL_FOUR
             }
-            contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_four).drawRight(if(isChecked) mModelDrawable else null);
+            contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_four).drawRight(if(isChecked) mModelDrawable else null)
         }
         contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_two).setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked) {
-                event?.workStatus = HomeModelEvent.MODEL_TWO;
+                event?.workStatus = HomeModelEvent.MODEL_TWO
             }
-            contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_two).drawRight(if(isChecked) mModelDrawable else null);
+            contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_two).drawRight(if(isChecked) mModelDrawable else null)
         }
         // set default model
         event?.apply {
             if(workStatus == HomeModelEvent.MODEL_FOUR) {
-                contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_four).isChecked = true;
+                contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_four).isChecked = true
             } else {
-                contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_two).isChecked = true;
+                contentView.findViewById<RadioButton>(R.id.rb_take_order_setting_two).isChecked = true
             }
         }
     }
