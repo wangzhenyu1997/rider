@@ -30,15 +30,15 @@ public class MapNav {
     /**
      * 地图选择弹窗
      */
-    public static void chooseMapDialog(Context context,String address, double mlatitude, double mlongitude) {
-        if(context == null) {
+    public static void chooseMapDialog(Context context, String address, double mlatitude, double mlongitude) {
+        if (context == null) {
             return;
         }
         ListDialog dialog = new ListDialog(context, (ListDialog.DialogItemClickListener) (position, id, text, chooseIndex) -> {//1:百度   2：高德   3.腾讯
             if (id.equals("1")) {
                 if (PublicUtil.isInstalled(context, "com.baidu.BaiduMap")) {
                     Intent intent = new Intent();
-                    intent.setData(Uri.parse("baidumap://map/direction?destination=" + mlatitude + "," + mlongitude + "&mode=riding&coord_type=bd09ll&src=" + context.getPackageName()));
+                    intent.setData(Uri.parse("baidumap://map/direction?destination=" + address + "&mode=riding&coord_type=bd09ll&src=" + context.getPackageName()));
                     context.startActivity(intent);
                 } else {
                     ToastUtil.showToast(context, "请先安装百度地图客户端");
