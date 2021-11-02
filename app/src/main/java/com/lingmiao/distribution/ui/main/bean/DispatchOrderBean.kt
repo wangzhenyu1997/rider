@@ -76,7 +76,8 @@ class DispatchOrderRecordBean : Serializable, MultiItemEntity {
     var vehiclePlate: Int? = 0
     @SerializedName("vehicleType")
     var vehicleType: Int? = 0
-    var viewModelType : Int = 0
+    //默认为1 表示二轮
+    var viewModelType : Int = 1
     @SerializedName("pickOrderFlag")
     val pickOrderFlag : String?=""
     // 业务字段

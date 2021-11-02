@@ -13,7 +13,7 @@ import com.allenliu.versionchecklib.v2.AllenVersionChecker;
 import com.allenliu.versionchecklib.v2.builder.DownloadBuilder;
 import com.allenliu.versionchecklib.v2.builder.UIData;
 import com.blankj.utilcode.util.Utils;
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.google.gson.Gson;
 import com.lingmiao.distribution.R;
 import com.lingmiao.distribution.app.ActivitySupport;
@@ -24,7 +24,6 @@ import com.lingmiao.distribution.databinding.ActivitySettingBinding;
 import com.lingmiao.distribution.dialog.HomeConfirmDialog;
 import com.lingmiao.distribution.okhttp.HttpCallback;
 import com.lingmiao.distribution.okhttp.OkHttpUtils;
-import com.lingmiao.distribution.util.PreferUtil;
 import com.lingmiao.distribution.util.PublicUtil;
 import com.lingmiao.distribution.util.ToastUtil;
 import com.lingmiao.distribution.view.LayoutTopView;
@@ -32,7 +31,6 @@ import com.james.common.utils.DialogUtils;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * 设置

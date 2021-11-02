@@ -3,8 +3,8 @@ package com.lingmiao.distribution.net
 import android.text.TextUtils
 import com.blankj.utilcode.util.*
 import com.fisheagle.mkt.base.ApiService
-import com.fisheagle.mkt.base.IConstant
-import com.fisheagle.mkt.base.UserManager
+import com.lingmiao.distribution.base.IConstant
+import com.lingmiao.distribution.base.UserManager
 import com.google.gson.Gson
 import com.lingmiao.distribution.BuildConfig
 import com.lingmiao.distribution.config.Constant

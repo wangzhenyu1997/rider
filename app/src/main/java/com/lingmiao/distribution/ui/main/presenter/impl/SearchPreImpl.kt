@@ -2,7 +2,7 @@ package com.lingmiao.distribution.ui.main.presenter.impl
 
 import android.content.Context
 import android.view.View
-import com.fisheagle.mkt.base.IConstant
+import com.lingmiao.distribution.base.IConstant
 import com.lingmiao.distribution.base.bean.BasePageReqVO
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.lingmiao.distribution.config.Constant

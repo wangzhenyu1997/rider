@@ -2,7 +2,7 @@ package com.lingmiao.distribution.config;
 
 import android.os.Environment;
 
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.lingmiao.distribution.bean.HomeModelEvent;
 import com.lingmiao.distribution.bean.PersonalDataParam;
 

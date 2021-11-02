@@ -6,7 +6,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.animation.Animation
 import android.widget.*
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.lingmiao.distribution.R
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.james.common.utils.exts.drawRight

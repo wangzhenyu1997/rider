@@ -1,6 +1,5 @@
 package com.lingmiao.distribution.ui.main.bean
 
-import com.fisheagle.mkt.base.IConstant
 import com.lingmiao.distribution.config.Constant
 
 /**

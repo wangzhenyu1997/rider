@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.lingmiao.distribution.R;
 import com.lingmiao.distribution.bean.HomeModelEvent;
 import com.lingmiao.distribution.databinding.DialogTakeOrderSettingBinding;

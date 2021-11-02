@@ -5,7 +5,7 @@ import android.media.MediaPlayer
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.fisheagle.mkt.base.UserManager
+import com.lingmiao.distribution.base.UserManager
 import com.google.gson.Gson
 import com.james.common.base.BaseFragment
 import com.lingmiao.distribution.R
@@ -37,20 +37,20 @@ import java.util.*
 
 /**
 Create Date : 2020/12/284:30 PM
-Auther      : Fox
+Author      : Fox
 Desc        :
  **/
 class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabPresenter.View {
 
-    private var tvTabList: ArrayList<ITabWithNumberView> = ArrayList();
+    private var tvTabList: ArrayList<ITabWithNumberView> = ArrayList()
 
     private var mTabTitles = arrayOf("待抢单", "待接单", "待取货", "待送达")
 
-    private var mFragments = mutableListOf<Fragment>();
+    private var mFragments = mutableListOf<Fragment>()
 
-    private var mediaPlayer: MediaPlayer? = null;
+    private var mediaPlayer: MediaPlayer? = null
 
-    private var mPushDialog: HomePushDialog? = null;
+    private var mPushDialog: HomePushDialog? = null
 
     private var mTakeOrderDialog: TakeOrderDialog? = null
 
@@ -62,8 +62,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
     }
 
-    override fun getLayoutId() = R.layout.main_fragment_dispatch_tab;
-
+    override fun getLayoutId() = R.layout.main_fragment_dispatch_tab
 
     override fun useEventBus() = true
 
@@ -133,35 +132,35 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
         // 待接单
         tvTabVie.setOnClickListener {
             viewPager.currentItem =
-                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_VIE);
+                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_VIE)
             EventBus.getDefault()
-                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_VIE));
+                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_VIE))
         }
         // 待接单
         tvTabAgreeing.setOnClickListener {
             viewPager.currentItem =
-                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_AGREEING);
+                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_AGREEING)
             EventBus.getDefault()
-                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_AGREEING));
+                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_AGREEING))
         }
         // 待接货
         tvTabTaking.setOnClickListener {
             viewPager.currentItem =
-                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_TAKING);
+                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_TAKING)
             EventBus.getDefault()
-                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_TAKING));
+                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_TAKING))
         }
         // 待送达
         tvTabDelivering.setOnClickListener {
             viewPager.currentItem =
-                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_DELIVERING);
+                DispatchTabEvent.getTabIndexByStatus(DispatchConstants.DISPATCH_STATUS_DELIVERING)
             EventBus.getDefault()
-                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_DELIVERING));
+                .post(RefreshDispatchStatusEvent(DispatchConstants.DISPATCH_STATUS_DELIVERING))
         }
-        tvTabList.add(tvTabVie);
-        tvTabList.add(tvTabAgreeing);
-        tvTabList.add(tvTabTaking);
-        tvTabList.add(tvTabDelivering);
+        tvTabList.add(tvTabVie)
+        tvTabList.add(tvTabAgreeing)
+        tvTabList.add(tvTabTaking)
+        tvTabList.add(tvTabDelivering)
 
         mFragments.add(OrderListFragment.vie(mPresenter?.getModelData()!!))
         mFragments.add(DispatchListFragment.agreeing(mPresenter?.getModelData()!!))
@@ -170,8 +169,8 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
         val fragmentAdapter = DispatchPageAdapter(childFragmentManager, mFragments, mTabTitles)
         viewPager.adapter = fragmentAdapter
-        viewPager.addOnPageChangeListener(mPageChangeListener);
-        viewPager.offscreenPageLimit = 1;
+        viewPager.addOnPageChangeListener(mPageChangeListener)
+        viewPager.offscreenPageLimit = 1
     }
 
     val mPageChangeListener = object : ViewPager.OnPageChangeListener {
@@ -197,7 +196,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
          * ViewPager.OnPageChangeListener
          */
         override fun onPageSelected(position: Int) {
-            updateTab(position);
+            updateTab(position)
         }
     }
 
@@ -206,7 +205,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
         tvTabAgreeing.setTabSelected(false)
         tvTabTaking.setTabSelected(false)
         tvTabDelivering.setTabSelected(false)
-        viewPager.currentItem = tabIndex;
+        viewPager.currentItem = tabIndex
         tvTabList[tabIndex].setTabSelected(true)
     }
 
@@ -221,24 +220,24 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
             0
         }
         tvTabVie.setTabNumber(temp)
-        tvTabAgreeing.setTabNumber(data?.receivedNum!!);
-        tvTabTaking.setTabNumber(data?.pickupNum!!);
-        tvTabDelivering.setTabNumber(data?.arriveNum!!);
+        tvTabAgreeing.setTabNumber(data?.receivedNum!!)
+        tvTabTaking.setTabNumber(data?.pickupNum!!)
+        tvTabDelivering.setTabNumber(data?.arriveNum!!)
     }
 
     override fun updateWorkStatusSuccess() {
         Constant.WORKSTATES =
-            if (Constant.WORKSTATES == Constant.WORK_STATES_OF_REST) Constant.WORK_STATES_OF_WORK else Constant.WORK_STATES_OF_REST;
-        setWorkStatus();
+            if (Constant.WORKSTATES == Constant.WORK_STATES_OF_REST) Constant.WORK_STATES_OF_WORK else Constant.WORK_STATES_OF_REST
+        setWorkStatus()
     }
 
     override fun loadedDispatchData(data: DispatchOrderRecordBean) {
         if (data?.id == null || data?.id?.isEmpty() == true) {
-            return;
+            return
         }
         if (data?.id?.isNotBlank() == true) {
             if (viewPager.currentItem != 0) {
-                viewPager.currentItem = 0;
+                viewPager.currentItem = 0
             }
             if (data?.isTrucker()) {
                 VoiceUtils.playVoiceOfFourModel()
@@ -247,7 +246,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
                         DispatchConstants.DISPATCH_STATUS_AGREEING,
                         data?.id!!
                     )
-                );
+                )
             } else {
                 VoiceUtils.playVoiceOfTwoModel()
                 if (mPushDialog?.isShowing == true) {
@@ -277,9 +276,9 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
     override fun updateSettingSuccess(string: String?, it: HomeModelEvent?) {
         if (it != null) {
-            UserManager.setTakingModel(it);
-            Constant.Home_Model_Event = it;
-            refreshListData();
+            UserManager.setTakingModel(it)
+            Constant.Home_Model_Event = it
+            refreshListData()
         }
     }
 
@@ -288,11 +287,11 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 //            showToast(str);
 //        }
         if (it != null) {
-            UserManager.setTakingModel(it);
-            Constant.Home_Model_Event = it;
-            refreshListData();
+            UserManager.setTakingModel(it)
+            Constant.Home_Model_Event = it
+            refreshListData()
 
-            loadTabNumber();
+            loadTabNumber()
         }
     }
 
@@ -305,7 +304,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun refreshDispatchTabNumber(event: DispatchTabEvent) {
-        viewPager.setCurrentItem(event?.getTabIndex(), false);
+        viewPager.setCurrentItem(event.getTabIndex(), false)
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -335,7 +334,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
             val param =
                 Gson().fromJson(event.message, PushBean::class.java)
             if (param.type == 1) {
-                mPresenter?.loadDispatchData(param.dispatchId);
+                mPresenter?.loadDispatchData(param.dispatchId)
             } else if (param.type == 3) {
                 // 抢单
                 if (param?.order != null) {
@@ -346,25 +345,25 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
                     mTakeOrderDialog = TakeOrderDialog(
                         context,
                         takeOrderClick,
-                        param?.order!!
+                        param.order!!
                     )
                     mTakeOrderDialog?.show()
                 }
             }
         } else if (event.code == 12) {  //获取相关订单数量
-            loadTabNumber();
+            loadTabNumber()
         } else if (event.code == 20) {
             updateTab(0)
         } else if (event.code == 21) {
             updateTab(1)
         } else if (event.code == 10) {
-            refreshListData();
+            refreshListData()
         }
     }
 
     private fun updateTab(position: Int) {
-        setTabStatus(position);
-        refreshListData();
+        setTabStatus(position)
+        refreshListData()
     }
 
     private val click: HomePushDialog.DialogPushConfirmClick =
@@ -412,17 +411,17 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
     fun agreeAndAccept(id: String) {
         mPresenter?.takeOrder(id, {
             showToast("抢单成功!")
-            refreshListData();
-            loadTabNumber();
+            refreshListData()
+            loadTabNumber()
         }, {
-        });
+        })
     }
 
     fun agreeAccept(id: String) {
         mPresenter?.sureOrder(id, {
-            refreshListData();
-            loadTabNumber();
+            refreshListData()
+            loadTabNumber()
         }, {
-        });
+        })
     }
 }

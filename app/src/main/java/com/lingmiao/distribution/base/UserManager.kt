@@ -1,10 +1,9 @@
-package com.fisheagle.mkt.base
+package com.lingmiao.distribution.base
 
 import android.text.TextUtils
 import cn.jpush.android.api.JPushInterface
 import com.blankj.utilcode.util.*
 import com.google.gson.Gson
-import com.lingmiao.distribution.base.SPConstants
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.lingmiao.distribution.bean.PersonalDataParam
 import com.lingmiao.distribution.config.Constant
@@ -109,12 +108,16 @@ class UserManager {
         }
 
         fun getDefaultTakingModel() : HomeModelEvent {
-            return HomeModelEvent(HomeModelEvent.DEFAULT_MODEL, HomeModelEvent.DEFAULT_SORT_OF_TAKE, HomeModelEvent.DEFAULT_SORT_DELIVERY);
+            //默认两轮，取默认，送默认
+            return HomeModelEvent(HomeModelEvent.DEFAULT_MODEL, HomeModelEvent.DEFAULT_SORT_OF_TAKE, HomeModelEvent.DEFAULT_SORT_DELIVERY)
         }
-        fun getTakingModel() : HomeModelEvent {
-            var str = SPUtils.getInstance().getString(Constant.KEY_HOME_TAKING_MODEL, "");
-            var event = if(str == null || str?.isEmpty()) getDefaultTakingModel() else GsonUtils.fromJson(str, GsonUtils.getType(HomeModelEvent::class.java))
-            return event;
+        fun getTakingModel(): HomeModelEvent {
+            //保存在本地的接单模式实体
+            val str = SPUtils.getInstance().getString(Constant.KEY_HOME_TAKING_MODEL, "");
+            return if (str == null || str.isEmpty()) getDefaultTakingModel() else GsonUtils.fromJson(
+                str,
+                GsonUtils.getType(HomeModelEvent::class.java)
+            )
         }
     }
 }

@@ -21,8 +21,8 @@ open class DispatchOptionPreImpl(open val view : BaseView) : BasePreImpl(view),
     IDispatchOptionPresenter {
 
     override fun changeViewType(list: List<DispatchOrderRecordBean>, event : HomeModelEvent){
-        list?.forEachIndexed { index, dispatchOrderRecordBean ->
-            dispatchOrderRecordBean.viewModelType = if(event?.isFourMode() == true) 0 else 1;
+        list.forEachIndexed { _, dispatchOrderRecordBean ->
+            dispatchOrderRecordBean.viewModelType = if(event.isFourMode) 0 else 1
         }
     }
 

@@ -1,5 +1,6 @@
 package com.lingmiao.distribution.ui.main.presenter.impl
 
+import android.util.Log
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.lingmiao.distribution.config.Constant
 import com.lingmiao.distribution.ui.main.api.DispatchRepository
@@ -26,26 +27,26 @@ Desc        :
 class DispatchTakingListPreImpl(val view: IDispatchListPresenter.View) : BasePreImpl(view) , IDispatchListPresenter {
 
     private val dispatchOptionPresenter: IDispatchOptionPresenter by lazy {
-        DispatchOptionPreImpl(view);
+        DispatchOptionPreImpl(view)
     }
 
-    override fun loadList(page: IPage, datas: List<*>, event : HomeModelEvent) {
+    override fun loadList(page: IPage, list: List<*>, event : HomeModelEvent) {
         mCoroutine.launch {
-            if(datas?.isEmpty()) {
-                view?.showPageLoading()
+            if(list.isEmpty()) {
+                view.showPageLoading()
             }
 
-            val resp = DispatchRepository.queryDispatchList(page.getPageIndex(), getStatusList(), event);
+            val resp = DispatchRepository.queryDispatchList(page.getPageIndex(), getStatusList(), event)
             if (resp.isSuccess) {
-                val list = resp?.data?.data?.records ?: listOf();
-                dispatchOptionPresenter?.changeViewType(list, event);
+                val listData = resp.data?.data?.records ?: listOf()
+                dispatchOptionPresenter.changeViewType(listData, event)
 //                EventBus.getDefault().post(DispatchSingleNumberEvent(DispatchConstants.DISPATCH_STATUS_TAKING, resp?.data?.data?.totalCount ?: 0));
-                view?.onLoadMoreSuccess(list, page.getPageIndex() < resp?.data?.data?.totalPages?:0)
+                view.onLoadMoreSuccess(listData, page.getPageIndex() < resp.data?.data?.totalPages?:0)
             } else {
-                view?.onLoadMoreFailed()
+                view.onLoadMoreFailed()
             }
 
-            view?.hidePageLoading()
+            view.hidePageLoading()
         }
     }
 
@@ -53,42 +54,42 @@ class DispatchTakingListPreImpl(val view: IDispatchListPresenter.View) : BasePre
         val mState: MutableList<Int> = mutableListOf()
         mState.add(DispatchOrderRecordBean.WAIT_ARRIVE_SHOP)
         mState.add(DispatchOrderRecordBean.WAIT_PICKUP)
-        return mState;
+        return mState
     }
 
     override fun itemOptionClick(item: DispatchOrderRecordBean) {
-        if(item?.dispatchStatus == DispatchOrderRecordBean.WAIT_ARRIVE_SHOP) {
+        if(item.dispatchStatus == DispatchOrderRecordBean.WAIT_ARRIVE_SHOP) {
             val req = OrderArriveShopReq();
-            req.dispatchId = item?.id;
+            req.dispatchId = item.id;
             req.address = PublicUtil.isNull(Constant.LOCATIONADDRESS);
             req.latitude = Constant.LOCATIONLATITUDE;
             req.longitude = Constant.LOCATIONLONGITUDE;
 
-            dispatchOptionPresenter?.arriveShop(req,{
-                view?.hideDialogLoading()
-                view?.onItemOptionSuccess();
+            dispatchOptionPresenter.arriveShop(req,{
+                view.hideDialogLoading()
+                view.onItemOptionSuccess();
             },{
-                view?.hideDialogLoading()
-                view?.showToast("操作失败")
+                view.hideDialogLoading()
+                view.showToast("操作失败")
             });
-        } else if(item?.dispatchStatus == DispatchOrderRecordBean.WAIT_PICKUP) {
+        } else if(item.dispatchStatus == DispatchOrderRecordBean.WAIT_PICKUP) {
             val req = OrderPickReq();
-            req.dispatchId = item?.id
+            req.dispatchId = item.id
             req.address = PublicUtil.isNull(Constant.LOCATIONADDRESS);
             req.latitude = Constant.LOCATIONLATITUDE;
             req.longitude = Constant.LOCATIONLONGITUDE;
-            dispatchOptionPresenter?.pickSuccess(req, {
-                view?.hideDialogLoading()
-                view?.onItemOptionSuccess();
+            dispatchOptionPresenter.pickSuccess(req, {
+                view.hideDialogLoading()
+                view.onItemOptionSuccess();
             },{
-                view?.hideDialogLoading()
-                view?.showToast("操作失败")
+                view.hideDialogLoading()
+                view.showToast("操作失败")
             });
         }
     }
 
     override fun batchOptionClick(ids: ArrayList<String>) {
-        view?.hideDialogLoading()
+        view.hideDialogLoading()
     }
 
 

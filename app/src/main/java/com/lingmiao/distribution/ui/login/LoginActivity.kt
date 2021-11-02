@@ -5,7 +5,7 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.KeyEvent
 import cn.jpush.android.api.JPushInterface
-import com.fisheagle.mkt.base.UserManager
+import com.lingmiao.distribution.base.UserManager
 import com.lingmiao.distribution.R
 import com.lingmiao.distribution.bean.PersonalDataParam
 import com.lingmiao.distribution.ui.activity.*

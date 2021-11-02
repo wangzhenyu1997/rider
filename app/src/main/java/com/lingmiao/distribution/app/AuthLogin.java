@@ -3,8 +3,7 @@ package com.lingmiao.distribution.app;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.blankj.utilcode.util.LogUtils;
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.google.gson.Gson;
 import com.lingmiao.distribution.bean.LoginBean;
 import com.lingmiao.distribution.bean.PersonalBean;
@@ -12,7 +11,6 @@ import com.lingmiao.distribution.bean.PersonalDataParam;
 import com.lingmiao.distribution.config.Constant;
 import com.lingmiao.distribution.okhttp.HttpCallback;
 import com.lingmiao.distribution.okhttp.OkHttpUtils;
-import com.lingmiao.distribution.ui.activity.HomeActivity;
 import com.lingmiao.distribution.ui.activity.IdentityExNoActivity;
 import com.lingmiao.distribution.ui.activity.IdentityExamineActivity;
 import com.lingmiao.distribution.ui.activity.IdentityNoActivity;

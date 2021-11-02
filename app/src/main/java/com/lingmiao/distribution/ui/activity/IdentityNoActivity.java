@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.blankj.utilcode.util.ScreenUtils;
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.google.gson.Gson;
 import com.lingmiao.distribution.R;
 import com.lingmiao.distribution.app.ActivitySupport;

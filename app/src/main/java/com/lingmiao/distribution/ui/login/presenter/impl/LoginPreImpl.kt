@@ -1,7 +1,7 @@
 package com.lingmiao.distribution.ui.login.presenter.impl
 
 import com.blankj.utilcode.util.LogUtils
-import com.fisheagle.mkt.base.UserManager
+import com.lingmiao.distribution.base.UserManager
 import com.lingmiao.distribution.bean.PersonalDataParam
 import com.lingmiao.distribution.config.Constant
 import com.lingmiao.distribution.ui.login.api.LoginRepository

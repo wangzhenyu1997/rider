@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.fisheagle.mkt.business.photo.PhotoHelper;
 import com.google.gson.Gson;
 import com.lingmiao.distribution.R;
@@ -24,7 +24,6 @@ import com.lingmiao.distribution.ui.common.bean.UploadDataBean;
 import com.lingmiao.distribution.ui.common.pop.MediaMenuPop;
 import com.lingmiao.distribution.util.GlideUtil;
 import com.lingmiao.distribution.util.InputUtil;
-import com.lingmiao.distribution.util.PreferUtil;
 import com.lingmiao.distribution.util.ToastUtil;
 import com.lingmiao.distribution.view.LayoutTopView;
 import com.lzy.imagepicker.ImagePicker;

@@ -10,7 +10,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.google.gson.Gson;
 import com.lingmiao.distribution.R;
 import com.lingmiao.distribution.app.ActivitySupport;
@@ -25,7 +25,6 @@ import com.lingmiao.distribution.okhttp.HttpCallback;
 import com.lingmiao.distribution.okhttp.OkHttpUtils;
 import com.lingmiao.distribution.util.InputUtil;
 import com.lingmiao.distribution.util.MD5Util;
-import com.lingmiao.distribution.util.PreferUtil;
 import com.lingmiao.distribution.util.TimeCountUtil;
 import com.lingmiao.distribution.util.ToastUtil;
 import com.lingmiao.distribution.view.LayoutTopView;

@@ -1,5 +1,7 @@
 package com.lingmiao.distribution.bean;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 /**
@@ -20,7 +22,8 @@ public class HomeModelEvent implements Serializable {
     /**
      * 默认
      */
-    public static final int DEFAULT_MODEL = MODEL_FOUR;
+    //默认两轮
+    public static final int DEFAULT_MODEL = MODEL_TWO;
     /**
      * 综合
      */
@@ -84,7 +87,9 @@ public class HomeModelEvent implements Serializable {
     }
 
     public boolean isFourMode() {
-        return MODEL_FOUR == workStatus;
+        //return MODEL_FOUR == workStatus;
+        //默认不使用4轮
+        return false;
     }
 
     public boolean isTwoMode() {
@@ -92,7 +97,7 @@ public class HomeModelEvent implements Serializable {
     }
 
     public int getWorkStatus() {
-        //  return workStatus;
+        //return workStatus;
         //默认二轮
         return MODEL_TWO;
     }

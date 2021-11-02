@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPage"
     android:orientation="vertical"
-    tools:context=".ui.activity.BillDetailActivity">
+    tools:context=".ui.activity.BillDetailActivity"
+    tools:ignore="HardcodedText">
 
     <com.lingmiao.distribution.view.LayoutTopView
         android:id="@+id/top_view"
@@ -27,7 +27,8 @@
                 android:layout_height="34dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
-                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
                 android:text="余额与押金"
                 android:textColor="#ff000000"
                 android:textSize="14sp" />
@@ -52,7 +53,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:drawableLeft="@mipmap/icon_yue"
+                        android:drawableStart="@mipmap/icon_yue"
                         android:drawablePadding="10dp"
                         android:gravity="center_vertical"
                         android:text="余额"
@@ -69,6 +70,7 @@
                         android:text="0.00元"
                         android:textColor="@color/color757"
                         android:textSize="14sp" />
+
                 </LinearLayout>
 
                 <View
@@ -86,7 +88,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:drawableLeft="@mipmap/feiyong"
+                        android:drawableStart="@mipmap/feiyong"
                         android:drawablePadding="10dp"
                         android:gravity="center_vertical"
                         android:text="押金"
@@ -105,15 +107,16 @@
                         android:textSize="14sp" />
 
                 </LinearLayout>
-            </LinearLayout>
 
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
-                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
                 android:text="账户积分"
                 android:textColor="#ff000000"
                 android:textSize="14sp" />
@@ -138,7 +141,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:drawableLeft="@mipmap/icon_yudan"
+                        android:drawableStart="@mipmap/icon_yudan"
                         android:drawablePadding="10dp"
                         android:gravity="center_vertical"
                         android:text="牛蛋分"
@@ -155,7 +158,9 @@
                         android:text="0.00分"
                         android:textColor="@color/color757"
                         android:textSize="14sp" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <TextView
@@ -163,7 +168,8 @@
                 android:layout_height="34dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
-                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
                 android:text="账户绑定"
                 android:textColor="#ff000000"
                 android:textSize="14sp" />
@@ -188,7 +194,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:drawableLeft="@mipmap/icon_zhifubao"
+                        android:drawableStart="@mipmap/icon_zhifubao"
                         android:drawablePadding="10dp"
                         android:gravity="center_vertical"
                         android:text="支付宝"
@@ -222,7 +228,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:drawableLeft="@mipmap/icon_bank"
+                        android:drawableStart="@mipmap/icon_bank"
                         android:drawablePadding="10dp"
                         android:gravity="center_vertical"
                         android:text="银行卡"

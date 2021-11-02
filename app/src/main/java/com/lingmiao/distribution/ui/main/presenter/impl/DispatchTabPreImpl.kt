@@ -1,6 +1,6 @@
 package com.lingmiao.distribution.ui.main.presenter.impl
 
-import com.fisheagle.mkt.base.UserManager
+import com.lingmiao.distribution.base.UserManager
 import com.lingmiao.distribution.base.bean.DataVO
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.lingmiao.distribution.ui.main.api.DispatchRepository

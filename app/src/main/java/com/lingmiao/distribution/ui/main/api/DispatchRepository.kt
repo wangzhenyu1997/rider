@@ -1,6 +1,6 @@
 package com.lingmiao.distribution.ui.main.api
 
-import com.fisheagle.mkt.base.IConstant
+import com.lingmiao.distribution.base.IConstant
 import com.lingmiao.distribution.base.bean.PageVO
 import com.lingmiao.distribution.base.bean.BasePageReqVO
 import com.lingmiao.distribution.base.bean.DataVO

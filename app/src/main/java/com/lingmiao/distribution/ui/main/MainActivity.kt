@@ -20,7 +20,7 @@ import com.amap.api.location.AMapLocationClient
 import com.amap.api.location.AMapLocationClientOption
 import com.amap.api.location.AMapLocationListener
 import com.blankj.utilcode.util.*
-import com.fisheagle.mkt.base.UserManager
+import com.lingmiao.distribution.base.UserManager
 import com.google.zxing.integration.android.IntentIntegrator
 import com.jaeger.library.StatusBarUtil
 import com.james.common.base.BaseActivity
@@ -33,7 +33,6 @@ import com.lingmiao.distribution.bean.PersonalDataParam
 import com.lingmiao.distribution.bean.UpdateBean
 import com.lingmiao.distribution.config.Constant
 import com.lingmiao.distribution.location.AmapLocationProvider
-import com.lingmiao.distribution.location.LocInterceptor
 import com.lingmiao.distribution.location.WorkProvider
 import com.lingmiao.distribution.ui.activity.*
 import com.lingmiao.distribution.ui.login.bean.LoginBean
@@ -77,19 +76,17 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
 
     override fun getLayoutId() = R.layout.main_activity_main
 
+    override fun useBaseLayout() = false
 
-    override fun useBaseLayout(): Boolean {
-        return false
-    }
-
-    override fun useEventBus(): Boolean {
-        return true
-    }
+    override fun useEventBus() = true
 
     override fun initView() {
         StatusBarUtil.setColor(context, ContextCompat.getColor(context, R.color.colorPrimary))
 
+        //设置菜单栏点击
         initHeader()
+
+
         initDrawer()
 
         useStoragePermission()

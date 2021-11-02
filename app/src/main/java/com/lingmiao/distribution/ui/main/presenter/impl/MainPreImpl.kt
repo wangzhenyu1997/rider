@@ -1,7 +1,6 @@
 package com.lingmiao.distribution.ui.main.presenter.impl
 
-import com.fisheagle.mkt.base.UserManager
-import com.lingmiao.distribution.config.Constant
+import com.lingmiao.distribution.base.UserManager
 import com.lingmiao.distribution.ui.login.api.LoginRepository
 import com.lingmiao.distribution.ui.main.presenter.IMainPresenter
 import com.lingmiao.distribution.ui.main.presenter.IVersionPresenter

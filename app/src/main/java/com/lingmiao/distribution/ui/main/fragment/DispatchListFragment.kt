@@ -6,6 +6,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
@@ -50,15 +51,15 @@ class DispatchListFragment :
     BaseLoadMoreFragment<DispatchOrderRecordBean, IDispatchListPresenter>(),
     IDispatchListPresenter.View {
 
-    private var mDispatchStatus: Int? = null;
+    private var mDispatchStatus: Int? = null
 
-    private var mHomeModelEvent: HomeModelEvent? = null;
+    private var mHomeModelEvent: HomeModelEvent? = null
 
     companion object {
-        const val CODE_SIGN = 101;
-        const val CODE_DETAIL = 102;
+        const val CODE_SIGN = 101
+        const val CODE_DETAIL = 102
         const val CODE_PICK_FAIL = 1011
-        const val CODE_SIGN_FAIL = 104;
+        const val CODE_SIGN_FAIL = 104
         const val CODE_SIGNED = 106
         const val KEY_DISPATCH_STATUS = "KEY_DISPATCH_STATUS"
         const val KEY_DISPATCH_EVENT = "KEY_DISPATCH_EVENT"
@@ -66,49 +67,49 @@ class DispatchListFragment :
         fun newInstance(status: Int, event: HomeModelEvent): DispatchListFragment {
             return DispatchListFragment().apply {
                 arguments = Bundle().apply {
-                    putInt(KEY_DISPATCH_STATUS, status);
-                    putSerializable(KEY_DISPATCH_EVENT, event);
+                    putInt(KEY_DISPATCH_STATUS, status)
+                    putSerializable(KEY_DISPATCH_EVENT, event)
                 }
             }
         }
 
         fun agreeing(event: HomeModelEvent): DispatchListFragment {
-            return newInstance(DispatchConstants.DISPATCH_STATUS_AGREEING, event);
+            return newInstance(DispatchConstants.DISPATCH_STATUS_AGREEING, event)
         }
 
+        //待取货
         fun taking(event: HomeModelEvent): DispatchListFragment {
-            return newInstance(DispatchConstants.DISPATCH_STATUS_TAKING, event);
+            return newInstance(DispatchConstants.DISPATCH_STATUS_TAKING, event)
         }
 
         fun delivering(event: HomeModelEvent): DispatchListFragment {
-            return newInstance(DispatchConstants.DISPATCH_STATUS_DELIVERING, event);
+            return newInstance(DispatchConstants.DISPATCH_STATUS_DELIVERING, event)
         }
 
     }
 
     override fun initBundles() {
-        mDispatchStatus = arguments?.getInt(KEY_DISPATCH_STATUS);
-        mHomeModelEvent = arguments?.getSerializable(KEY_DISPATCH_EVENT) as HomeModelEvent;
+        //状态
+        mDispatchStatus = arguments?.getInt(KEY_DISPATCH_STATUS)
+        //
+        mHomeModelEvent = arguments?.getSerializable(KEY_DISPATCH_EVENT) as HomeModelEvent
     }
 
-    override fun getLayoutId() = R.layout.main_fragment_dispatch_list;
-
+    override fun getLayoutId() = R.layout.main_fragment_dispatch_list
 
     override fun useEventBus()= true
 
-
     override fun initOthers(rootView: View) {
-
     }
 
     fun getOrderIds(item: DispatchOrderRecordBean?): ArrayList<String> {
         val ids = arrayListOf<String>()
         item?.orderList?.forEachIndexed { index, item ->
             if (item?.id?.isNotBlank() == true) {
-                ids.add(item?.id!!);
+                ids.add(item?.id!!)
             }
         }
-        return ids;
+        return ids
     }
 
     override fun initAdapter(): BaseQuickAdapter<DispatchOrderRecordBean, BaseViewHolder> {
@@ -355,15 +356,15 @@ class DispatchListFragment :
 
     override fun createPresenter(): IDispatchListPresenter? {
         return when (mDispatchStatus) {
-            DispatchConstants.DISPATCH_STATUS_AGREEING -> DispatchAgreeingListPreImpl(this);
-            DispatchConstants.DISPATCH_STATUS_TAKING -> DispatchTakingListPreImpl(this);
-            DispatchConstants.DISPATCH_STATUS_DELIVERING -> DispatchDeliveringListPreImpl(this);
-            else -> null;
+            DispatchConstants.DISPATCH_STATUS_AGREEING -> DispatchAgreeingListPreImpl(this)
+            DispatchConstants.DISPATCH_STATUS_TAKING -> DispatchTakingListPreImpl(this)
+            DispatchConstants.DISPATCH_STATUS_DELIVERING -> DispatchDeliveringListPreImpl(this)
+            else -> null
         }
     }
 
     override fun executePageRequest(page: IPage) {
-        mPresenter?.loadList(page, mAdapter.data, Constant.Home_Model_Event);
+        mPresenter?.loadList(page, mAdapter.data, Constant.Home_Model_Event)
     }
 
     override fun onItemOptionSuccess() {
@@ -377,11 +378,10 @@ class DispatchListFragment :
         } else {
             mAdapter.addData(list ?: arrayListOf())
         }
-        mLoadMoreDelegate?.refresh();
+        mLoadMoreDelegate?.refresh()
         mLoadMoreDelegate?.loadFinish(hasMore, !list.isNullOrEmpty())
         //
-        EventBus.getDefault().post(DispatchSingleNumberEvent(-1, 0));
-//        EventBus.getDefault().post(DispatchSingleNumberEvent(mDispatchStatus!!, list?.size?:0));
+        EventBus.getDefault().post(DispatchSingleNumberEvent(-1, 0))
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

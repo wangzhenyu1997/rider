@@ -1,4 +1,4 @@
-package com.fisheagle.mkt.base
+package com.lingmiao.distribution.base
 
 object IConstant {
 
@@ -7,7 +7,7 @@ object IConstant {
     const val PAGE_SIZE_DEFAULT = PAGE_SIZE_10;
     const val SERVICE_PHONE = "15901899796"
 
-    var official = false
+    var official = true
 
 
     fun getServerUrl(): String {

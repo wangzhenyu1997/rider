@@ -1,12 +1,10 @@
 package com.lingmiao.distribution.ui.main.presenter.impl
 
-import com.fisheagle.mkt.base.IConstant
+import com.lingmiao.distribution.base.IConstant
 import com.lingmiao.distribution.bean.HomeModelEvent
 import com.lingmiao.distribution.config.Constant
 import com.lingmiao.distribution.ui.main.api.DispatchRepository
 import com.lingmiao.distribution.ui.main.bean.*
-import com.lingmiao.distribution.ui.main.event.DispatchSingleNumberEvent
-import com.lingmiao.distribution.ui.main.event.RefreshDispatchStatusEvent
 import com.lingmiao.distribution.ui.main.presenter.IDispatchListPresenter
 import com.lingmiao.distribution.ui.main.presenter.IDispatchOptionPresenter
 import com.lingmiao.distribution.ui.main.presenter.IOrderOptionPresenter
@@ -14,7 +12,6 @@ import com.lingmiao.distribution.util.PublicUtil
 import com.james.common.base.BasePreImpl
 import com.james.common.base.loadmore.core.IPage
 import kotlinx.coroutines.launch
-import org.greenrobot.eventbus.EventBus
 
 /**
 Create Date : 2020/12/274:31 PM

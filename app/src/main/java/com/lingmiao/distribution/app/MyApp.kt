@@ -8,7 +8,7 @@ import com.blankj.utilcode.util.ProcessUtils
 import com.blankj.utilcode.util.RomUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.blankj.utilcode.util.Utils
-import com.fisheagle.mkt.base.UserManager
+import com.lingmiao.distribution.base.UserManager
 import com.lingmiao.distribution.BuildConfig
 import com.lingmiao.distribution.net.Fetch
 import com.lingmiao.distribution.util.VoiceUtils

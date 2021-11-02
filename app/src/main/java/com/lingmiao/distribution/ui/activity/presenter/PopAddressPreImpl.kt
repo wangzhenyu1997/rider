@@ -1,12 +1,8 @@
 package com.lingmiao.distribution.ui.activity.presenter
 
 import android.content.Context
-import android.view.View
-import com.amap.api.mapcore.util.it
 import com.blankj.utilcode.util.ResourceUtils
-import com.fisheagle.mkt.base.UserManager
 import com.james.common.base.BasePreImpl
-import com.james.common.base.BaseView
 import com.lingmiao.distribution.common.commonpop.bean.RegionVo
 import com.lingmiao.shop.business.commonpop.adapter.DefaultItemAdapter
 import com.lingmiao.shop.business.commonpop.pop.AbsThreeItemPop

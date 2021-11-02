@@ -7,7 +7,7 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.WindowManager;
 
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.google.gson.Gson;
 import com.hjq.permissions.OnPermission;
 import com.hjq.permissions.Permission;
@@ -22,7 +22,6 @@ import com.lingmiao.distribution.dialog.UpdateConfirmDialog;
 import com.lingmiao.distribution.okhttp.HttpCallback;
 import com.lingmiao.distribution.okhttp.OkHttpUtils;
 import com.lingmiao.distribution.service.UpdateService;
-import com.lingmiao.distribution.util.PreferUtil;
 import com.lingmiao.distribution.util.PublicUtil;
 import com.lingmiao.distribution.util.ToastUtil;
 

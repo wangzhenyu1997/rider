@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.fisheagle.mkt.base.UserManager;
+import com.lingmiao.distribution.base.UserManager;
 import com.github.nrecyclerview.interfaces.LoadingListener;
 import com.google.gson.Gson;
 import com.lingmiao.distribution.adapter.HomeBatchOrderAdapter;
