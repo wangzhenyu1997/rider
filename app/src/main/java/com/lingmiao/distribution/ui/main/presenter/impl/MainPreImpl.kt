@@ -1,5 +1,6 @@
 package com.lingmiao.distribution.ui.main.presenter.impl
 
+import android.util.Log
 import com.lingmiao.distribution.base.UserManager
 import com.lingmiao.distribution.ui.login.api.LoginRepository
 import com.lingmiao.distribution.ui.main.presenter.IMainPresenter

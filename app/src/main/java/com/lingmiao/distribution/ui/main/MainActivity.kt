@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import android.util.Log
 import android.view.Gravity
 import android.view.KeyEvent
 import android.view.View
@@ -80,12 +81,16 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
 
     override fun useEventBus() = true
 
+    override fun initBundles() {
+        super.initBundles()
+        getUserInfo()
+    }
+
     override fun initView() {
         StatusBarUtil.setColor(context, ContextCompat.getColor(context, R.color.colorPrimary))
 
         //设置菜单栏点击
         initHeader()
-
 
         initDrawer()
 
@@ -204,16 +209,16 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
             ScreenUtils.getScreenWidth() / 6 * 4,
             LinearLayout.LayoutParams.MATCH_PARENT
         )
-        m_all_view.setLayoutParams(param)
+        m_all_view.layoutParams = param
         m_all_view.setOnTouchListener { v, event -> true };
     }
 
     override fun onResume() {
         super.onResume()
         if (Constant.user == null) {
-            getUserInfo();
+            getUserInfo()
         } else {
-            setUserView();
+            setUserView()
         }
         val rid = JPushInterface.getRegistrationID(applicationContext)
         LogUtils.e("push", "[registrationID] $rid")
@@ -354,12 +359,13 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
     ) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100 && resultCode == 200) {
+            //点击头像返回后并不会调用
             getUserInfo()
         }
     }
 
     fun getUserInfo() {
-        mPresenter?.getUser();
+        mPresenter?.getUser()
     }
 
     override fun onDestroy() {
@@ -408,12 +414,13 @@ class MainActivity : BaseActivity<IMainPresenter>(), IMainPresenter.View {
     }
 
     fun setUserView() {
-        Constant.user?.apply {
-            m_name.setText(name);
-            m_phone.setText(mobile);
+        UserManager.getUserInfo()?.apply {
+            m_name.text = name;
+            m_phone.text = mobile;
+
             GlideUtil.load(
                 context,
-                getHeadImgUrl(),
+                headImgUrl,
                 lpc_img,
                 GlideUtil.getHeadImgOption()
             )

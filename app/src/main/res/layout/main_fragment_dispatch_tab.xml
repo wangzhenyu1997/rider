@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -17,34 +16,34 @@
 
         <com.lingmiao.distribution.widget.ITabWithNumberView
             android:id="@+id/tvTabVie"
-            app:tvSelected="true"
-            app:tvTitle="待抢单"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:tvSelected="true"
+            app:tvTitle="待抢单" />
 
         <com.lingmiao.distribution.widget.ITabWithNumberView
             android:id="@+id/tvTabAgreeing"
-            app:tvTitle="待接单"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:tvTitle="待接单" />
 
         <com.lingmiao.distribution.widget.ITabWithNumberView
             android:id="@+id/tvTabTaking"
-            app:tvSelected="false"
-            app:tvTitle="待取货"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:tvSelected="false"
+            app:tvTitle="待取货" />
 
         <com.lingmiao.distribution.widget.ITabWithNumberView
             android:id="@+id/tvTabDelivering"
-            app:tvSelected="false"
-            app:tvTitle="待送达"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:tvSelected="false"
+            app:tvTitle="待送达" />
 
     </LinearLayout>
 
@@ -57,7 +56,7 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <View style="@style/DivideLineHorizontal" />
 
@@ -68,8 +67,8 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
-        android:paddingRight="15dp"
         android:paddingTop="@dimen/dimen_2"
+        android:paddingRight="15dp"
         android:paddingBottom="@dimen/dimen_2">
 
         <TextView
@@ -80,8 +79,8 @@
             android:drawableTop="@mipmap/ic_setting"
             android:gravity="center"
             android:paddingLeft="@dimen/dimen_15"
-            android:paddingRight="@dimen/dimen_15"
             android:paddingTop="@dimen/dimen_5"
+            android:paddingRight="@dimen/dimen_15"
             android:paddingBottom="@dimen/dimen_5"
             android:text="接单设置"
             android:textSize="12sp"

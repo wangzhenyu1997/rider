@@ -7,7 +7,7 @@ object IConstant {
     const val PAGE_SIZE_DEFAULT = PAGE_SIZE_10;
     const val SERVICE_PHONE = "15901899796"
 
-    var official = true
+    var official = false
 
 
     fun getServerUrl(): String {
