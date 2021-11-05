@@ -1,4 +1,5 @@
 package com.lingmiao.distribution.ui.main.bean
+import android.util.Log
 import com.chad.library.adapter.base.entity.MultiItemEntity
 import com.google.gson.annotations.SerializedName
 import com.lingmiao.distribution.util.MathExtend
@@ -217,6 +218,11 @@ class DispatchOrderRecordBean : Serializable, MultiItemEntity {
 
     fun getVehiclePlateStr() : String {
         return ""
+    }
+
+    //获取接单时间
+    fun getAcceptTimeStr() : String {
+        return if(acceptTime == null || acceptTime?.length ?:0 == 0) "" else String.format("%s 接单", PublicUtil.isNull(acceptTime))
     }
 
 }
@@ -463,11 +469,11 @@ data class DispatchOrderItemBean(
         return upsBillNo == null || upsBillNo!!.length == 0
     }
 
-    fun getOutOrderNo(): String? {
+    fun getOutOrderNo(): String {
         return String.format("外部单号：%s", upsBillNo)
     }
 
-    fun getPlanDeliveryTimeStr() : String? {
+    fun getPlanDeliveryTimeStr() : String {
         return if(planDeliveryTime == null || planDeliveryTime?.length ?:0 == 0) "立即配送" else String.format("%s 配送", PublicUtil.isNull(planDeliveryTime));
     }
 
