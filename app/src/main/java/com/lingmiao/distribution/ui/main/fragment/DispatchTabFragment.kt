@@ -165,7 +165,7 @@ class DispatchTabFragment : BaseFragment<IDispatchTabPresenter>(), IDispatchTabP
         mFragments.add(OrderListFragment.vie(mPresenter?.getModelData()!!))
         mFragments.add(DispatchListFragment.agreeing(mPresenter?.getModelData()!!))
         mFragments.add(DispatchListFragment.taking(mPresenter?.getModelData()!!))
-        mFragments.add(DispatchListFragment.delivering(mPresenter?.getModelData()!!))
+         mFragments.add(DispatchListFragment.delivering(mPresenter?.getModelData()!!))
 
         val fragmentAdapter = DispatchPageAdapter(childFragmentManager, mFragments, mTabTitles)
         viewPager.adapter = fragmentAdapter

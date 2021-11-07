@@ -1,5 +1,6 @@
 package com.lingmiao.distribution.ui.main.api
 
+import android.util.Log
 import com.lingmiao.distribution.base.IConstant
 import com.lingmiao.distribution.base.bean.PageVO
 import com.lingmiao.distribution.base.bean.BasePageReqVO
@@ -22,11 +23,11 @@ object DispatchRepository {
     /**
      * 调度单列表
      */
-    suspend fun queryDispatchList(req : BasePageReqVO<DispatchListReq>): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
+    suspend fun queryDispatchList(req: BasePageReqVO<DispatchListReq>): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
         return apiService.queryDispatchList(req).awaitHiResponse();
     }
 
-    suspend fun queryDispatchList(req : DispatchListReq): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
+    suspend fun queryDispatchList(req: DispatchListReq): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
         val body = BasePageReqVO<DispatchListReq>();
         body.body = req;
         body.pageNum = req.pageNum;
@@ -37,17 +38,39 @@ object DispatchRepository {
     /**
      * 调度单列表
      */
-    suspend fun queryOrderListByRiderId(pageNum : Int): HiResponse<DataVO<PageVO<DispatchOrderItemBean>>> {
-        val req = BasePageReqVO<DispatchListReq>();
-        req.pageSize = IConstant.PAGE_SIZE_DEFAULT;
-        req.pageNum = pageNum;
+    suspend fun queryOrderListByRiderId(pageNum: Int): HiResponse<DataVO<PageVO<DispatchOrderItemBean>>> {
+        val resq = DispatchListReq()
+        resq.apply {
+            this.pageNum = null
+            pageSize = null
+            dispatchStatusArray = null
+            longitude = Constant.LOCATIONLONGITUDE
+            latitude = Constant.LOCATIONLATITUDE
+            workStatus = null
+            deliveryOrder = null
+            deliveryOrderSort = null
+            pickOrderSort = null
+            pickOrder = null
+            remarks = null
+        }
+
+        val req = BasePageReqVO<DispatchListReq>()
+        req.body = resq
+        req.pageSize = IConstant.PAGE_SIZE_DEFAULT
+        req.pageNum = pageNum
+
         return apiService.queryOrderListByRiderId(req).awaitHiResponse();
     }
 
     /**
      * 调度单列表
      */
-    suspend fun queryDispatchList(pageNum : Int, mState : MutableList<Int>, mListModel : HomeModelEvent?, remarks : String?): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
+    suspend fun queryDispatchList(
+        pageNum: Int,
+        mState: MutableList<Int>,
+        mListModel: HomeModelEvent?,
+        remarks: String?
+    ): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
         var resq = DispatchListReq();
         resq.dispatchStatusArray = mState;
         resq.longitude = Constant.LOCATIONLONGITUDE;
@@ -58,7 +81,6 @@ object DispatchRepository {
         resq.deliveryOrder = mListModel?.deliveryOrder;
         resq.deliveryOrder = mListModel?.deliveryOrderSort;
         resq.remarks = remarks;
-
         val req = BasePageReqVO<DispatchListReq>();
         req.body = resq;
         req.pageSize = IConstant.PAGE_SIZE_DEFAULT;
@@ -69,17 +91,24 @@ object DispatchRepository {
     /**
      * 调度单列表
      */
-    suspend fun queryDispatchList(pageNum : Int, mState : MutableList<Int>, mListModel : HomeModelEvent?): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
+    suspend fun queryDispatchList(
+        pageNum: Int,
+        mState: MutableList<Int>,
+        mListModel: HomeModelEvent?
+    ): HiResponse<DataVO<PageVO<DispatchOrderRecordBean>>> {
         return queryDispatchList(pageNum, mState, mListModel, null);
     }
 
-    suspend fun queryDispatchById(id : String): HiResponse<DataVO<DispatchOrderRecordBean>> {
+    suspend fun queryDispatchById(id: String): HiResponse<DataVO<DispatchOrderRecordBean>> {
         val map = mutableMapOf<String, String>()
         map.put("id", id)
         return apiService.queryDispatchById(map).awaitHiResponse();
     }
 
-    suspend fun queryOrderListByPickOrderFlag(id : String, req : DispatchListReq?): HiResponse<DataVO<DispatchOrderRecordBean>> {
+    suspend fun queryOrderListByPickOrderFlag(
+        id: String,
+        req: DispatchListReq?
+    ): HiResponse<DataVO<DispatchOrderRecordBean>> {
         var data = OrderFlagVo();
         data.convert(req)
         data.pickOrderFlag = id;
@@ -91,7 +120,10 @@ object DispatchRepository {
         return apiService.queryOrderListByPickOrderFlag(body).awaitHiResponse();
     }
 
-    suspend fun loadDispatchNumber(mState : MutableList<Int>?, mListModel : HomeModelEvent?): HiResponse<DataVO<DispatchNumberBean>> {
+    suspend fun loadDispatchNumber(
+        mState: MutableList<Int>?,
+        mListModel: HomeModelEvent?
+    ): HiResponse<DataVO<DispatchNumberBean>> {
         var resq = DispatchListReq();
 //        resq.dispatchStatusArray = mState;
         resq.longitude = Constant.LOCATIONLONGITUDE;
@@ -107,19 +139,19 @@ object DispatchRepository {
         return apiService.loadDispatchNumber(body).awaitHiResponse();
     }
 
-    suspend fun updateWorkStatus(status : Int): HiResponse<DataVO<Unit>> {
+    suspend fun updateWorkStatus(status: Int): HiResponse<DataVO<Unit>> {
         val map = mutableMapOf<String, Int>()
         map.put("workStatus", status)
         return apiService.updateWorkStatus(map).awaitHiResponse();
     }
 
-    suspend fun agreeAccept(id : String): HiResponse<DataVO<Unit>> {
+    suspend fun agreeAccept(id: String): HiResponse<DataVO<Unit>> {
         val map = mutableMapOf<String, String>()
         map.put("id", id)
         return apiService.agreeAccept(map).awaitHiResponse();
     }
 
-    suspend fun assignAndAccept(ids : MutableList<String>): HiResponse<DataVO<Unit>> {
+    suspend fun assignAndAccept(ids: MutableList<String>): HiResponse<DataVO<Unit>> {
         var data = TakeOrderReq();
         data.ids = ids;
         return apiService.assignAndAccept(data).awaitHiResponse();
@@ -129,27 +161,27 @@ object DispatchRepository {
         return apiService.refuse(refuseOrderReq).awaitHiResponse();
     }
 
-    suspend fun arriveShop(req : OrderArriveShopReq): HiResponse<DataVO<Unit>> {
+    suspend fun arriveShop(req: OrderArriveShopReq): HiResponse<DataVO<Unit>> {
         return apiService.arriveShop(req).awaitHiResponse();
     }
 
-    suspend fun pickup(req : OrderPickReq): HiResponse<DataVO<Unit>> {
+    suspend fun pickup(req: OrderPickReq): HiResponse<DataVO<Unit>> {
         return apiService.pickup(req).awaitHiResponse();
     }
 
-    suspend fun pickFail(req : OrderPickFailedReq): HiResponse<DataVO<Unit>> {
+    suspend fun pickFail(req: OrderPickFailedReq): HiResponse<DataVO<Unit>> {
         return apiService.pickFail(req).awaitHiResponse();
     }
 
-    suspend fun arriveStation(req : OrderArriveStationReq): HiResponse<DataVO<Unit>> {
+    suspend fun arriveStation(req: OrderArriveStationReq): HiResponse<DataVO<Unit>> {
         return apiService.arriveStation(req).awaitHiResponse();
     }
 
-    suspend fun signed(req : OrderSignReq): HiResponse<DataVO<Unit>> {
+    suspend fun signed(req: OrderSignReq): HiResponse<DataVO<Unit>> {
         return apiService.signed(req).awaitHiResponse();
     }
 
-    suspend fun signFail(req : OrderSignFailedReq): HiResponse<DataVO<Unit>> {
+    suspend fun signFail(req: OrderSignFailedReq): HiResponse<DataVO<Unit>> {
         return apiService.signFail(req).awaitHiResponse();
     }
 
@@ -157,25 +189,25 @@ object DispatchRepository {
         return apiService.uploadException(body).awaitHiResponse();
     }
 
-    suspend fun getOrderByUpsBillNo(id : String): HiResponse<DataVO<DispatchOrderRecordBean>> {
+    suspend fun getOrderByUpsBillNo(id: String): HiResponse<DataVO<DispatchOrderRecordBean>> {
         val map = mutableMapOf<String, String>()
         map.put("upsBillNo", id)
         return apiService.getOrderByUpsBillNo(map).awaitHiResponse();
     }
 
-    suspend fun getOrderDetailByUpsBillNo(id : String): HiResponse<DataVO<DispatchOrderRecordBean>> {
+    suspend fun getOrderDetailByUpsBillNo(id: String): HiResponse<DataVO<DispatchOrderRecordBean>> {
         val map = mutableMapOf<String, String>()
         map.put("upsBillNo", id)
         return apiService.getOrderDetailsByUpsBillNo(map).awaitHiResponse();
     }
 
-    suspend fun queryOrderById(id : String): HiResponse<DataVO<OrderDetail>> {
+    suspend fun queryOrderById(id: String): HiResponse<DataVO<OrderDetail>> {
         val map = mutableMapOf<String, String>()
         map.put("id", id)
         return apiService.queryOrderById(map).awaitHiResponse();
     }
 
-    suspend fun upgrade(version : String) : HiResponse<DataVO<UpdateBean>> {
+    suspend fun upgrade(version: String): HiResponse<DataVO<UpdateBean>> {
         val mMap: MutableMap<String, String> = HashMap()
         mMap["appType"] = "1";
         mMap["currentVersion"] = version;
@@ -185,14 +217,14 @@ object DispatchRepository {
     /**
      * 修改接单设置
      */
-    suspend fun updateSetting(data : HomeModelEvent) : HiResponse<DataVO<Unit>> {
+    suspend fun updateSetting(data: HomeModelEvent): HiResponse<DataVO<Unit>> {
         return apiService.updateSetting(data).awaitHiResponse();
     }
 
     /**
      * 修改接单设置
      */
-    suspend fun querySetting() : HiResponse<DataVO<TakingSettingBean>> {
+    suspend fun querySetting(): HiResponse<DataVO<TakingSettingBean>> {
         return apiService.querySetting().awaitHiResponse();
     }
 

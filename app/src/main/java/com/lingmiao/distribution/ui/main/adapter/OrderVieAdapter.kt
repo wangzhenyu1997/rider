@@ -53,8 +53,7 @@ class OrderVieAdapter() : BaseQuickAdapter<DispatchOrderItemBean, BaseViewHolder
         // 发货地址
         helper.setText(R.id.tv_dispatch_start_address, item?.getConsignerAddressStr());
         // 发货距离
-       // helper.setText(R.id.tv_dispatch_start_distance, String.format("%s%s", PublicUtil.isNull(order?.originDistance), if(order?.originDistance?.length?:0 > 0) "公里" else ""));
-        helper.setText(R.id.tv_dispatch_start_distance,order?.originDistance.toString())
+       helper.setText(R.id.tv_dispatch_start_distance, String.format("%s%s", PublicUtil.isNull(order?.originDistance), if(order?.originDistance?.length?:0 > 0) "公里" else ""));
         // 收货地址
         helper.setText(R.id.tv_dispatch_end_address, item?.getConsigneeAddressStr());
         // 收货距离

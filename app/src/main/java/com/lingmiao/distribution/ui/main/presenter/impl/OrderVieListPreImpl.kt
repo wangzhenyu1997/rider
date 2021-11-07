@@ -47,6 +47,7 @@ class OrderVieListPreImpl(val view: IOrderViePresenter.View) : BasePreImpl(view)
                 val list = resp.data?.data?.records ?: listOf()
                 view.upDateTotalCount(resp.data.data?.totalCount.toString())
                 view.onLoadMoreSuccess(list, page.getPageIndex() < resp.data?.data?.totalPages?:0)
+
             } else {
                 view.onLoadMoreFailed()
             }
