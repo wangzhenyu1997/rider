@@ -4,6 +4,7 @@ import android.text.Html
 import android.widget.LinearLayout
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.james.common.utils.exts.isNotBlank
 import com.lingmiao.distribution.R
 import com.lingmiao.distribution.bean.LabelsBean
 import com.lingmiao.distribution.ui.main.bean.DispatchConstants
@@ -11,7 +12,9 @@ import com.lingmiao.distribution.ui.main.bean.DispatchOrderItemBean
 import com.lingmiao.distribution.ui.main.bean.DispatchOrderRecordBean
 import com.lingmiao.distribution.util.MathExtend
 import com.lingmiao.distribution.util.PublicUtil
-import com.james.common.utils.exts.isNotBlank
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 /**
 Create Date : 2020/12/283:18 PM
@@ -201,8 +204,16 @@ class DispatchAdapter(val type: Int) :
         //接单时间
         helper.setText(R.id.tv_dispatch_dt_time, item.getAcceptTimeStr())
         // 实效
-        // helper.setText(R.id.tv_dispatch_time, PublicUtil.isNull(order?.showTimeRequire))
-        //  helper.setGone(R.id.tv_dispatch_time, PublicUtil.isNull(order?.showTimeRequire)?.length?:0 > 0)
+        helper.setGone(R.id.tv_dispatch_time, order?.timeRequire != null)
+        val time = try {
+            val temp =
+                SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(item.acceptTime + " 00:00:00").time
+
+            SimpleDateFormat("yyyy-MM-dd HH:mm").format(Date(temp + order?.timeRequire?.toLong()!! * 60 * 1000))
+        } catch (e: Exception) {
+            ""
+        }
+        helper.setText(R.id.tv_dispatch_time, "$time 送达")
         // 商品信息
         helper.setText(R.id.tv_dispatch_good, item?.goodsInfo)
         // 备注
