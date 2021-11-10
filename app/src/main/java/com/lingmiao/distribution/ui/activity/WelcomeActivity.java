@@ -1,7 +1,12 @@
 package com.lingmiao.distribution.ui.activity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.TypedArray;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +30,8 @@ import com.lingmiao.distribution.service.UpdateService;
 import com.lingmiao.distribution.util.PublicUtil;
 import com.lingmiao.distribution.util.ToastUtil;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,7 +52,13 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Android8.0中，如果是透明的Activity，则不能固定他的方向
+        //https://blog.csdn.net/starry_eve/article/details/82777160
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.O && isTranslucentOrFloating()) {
+            boolean result = fixOrientation();
+        }
         super.onCreate(savedInstanceState);
+
         MyApplication.APP_STATUS = MyApplication.APP_STATUS_NORMAL; // App正常的启动，设置App的启动状态为正常启动
         setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_welcome);
@@ -53,6 +66,44 @@ public class WelcomeActivity extends AppCompatActivity {
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         context = this;
         initView();
+    }
+
+    @Override
+    public void setRequestedOrientation(int requestedOrientation) {
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.O && isTranslucentOrFloating()) {
+            return;
+        }
+        super.setRequestedOrientation(requestedOrientation);
+    }
+
+    @SuppressLint("WrongConstant")
+    private boolean fixOrientation(){
+        try {
+            Field field = Activity.class.getDeclaredField("mActivityInfo");
+            field.setAccessible(true);
+            ActivityInfo o = (ActivityInfo)field.get(this);
+            o.screenOrientation  = -1;
+            field.setAccessible(false);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    private boolean isTranslucentOrFloating(){
+        boolean isTranslucentOrFloating = false;
+        try {
+            int [] styleableRes = (int[]) Class.forName("com.android.internal.R$styleable").getField("Window").get(null);
+            final TypedArray ta = obtainStyledAttributes(styleableRes);
+            Method m = ActivityInfo.class.getMethod("isTranslucentOrFloating", TypedArray.class);
+            m.setAccessible(true);
+            isTranslucentOrFloating = (boolean)m.invoke(null, ta);
+            m.setAccessible(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return isTranslucentOrFloating;
     }
 
     private void initView() {
