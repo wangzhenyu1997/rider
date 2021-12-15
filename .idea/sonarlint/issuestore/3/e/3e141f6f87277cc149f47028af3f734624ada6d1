@@ -1,9 +1,0 @@
-
-R
-java:S1068"0Remove this unused "workerParams" private field.(ìêùÛùÿÿÿÿ8¯­Ş›/
-R
-java:S1611."0Remove the parentheses around the "it" parameter(©â€ùÿÿÿÿ8òıı’›/
-X	java:S125%"<This block of commented-out lines of code should be removed.(ƒã²†8¯­Ş›/
-X	java:S125)"<This block of commented-out lines of code should be removed.(òµ×ƒ8‚ùÒŞ›/
-N
-java:S16111"1Remove the parentheses around the "it2" parameter(ÓÃÈ8òıı’›/

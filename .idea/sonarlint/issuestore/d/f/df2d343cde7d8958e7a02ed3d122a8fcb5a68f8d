@@ -1,18 +1,0 @@
-
-G
-java:S1444"*Make this "public static NAME" field final(ø¹¹¢8§Üž“›/
-J
-java:S1444"(Make this "public static ID" field final(«ï€ôýÿÿÿÿ8§Üž“›/
-o
-java:S3008"MRename this field "ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ï€ôýÿÿÿÿ8§Üž“›/
-]	java:S125"<This block of commented-out lines of code should be removed.(èìÚþÿÿÿÿ8²ö“›/
-p
-java:S1104"NMake ID a static final constant or non-public and provide accessors if needed.(«ï€ôýÿÿÿÿ8§Üž“›/
-W
-java:S1118":Add a private constructor to hide the implicit public one.( ÂìÔ8§Üž“›/
-l
-java:S3008"ORename this field "NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø¹¹¢8§Üž“›/
-L
-java:S1874/"/Remove this use of "Builder"; it is deprecated.(¯»¥ë8Ø™”“›/
-m
-java:S1104"PMake NAME a static final constant or non-public and provide accessors if needed.(ø¹¹¢8§Üž“›/
